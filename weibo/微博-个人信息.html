@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>weibo</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix{
+    clear: both;
+    content: "";
+    display: block;
+}
+.clearfix{
+    zoom: 1;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.box1{
+    width: 598px;
+    height: 457px;
+    background: #fafafa;
+}
+ .inner{
+    margin: 0 auto;
+ }   
+ .menu{
+     height: 35px;
+     width: 598px;
+ }
+.menu_font{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 21px;
+    margin-left: 8px;
+}
+.menu_box1{
+    width: 450px;
+    height: 1px;
+    border-bottom: 1px solid #c5d5da;
+    margin-left: 8px;
+    margin-top: 27px;
+    
+}
+.menu_box2{
+    width: 45px;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #f2f2f2;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 22px;
+    margin-top: 18px;
+    margin-right: 29px;
+}
+.login_name{
+    width: 598px;
+    height: 12px;
+    margin-top: 25px;
+}
+.list1{
+    width: 61px;
+    font-size: 12px;
+    text-align: right;
+    color: #808080;
+}
+.list2{
+    color: black;
+    /*width: 132px;*/
+    text-align: left;
+    font-size: 12px;
+    margin-left: 24px;
+}
+.list3{
+    font-size: 13px;
+    color: #177c99;
+}
+.name{
+    width: 598px;
+    height: 49px;
+}
+.list4{
+    width: 61px;
+    font-size: 12px;
+    text-align: right;
+    color: #808080;
+    margin-top:24px;    
+}
+.list5{
+    width: 198px;
+    height: 30px;
+    font-size: 12px;
+    margin-left: 24px;
+    color: #808080;
+    margin-top:16px;    
+}
+.mark{
+    margin-top: 20px;
+    margin-left: 25px;
+}
+.location,.emo,.brithday{
+    height: 29px;
+    width: 598px;
+}
+.list6{
+    width: 61px;
+    font-size: 12px;
+    text-align: right;
+    color: #808080;
+    margin-top:14px;    
+}
+.select1{
+    margin-top: 10px;
+    height: 19px;
+    width:67px;
+    margin-left: 24px;
+    font-size: 12px;
+}
+.sex{
+    height: 32px;
+    width: 598px;
+}
+.list7{
+    width: 61px;
+    font-size: 12px;
+    text-align: right;
+    color: #808080;
+    margin-top:20px;    
+}
+.radio1{
+    margin-top:20px;  
+    height: 13px;
+    width: 13px;
+    margin-left: 24px;
+}
+.label1{
+    margin-top:20px;
+    font-size: 12px; 
+}
+.visi{
+    height: 22px;
+    width: 98px;
+    background: #f2f2f2;
+    margin-right: 51px;
+    font-size: 12px;
+    margin-top:12px;
+   
+}
+.label2{
+    margin-top: 13px;
+    font-size: 12px;
+}
+.blog{
+    height: 41px;
+    width: 598px;
+}
+.list8{
+    width: 61px;
+    font-size: 12px;
+    text-align: right;
+    color: #808080;
+    margin-top:20px;    
+}
+.intro{
+    height: 61px;
+    width: 598px;
+}
+.list9{
+    width: 61px;
+    font-size: 12px;
+    text-align: right;
+    color: #808080;
+    margin-top:14px;  
+}
+.list10{
+    width: 198px;
+    height: 50px;
+    font-size: 12px;
+    margin-left: 24px;
+    color: #808080;
+    margin-top:5px;    
+}
+</style>
+<body>
+    <div class="box1 inner">
+        <div class="clearfix menu">
+            <span class="fl menu_font">基本信息</span>
+            <i class="fl menu_box1"></i>        
+            <span class="fr menu_box2">保存</span>
+        </div>
+
+        <div class="login_name clearfix">
+            <span class="fl list1">登录名</span>
+            <span class="fl list2">z8***35@sina.com</span>
+            <span class="fl list3">修改密码</span>
+        </div>
+        <div class="name clearfix">
+            <span class="fl list4">*昵称</span>
+            <input type="text" name="昵称" value="测试文字" class="fl list5">
+            <img src="img/1.jpg" alt="对勾" class="mark fl">
+        </div>
+        <div class="name clearfix">
+            <span class="fl list4">真实姓名</span>
+            <input type="text" name="真实姓名" value="测试文字" class="fl list5">
+            <img src="img/1.jpg" alt="对勾" class="mark fl">
+             <select class="fr visi">
+                <option>仅自己可见</option>
+            </select>              
+        </div>
+        <div class="location clearfix">
+            <span class="fl list6">*所在地</span>
+            <select class="fl select1">
+                <option>北京</option>
+            </select>
+            <select class="fl select1">
+                <option>朝阳区</option>
+            </select>           
+        </div>
+        <div class="sex clearfix">
+            <span class="fl list7">*性别</span>
+            <input type="radio" name=""sex value="man" class="fl radio1">
+                <label class="fl label1">男</label>
+            <input type="radio" name=""sex value="woman" class="fl radio1">
+                <label class="fl label1">女</label>           
+        </div>
+        <div class="sex clearfix">
+            <span class="fl list7">性取向</span>
+            <input type="checkbox" name=""sex value="man" class="fl radio1">
+                <label class="fl label1">男</label>
+            <input type="checkbox" name=""sex value="woman" class="fl radio1">
+                <label class="fl label1">女</label> 
+            <select class="fr visi">
+                <option>仅自己可见</option>
+            </select>                   
+        </div>
+        <div class="emo clearfix">
+            <span class="fl list6">感情状况</span>
+            <select class="fl select1">
+                <option></option>
+            </select>
+            <select class="fr visi" style="margin-top:7px">
+                <option>仅自己可见</option>
+            </select>      
+        </div>
+        <div class="brithday clearfix">
+            <span class="fl list6" >生日</span>
+            <select class="fl select1"style="height: 19px;width: 59px">
+                <option>1998</option>
+            </select>
+            <label class="fl label2">年</label>
+            <select class="fl select1"style="height: 19px;width: 45px;margin-left:7px">
+                <option>02</option>
+            </select>
+            <label class="fl label2">月</label>        
+             <select class="fl select1"style="height: 19px;width: 45px;margin-left:7px">
+                <option>14</option>
+            </select>
+            <label class="fl label2">日</label>
+            <select class="fr visi"style="margin-top:7px">
+                <option>只显示月日</option>
+            </select>                 
+        <div class="emo clearfix">
+            <span class="fl list6">血型</span>
+            <select class="fl select1">
+                <option></option>
+            </select>
+            <select class="fr visi" style="margin-top:7px">
+                <option>仅自己可见</option>
+            </select>      
+        </div>
+        <div class="blog clearfix">
+            <span class="fl list8">博客地址</span>  
+              <input type="text" name="博客地址" value="请输入正确的博客地址" class="fl list5">
+            <select class="fr visi" style="margin-top:17px">
+                <option>所有人可见</option>
+            </select>  
+        </div>
+        <div class="intro clearfix">
+            <span class="fl list9">简介</span>  
+              <input type="text" name="简介" value="请输入个人简介" class="fl list10">
+        </div>           
+        </div>
+</body>
+</html>
