@@ -1,0 +1,378 @@
+@charset "utf-8";
+/* CSS Document */
+/*base css*/
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix{
+    clear: both;
+    content: "";
+    display: block;
+}
+.clearfix{
+    zoom: 1;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.inner{
+    margin: 0 auto;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+/*-----------*/
+.sheet_box{
+    height: 2629px;
+    width: 1000px;
+}
+.top_box{
+    height: 37px;
+    width: 976px;
+    margin-top: 6px;
+    margin-left: 14px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+.top_img1{
+    height: 37px;
+    width: 99px;
+    border-right: 1px solid #cecece
+}
+.register{
+    font-size: 12px;
+    font-weight: bold;
+    height: 37px;
+    width: 68px;
+    line-height: 37px;
+
+}
+.top_img2{
+    height: 24px;
+    width: 24px;
+    background: url(../img/2.jpg) no-repeat;
+    margin-right: 6px;
+    margin-top: 5px;
+
+}
+.chongzhi{
+    font-size: 12px;
+    font-weight: bold;
+    height: 37px;
+    width: 79px;
+    line-height: 37px;
+}
+.top_img3{
+    height: 24px;
+    width: 24px;
+    background: url(../img/cyou_sprite.png) no-repeat -189px 0px;
+    margin-right: 4px;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+.changyou{
+    font-size: 12px;
+    font-weight: bold;
+    height: 37px;
+    width: 75px;
+    line-height: 37px;
+}
+.top_img4{
+    height: 24px;
+    width: 24px;
+    background: url(../img/cyou_sprite.png) no-repeat 0px -104px;
+    margin-right: 4px;
+    margin-top: 5px;
+    margin-left: 4px;
+}
+.kefu{
+    font-size: 12px;
+    font-weight: bold;
+    height: 37px;
+    width: 53px;
+    line-height: 37px; 
+    border-left: 1px solid #cecece;
+    border-right: 1px solid #cecece; 
+    padding-left: 29px  
+}
+.top_img5{
+    height: 5px;
+    width: 7px;
+    background: url(../img/cyou_sprite.png) no-repeat -206px -148px;
+    margin-right: 17px;
+    margin-top: 17px;
+}
+.all_game{
+    font-size: 12px;
+    font-weight: bold;
+    height: 37px;
+    width: 87px;
+    line-height: 37px; 
+    border-right: 1px solid #cecece; 
+    padding-left: 25px      
+}
+.top_img5{
+    height: 5px;
+    width: 7px;
+    background: url(../img/cyou_sprite.png) no-repeat -206px -148px;
+    margin-top: 17px;
+}
+.top_box2{
+    height: 5px;
+    width: 1000px;
+}
+.navigation{
+    width: 1000px;
+    height: 551px;
+    position: relative;
+}
+h1{
+    height: 63px;
+    width: 186px;
+    background: url(../img/5.png);
+    float: left;
+    position: absolute;
+    left: 0px;
+    top: 21px;
+}
+.logo{
+    width: 100%;
+    height: 100%;
+    text-indent: -999em;
+    display: block;
+
+}
+.navigation_box{
+    height: 109px;
+    width: 811px;
+    position: absolute;
+    left: 187px;
+    top: 0px;
+}
+.hanzi{
+    font-size: 17px;
+    color:#b6b6ba;
+    float: left;
+    font-weight: bold;
+    text-align: center;
+}
+.english{
+    font-size: 7px;
+    color:#b6b6ba;
+    float: left;
+    text-align: center;
+}
+.home{
+    height: 33px;
+    width: 35px;
+    margin-left: 51px;
+    margin-top: 37px;
+}
+.news{
+    height: 33px;
+    width: 70px;
+    margin-left: 27px;
+    margin-top: 37px;
+
+}
+.item1{
+    height: 33px;
+    width: 70px;
+    margin-left: 20px;
+    margin-top: 37px;
+}
+.item2{
+    height: 33px;
+    width: 70px;
+    margin-left: 18px;
+    margin-top: 37px;
+
+}
+.pendant1{
+    width: 31px;
+    height: 122px;
+    position: absolute;
+    top:245px;
+    left: 0px;
+}
+.navigation2{
+    width: 1000px;
+    height: 109px;
+    background: #1a1d22;
+}
+.scr_menu{
+    width: 617px;
+    height: 109px;
+    background: url(../img/sprite.jpg)  no-repeat 0px 0px;    
+}
+.navi2_box{
+    width: 383px;
+    height: 66px;
+    background:#221c20;
+    position: relative;
+}
+.navi2_img{
+    width: 361px;
+    height: 55px;
+    margin-top: 7px;
+    margin-left: 13px;
+    margin-bottom: 3px;
+}
+.navi2_text1{
+    font-size: 14px;
+    color: #9faace;
+    position: absolute;
+    left: 90px;
+    top: 15px;
+
+}
+.navi2_text1 span{
+    color: red;
+}
+.navi2_text2{
+    font-size: 14px;
+    color: #9faace;
+    position: absolute;
+    left: 90px;
+    bottom: 13px;
+
+}
+.navi2_text2 span{
+    color: red;
+}
+.navi2_box2{
+    width: 381px;
+    height: 43px;
+    background: url(../img/sprite.jpg) no-repeat 0px -221px;
+    border-right: 3px solid black;
+}
+.navi2_text3{
+    font-size: 12px;
+    color: #adb9e0;
+    margin-top: 15px;
+    margin-left: 6px;
+}
+.navi2_text3 span{
+    color: red;
+}
+.navi2_mark{
+    height: 14px;
+    width: 13px;
+    margin-left: 2px;
+    margin-top: 15px;
+    background: url(../img/sprite.jpg) no-repeat -603px -227px;
+}
+.navi2_text4{
+    font-size: 12px;
+    color: #adb9e0;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+.main{
+    width: 1000px;
+    height: 305px;
+}
+.main_img{
+    height: 305px;
+    width: 617px;
+    position: relative;
+    background: url(../img/main_a1.jpg) no-repeat;
+}
+.main_img ul{
+    position: absolute;
+    left: 520px;
+    top: 280px;
+}
+.main_img_li{
+    background: #3a3e47;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin-left: 3px;
+    float: left;
+}
+.main_img_li:hover{
+    background: #d0290a;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin-left: 3px;
+    float: left;
+}
+.main_text{
+    height: 305px;
+    width: 383px;
+
+}
+.main_menu{
+    width: 382px;
+    height: 59px;
+    background: url(../img/sprite.jpg) no-repeat 0px -261px;
+    border: 1px solid black;
+}
+.main_li{
+    color: #fff;
+    font-size: 14px;
+    padding: 0px 32px 0px 33px;
+    border: 1px solid #000;
+    line-height: 55px;
+}
+.main_li:hover{
+        background: url(../img/7.jpg) no-repeat;
+        cursor: pointer;
+}
+.main_content{
+    width: 383px;
+    height: 247px;
+    background: #322e3f;
+    position: relative;
+}
+.main_content1{
+    width: 346px;
+    height: 34px;
+    background: url(../img/sprite.jpg) no-repeat 0px -378px;
+    margin-top: 17px;
+    margin-left: 18px;
+    margin-right: 18px;
+    margin-bottom: 11px;
+}
+.main_content1 span{
+    color: red;
+    font-size: 15px;
+    line-height: 34px;
+    padding: 0px 42px 0px 40px;
+}
+.main_content1_li{
+    font-size: 12px;
+    margin-left: 24px;
+    margin-bottom: 9px;
+    color: #9ca7ca;
+}
+.main_content_img{
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    left: 296px;
+    top:215px;
+}
+.moremoremore{
+    position: absolute;
+    left: 316px;
+    top:215px;
+    color: #9ca7ca;
+    font-size: 12px;
+}
+.four_img{
+    width: 1000px;
+    height: 130px;
+    background: #1c1b21;
+    padding: 33px 0px 31px 0px;
+}
