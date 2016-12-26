@@ -160,40 +160,43 @@ h1{
 .hanzi{
     font-size: 17px;
     color:#b6b6ba;
-    float: left;
+    /*float: left;*/
     font-weight: bold;
-    text-align: center;
+    /*text-align: center;*/
 }
 .english{
     font-size: 7px;
     color:#b6b6ba;
-    float: left;
-    text-align: center;
+    /*float: left;*/
+    /*text-align: center;*/
 }
 .home{
     height: 33px;
     width: 35px;
     margin-left: 51px;
     margin-top: 37px;
+    text-align: center;
 }
 .news{
     height: 33px;
     width: 70px;
     margin-left: 27px;
     margin-top: 37px;
-
+    text-align: center;
 }
 .item1{
     height: 33px;
     width: 70px;
     margin-left: 20px;
     margin-top: 37px;
+    text-align: center;
 }
 .item2{
     height: 33px;
     width: 70px;
     margin-left: 18px;
     margin-top: 37px;
+    text-align: center;
 
 }
 .pendant1{
@@ -211,7 +214,57 @@ h1{
 .scr_menu{
     width: 617px;
     height: 109px;
-    background: url(../img/sprite.jpg)  no-repeat 0px 0px;    
+    /*background: url(../img/sprite.jpg)  no-repeat 0px 0px;    */
+}
+.scr_menu1{
+    background: url(../img/sprite.jpg)  no-repeat;
+    height: 110px;
+    width: 216px;
+}
+.scr_menu2{
+    background: url(../img/sprite.jpg)  no-repeat -216px 0px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu3{
+    background: url(../img/sprite.jpg)  no-repeat -316px 0px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu4{
+    background: url(../img/sprite.jpg)  no-repeat -416px 0px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu5{
+    background: url(../img/sprite.jpg)  no-repeat -516px 0px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu1:hover{
+    background: url(../img/sprite.jpg)  no-repeat 0px -110px;
+    height: 110px;
+    width: 216px;
+}
+.scr_menu2:hover{
+    background: url(../img/sprite.jpg)  no-repeat -216px -110px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu3:hover{
+    background: url(../img/sprite.jpg)  no-repeat -316px -110px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu4:hover{
+    background: url(../img/sprite.jpg)  no-repeat -416px -110px;
+    height: 110px;
+    width: 100px;
+}
+.scr_menu5:hover{
+    background: url(../img/sprite.jpg)  no-repeat -516px -110px;
+    height: 110px;
+    width: 100px;
 }
 .navi2_box{
     width: 383px;
@@ -569,7 +622,7 @@ h1{
     width: 81px;
     border-top: 1px solid #524e5d;
     border-left: 1px solid #524e5d;
-    /*border-bottom: 1px solid #524e5d;*/
+    border-bottom: 1px solid #322b3c;
     float: left;
     background: #322b3c;
     font-size: 12px;
