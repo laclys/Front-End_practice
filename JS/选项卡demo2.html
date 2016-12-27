@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.clearfix{
+    zoom:1;
+}
+ol,ul{
+    list-style: none;
+}
+.box{
+    height: 400px;
+    width: 400px;
+}
+ul{
+    height: 400px;
+    width: 200px;
+    float: left;
+}
+ul li{
+    width: 200px;
+    height: 99px;
+    background: blue;
+    border-bottom: 1px solid red;
+}
+ol li{
+    width: 200px;
+    height: 400px;
+    float: left;
+    background: green;
+    /*border: 1px solid red;*/
+    display: none;
+}
+.on{
+    background: green;
+}
+</style>
+<script>
+    window.onload=function(){
+        var ubtn = document.getElementById('aaa').getElementsByTagName('li');
+        var obtn = document.getElementById('bbb').getElementsByTagName('li');
+        for(var i=0;i<ubtn.length;i++){
+            ubtn[i].index=i;
+            ubtn[i].onmouseover=function(){
+                for(var i=0;i<ubtn.length;i++){
+                    ubtn[i].className='';
+                    obtn[i].style.display='none';
+            }
+                this.className='on';
+                obtn[this.index].style.display='block';
+            }
+
+
+        }
+
+
+
+    }
+</script>
+<body>
+    <div class="box clearfix" >
+        <ul id="aaa">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <!--<div class="boxleft">
+            
+        </div>-->
+        <ol id="bbb">
+            <li style="display: block">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+.clearfix{
+    zoom:1;
+}
+ul, ol,p,h1{
+    list-style: none;
+}
+.fl{
+    float: left;
+}
+.main_box{
+    height: 600px;
+    width: 500px;
+}
+.left_ui{
+    height: 600px;
+    width: 200px;
+    background: blue;
+    text-align: center;
+}
+.left_ui li{
+    height: 199px;
+    width: 200px;
+    /*background: blue;*/
+    float: left;
+    color: white;
+    font-size: 20px;
+    line-height: 200px;
+    border-bottom: 1px solid red;
+}
+.right_box{
+    height: 600px;
+    width: 300px;
+	text-align: center;
+	line-height: 200px;
+}
+.right_box li{
+    height: 600px;
+    width: 300px;
+    background: lawngreen;
+	font-size: 25px;
+	color: white;
+
+    float: left;
+    display: none;
+}
+.on{
+    background: lawngreen;
+}
+.on1{
+    background: orange;
+}
+.top_ol{
+    width: 300px;
+    height: 100px;
+    background: powderblue;
+    text-align: center;
+}
+.top_ol p{
+    width: 100px;
+    height: 100px;
+    float: left;
+    color: red;
+    font-size: 20px;
+    line-height: 100px;
+
+}
+.bottom_ol{
+    width: 300px;
+    height: 300px;
+    text-align: center;
+}
+.bottom_ol h1{
+    height: 300px;
+    width: 300px;
+    color: saddlebrown;
+    font-size: 25px;
+    line-height: 300px;
+    background: orange;
+    float: left;
+    display: none; 
+}
+</style>
+<script>
+	window.onload = function () {
+		var btn_temp1 = document.getElementById('llist');
+		var left_btn = btn_temp1.getElementsByTagName('li');
+		// ------
+		var box_temp1 = document.getElementById('rbox');
+		var rbbox = box_temp1.getElementsByTagName('li');
+		// ------
+		var btn_temp2 = document.getElementById('main');
+		var top_btn = btn_temp2.getElementsByTagName('p');
+		// ------		
+		var box_temp2 = document.getElementById('main');
+		var bbbox = box_temp2.getElementsByTagName('h1');
+
+		for (var i = 0; i < left_btn.length; i++) {
+			left_btn[i].index = i;
+			left_btn[i].onclick = function () {
+				for (var i = 0; i < left_btn.length; i++) {
+					left_btn[i].className = '';
+					rbbox[i].style.display = 'none';
+				}
+				this.className = 'on';
+				rbbox[this.index].style.display = 'block';
+
+			}
+		}
+		for (var i = 0; i < top_btn.length; i++) {
+			top_btn[i].args = i;
+			top_btn[i].onclick = function () {
+				for (var i = 0; i < top_btn.length; i++) {
+					top_btn[i].className = '';
+					bbbox[i].style.display = 'none';
+				}
+				this.className = 'on1';
+				bbbox[this.args].style.display = 'block';
+			}
+		}
+	}
+</script>
+
+
+<div class="clearfix main_box" id="main">
+	<ul class="left_ui fl" id="llist">
+		<li class="on ">1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<ul class="right_box fl" id="rbox">
+		<li style="display: block">
+			<ol class="top_ol fl" id="tlist">
+				<p class="on1">1</p>
+				<p>2</p>
+				<p>3</p>
+			</ol>
+			<ol class="bottom_ol fl" id="bbox">
+				<h1 style="display: block">1</h1>
+				<h1>2</h1>
+				<h1>3</h1>
+			</ol>
+			1
+		</li>
+		<li>
+			<ol class="top_ol fl" id="tlist">
+				<p class="on1">1</p>
+				<p>2</p>
+				<p>3</p>
+			</ol>
+			<ol class="bottom_ol fl" id="bbox">
+				<h1 style="display: block">1</h1>
+				<h1>2</h1>
+				<h1>3</h1>
+			</ol>
+			2
+		</li>
+		<li>
+			<ol class="top_ol fl" id="tlist">
+				<p class="on1">1</p>
+				<p>2</p>
+				<p>3</p>
+			</ol>
+			<ol class="bottom_ol fl" id="bbox">
+				<h1 style="display: block">1</h1>
+				<h1>2</h1>
+				<h1>3</h1>
+			</ol>
+			3
+		</li>
+	</ul>
+</div>
+
+
+</html>

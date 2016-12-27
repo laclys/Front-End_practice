@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        margin-bottom: 50px;
+        background: red;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var obnt = document.getElementsByTagName('div');
+        for (var i = 0; i < obnt.length; i++) {
+            obnt[i].onclick = function () {
+                if (this.style.background == 'blue') {
+                    this.style.background = 'red';
+                } else {
+                    for (var i = 0; i < obnt.length; i++) {
+                        obnt[i].style.background = 'red';
+                    }
+                    // alert(this.style.background);
+                    this.style.background = 'blue';
+
+                }
+
+            }
+
+        }
+    }
+</script>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

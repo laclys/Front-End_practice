@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--选项卡demo-->
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .clearfix:after{
+        clear: both;
+        display: block;
+        content: "";
+
+    }
+    .clearfix{
+        zoom:1;
+    }
+    ul,ol{
+        list-style: none;
+    }
+    ul{
+        margin-bottom: 10px;
+    }
+    ul li{
+        width: 80px;
+        height: 80px;
+        background: red;
+        float: left;
+        margin-right: 20px;
+    }
+    ol li{
+        width: 200px;
+        height: 200px;
+        background: blue;
+        display: none;
+        
+    }
+    .on{
+        background:blue;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var ulbtn = document.getElementById('aaa');
+        var uibtn = ulbtn.getElementsByTagName('li');
+        var olbtn = document.getElementById('bbb');
+        var oibtn = olbtn.getElementsByTagName('li');
+        for (var i = 0; i < uibtn.length; i++) {
+            uibtn[i].index = i;
+            uibtn[i].onclick = function () {
+                for (var i = 0; i < uibtn.length; i++) {
+                    uibtn[i].className = "";
+                    oibtn[i].style.display = 'none';
+                }
+                this.className = 'on';
+                oibtn[this.index].style.display = 'block';
+            }
+        }
+    }
+
+
+
+
+</script>
+
+<body>
+    <ul class="clearfix" id="aaa">
+        <li title="0">1</li>
+        <li title="1">2</li>
+        <li title="2">3</li>
+    </ul>
+    <ol id="bbb">
+        <li id="bbb1">1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+.clearfix{
+    zoom:1;
+}
+ol,ul{
+    list-style: none;
+}
+.box{
+    width: 320px;
+    height: 480px;
+    position: relative;
+}
+ul li{
+    display: none;
+}
+li img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+ol{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+ol li{
+    height: 15px;
+    width: 20px;
+    margin-right: 5px;
+    background: white;
+    opacity: 0.5;
+    float: left;
+    border-radius: 25%;
+}
+.on{
+     background: black;
+}
+</style>
+<script>
+    window.onload = function () {
+        var ubox = document.getElementById('uuu');
+        var ibox = ubox.getElementsByTagName('li');
+        var obtn = document.getElementById('ooo');
+        var ibtn = obtn.getElementsByTagName('li');
+        for (var i = 0; i < ibtn.length; i++) {
+            ibtn[i].index = i;
+            ibtn[i].onclick = function () {
+                for (var i = 0; i < ibtn.length; i++) {
+                    ibtn[i].className = '';
+                    ibox[i].style.display = 'none';
+                }
+                this.className = 'on';
+                ibox[this.index].style.display = 'block';
+
+            }
+
+        }
+    }
+</script>
+
+<body>
+    <div class="box">
+        <ul id="uuu">
+            <li style="display: block;">
+                <img src="img/123.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/321.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/789.jpg" alt="">
+            </li>
+        </ul>
+        <ol class="clearfix" id="ooo">
+            <li class="on"></li>
+            <li></li>
+            <li></li>
+        </ol>
+
+    </div>
+</body>
+
+</html>
