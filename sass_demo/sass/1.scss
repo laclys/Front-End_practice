@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    clear: both;
+    content: "";
+    display: block;
+}
+$w:30px;
+$h:100px;
+@mixin bg ($color){
+    background: $color;
+}
+.fl{
+    float:left;
+}
+.top{
+    width: $w;
+    height: $h;
+    @extend .fl;
+    @include bg(red);
+    margin-left: 10px;
+}
+.bottom{
+    width: $h + 10px;
+    height: $w;
+    @include bg(blue);
+    margin-left: 10px;
+}
