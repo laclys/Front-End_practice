@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0; }
 
-.clearfix:after, .google:after, .baidu:after, .big_menu ul:after, .big_menu2 ul:after, .message2:after, .message3:after, .m_box1:after, .text1:after, .text2:after, .text3:after, .foot_menu:after, .foot_list1:after, .foot_list2:after {
+.clearfix:after, header:after, .google:after, .baidu:after, .big_menu ul:after, .big_menu2 ul:after, .message2:after, .message3:after, .m_box1:after, .text1:after, .text2:after, .text3:after, .foot_menu:after, .foot_list1:after, .foot_list2:after {
   clear: both;
   content: '';
   display: block; }
 
-.clearfix, .google, .baidu, .big_menu ul, .big_menu2 ul, .message2, .message3, .m_box1, .text1, .text2, .text3, .foot_menu, .foot_list1, .foot_list2 {
+.clearfix, header, .google, .baidu, .big_menu ul, .big_menu2 ul, .message2, .message3, .m_box1, .text1, .text2, .text3, .foot_menu, .foot_list1, .foot_list2 {
   zoom: 1; }
 
 ul, li, ol {
@@ -17,7 +17,7 @@ i, a {
   text-decoration: none;
   font-style: normal; }
 
-.fl, .show_ol li, .google div, .baidu div, .google img, .baidu img, .menu_list1 li, .big_menu ul li, .big_menu2 ul li, .big_menu ul li img, .big_menu2 ul li img, .message2 span, .message3 span, .m_box1 img, .text1 span, .text2 span, .text3 span, .foot_menu li, .foot_list1 li, .foot_list2 li {
+.fl, header h1, .header-ui, .header-ui .hi1, .header-ui .hi1 img, .header-ui .hi2, .header-ui .hi2 img, .header-ui .hi3, .header-ui .hi3 img, .show_ol li, .google div, .baidu div, .google img, .baidu img, .menu_list1 li, .big_menu ul li, .big_menu2 ul li, .big_menu ul li img, .big_menu2 ul li img, .message2 span, .message3 span, .m_box1 img, .text1 span, .text2 span, .text3 span, .foot_menu li, .foot_list1 li, .foot_list2 li {
   float: left; }
 
 .fr, .message2 img, .message3 img, .text1 i, .text2 i, .text3 i {
@@ -32,6 +32,27 @@ header {
   width: 640px;
   height: 86px;
   background: url("../img/1.jpg") no-repeat; }
+  header h1 {
+    width: 176px;
+    height: 56px;
+    margin-left: 10px;
+    margin-top: 10px;
+    background: url("../img/1-1jpg") no-repeat; }
+    header h1 .logo {
+      width: 100%;
+      height: 100%;
+      text-indent: -999em;
+      display: block; }
+
+.header-ui .hi1 {
+  margin-left: 199px;
+  margin-top: 15px; }
+.header-ui .hi2 {
+  margin-left: 10px;
+  margin-top: 16px; }
+.header-ui .hi3 {
+  margin-left: 20px;
+  margin-top: 16px; }
 
 .img_show {
   width: 640px;
@@ -39,9 +60,7 @@ header {
   position: relative; }
 
 img {
-  display: block;
-  width: 100%;
-  height: 100%; }
+  display: block; }
 
 .show_ul li {
   display: none; }

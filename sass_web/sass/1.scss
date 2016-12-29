@@ -45,8 +45,59 @@ header{
     width: $inner_w;
     height: $headerH;
     // background: url(../img/1.jpg) no-repeat;
+    @extend .clearfix;
     @include bgimg('../img/1.jpg');
+    // img{
+    //     width: 176px;
+    //     height: 56px;
+    //     display: block;
+    //     margin-left: 10px;
+    //     margin-top: 10px;
+    //     @extend .fl;
+    // }
+    h1{
+        width: 176px;
+        height: 56px;
+        margin-left: 10px;
+        margin-top: 10px;
+        @extend .fl;
+        @include bgimg('../img/1-1jpg');
+        .logo{
+            width: 100%;
+            height: 100%;
+            text-indent: -999em;
+            display: block;
+        }
+    }
 }
+.header-ui{
+     @extend .fl;
+     .hi1{
+          @extend .fl;
+          margin-left: 199px;
+          margin-top: 15px;     
+          img{
+            @extend .fl;
+            }
+     }
+     .hi2{
+          @extend .fl;
+          margin-left: 10px;
+          margin-top: 15px + 1px;     
+          img{
+            @extend .fl;
+            }
+     }
+     .hi3{
+          @extend .fl;
+          margin-left: 20px;
+          margin-top: 15px + 1px;     
+          img{
+            @extend .fl;
+            }
+     }     
+}
+
 .img_show{
     width: $inner_w;
     height: $img_showH;
@@ -54,8 +105,8 @@ header{
 }
 img{
     display: block;
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
 }
 .show_ul{
     li{
