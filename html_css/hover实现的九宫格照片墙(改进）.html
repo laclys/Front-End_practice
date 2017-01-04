@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+.clearfix:after{
+    clear:both;
+    content: "";
+    display: block;
+}
+.clearfix{
+    zoom: 1;
+}
+ul{
+    list-style: none;
+    width: 360px;
+    height: 360px;
+    background: gray;
+    /*margin-top: 100px;*/
+    margin: 100px auto;
+
+}
+
+li{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    float: left;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+img:hover{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top:-25px;
+    left: -25px;
+}
+</style>
+<body>
+    <ul class="clearfix">
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+        <li><img src="psu.jpg" alt=""></li>
+    </ul>
+</body>
+</html>
