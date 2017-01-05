@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* { margin:0; padding:0; }
+.clear:after, .nav:after { display:block; content:''; clear:both; }
+/*出问题的原因就是这里，给左浮动的父级清除浮动了*/
+/*解决方法也简单：去掉.nav 上面的zoom:1;
+.clear, .nav { zoom:1; }
+但是这样的做的话相当于没有清除浮动，咱们可以给.nav 的父级清除浮动
+*/
+.clear { zoom:1; }
+
+
+li { list-style:none; }
+.right { float:right; }
+.nav li { float:left; padding:0 20px; }
+
+</style>
+</head>
+
+<body>
+	<ul class="nav right">
+		<li>首页</li>
+		<li>详细信息</li>
+		<li>联系我们</li>
+	</ul>
+	
+	<ul class="nav right">
+		<li>首页</li>
+		<li>详细信息</li>
+		<li>联系我们</li>
+	</ul>
+	<!--这里给 nav 的父级清除浮动 -->
+	<div class="right clear">
+		<ul class="nav">
+			<li>首页</li>
+			<li>详细信息</li>
+			<li>联系我们</li>
+		</ul>
+	</div>
+</body>
+</html>

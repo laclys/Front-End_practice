@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<title>智能社 - www.zhinengshe.com</title>
+<style>
+* { margin:0; padding:0; }
+ul { overflow:hidden; zoom:1; background:red; }
+li { display:inline; float:left; list-style:none; }
+a { float:left; height:50px; line-height:50px; padding:0 50px; }
+a:hover {
+	background:blue;
+	color:#fff;	
+}
+/*
+	bug 产生原因：
+		a 标签没有 width ，只有 padding 的时候，display:block就会出问题
+*/
+</style>
+</head>
+
+<body>
+	<ul class="clear">
+		<li><a href="#">首页</a></li>
+		<li><a href="#">身边团购</a></li>
+		<li><a href="#">身边外卖</a></li>
+	</ul>
+</body>
+</html>
+
+
