@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>1</title>
+    <style>
+
+    </style>
+    <script>
+        window.onload = function () {
+            aInput = document.getElementsByTagName('input');
+            oBtn = aInput[aInput.length - 1];
+            // alert(oBtn.type);
+            oBtn.onclick = function () {
+                var sum = 0;
+                for (var i = 0; i < aInput.length - 1; i++) {
+                    if (isNaN(Number(aInput[i].value))) {
+                        alert('框' + (i + 1) + '请填入正确数字');
+                        sum = NaN;
+                    } else {
+                        sum = sum + Number(aInput[i].value);
+                    }
+                }
+                if (!isNaN(sum)) {
+                    alert('总和为' + sum);
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <input type="text" />+<input type="text" />+<input type="text" />+<input type="text" />+<input type="text" />+<input
+        type="text" />+<input type="text" />+<input type="text" />+<input type="text" />+<input type="text" />+<input type="text"
+    />+<input type="text" />
+    <input type="button" value="计算" id="btn1" />
+</body>
+
+</html>
