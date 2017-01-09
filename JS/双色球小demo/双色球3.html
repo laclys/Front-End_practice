@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    //封装获取随机数函数
+    function rnd(m, n) {
+        return parseInt(Math.random() * (n - m) + m);
+    }
+    //封装函数：在参数arr数组中查找参数num。存在则返回true；不存在则返回false。
+    function findArr(num, arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (num == arr[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    //定义一个空数组a
+    var a = [];
+    //a数组长度不为6，循环不终止
+    while (a.length < 6) {
+        //得到1~33区间的随机数num
+        var num = rnd(1, 34);
+        //判断得到的随机数在不在数组a中，如果不在则进行if语句。
+        if (!findArr(num, a)) {
+            //为数组a，添加随机数num。
+            a.push(num);
+        }
+    }
+    //得到长度为六的数组a；
+    console.log(a);
+</script>
+
+<body>
+</body>
+
+</html>
