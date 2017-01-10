@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .box {
+        width: 300px;
+        height: 300px;
+        border: 1px solid purple;
+        position: relative;
+    }
+    
+    .box>.sell {
+        position: absolute;
+        right: 0;
+        margin-right: 10px;
+        color: blue;
+    }
+    
+    .box>.text {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    #time {
+        color: orange;
+        position: absolute;
+        bottom: 20px;
+        left: 90px;
+    }
+</style>
+<script>
+    function toD(n) {
+        if (n < 10) {
+            return '0' + n;
+        } else {
+            return '' + n;
+        }
+    }
+    window.onload = function () {
+        var oTime = document.getElementById('time');
+        var oSell = document.getElementById('sell');
+        var oText = document.getElementById('text');
+        var allTime = 3600;
+        var timer;
+        var ss = true;
+        clock();
+        setInterval(clock, 1000);
+
+        function clock() {
+            if (!allTime == 0) {
+                allTime--;
+                oTime.innerHTML = toD(parseInt(allTime / 60)) + '分' + toD(allTime % 60) + '秒';
+            } else {
+                allTime = 3600;
+                if (ss) {
+                    oText.innerHTML = '剩余时间:';
+                    oSell.innerHTML = '拍卖中！';
+                    ss = false;
+                } else {
+                    oText.innerHTML = '距开始:';
+                    oSell.innerHTML = '即将拍卖';
+                    ss = true;
+                }
+            }
+        }
+
+
+
+
+    }
+</script>
+
+<body>
+    <div class="box">
+        <span class="sell" id="sell">即将拍卖</span>
+        <span id="text" class="text">距开始:</span>
+        <span id="time">39分52秒</span>
+    </div>
+</body>
+
+</html>
