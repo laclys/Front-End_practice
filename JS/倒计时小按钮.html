@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function () {
+        var oT = document.getElementsByTagName('input')[0];
+        var allTime = 60;
+        var change = true;
+        var timer;
+        oT.onclick = function () {
+            clearInterval(timer);
+            var allTime = 60;
+            clock();
+            timer = setInterval(clock, 1000);
+            function clock() {
+                if (!allTime == 0) {
+                    allTime--;
+                    oT.value = allTime + '秒后可重新发送';
+                    oT.disabled = true;
+                } else {
+                    oT.disabled = false;
+                    oT.value = '免费获取验证码';
+
+                }
+
+            }
+        }
+    };
+</script>
+
+<body>
+    <input type="button" name="" value="免费获取验证码">
+</body>
+
+</html>
