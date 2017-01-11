@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        border: 1px solid red;
+        display: none;
+    }
+    
+    .active {
+        background: greenyellow;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var aBtn = document.getElementsByTagName('input');
+        var aBox = document.getElementsByTagName('div');
+        var n = 0;
+        for (var i = 0; i < aBtn.length; i++) {
+            aBtn[i].index = i;
+
+            aBtn[i].onmouseover = function () {
+                n = this.index;
+                setTimeout(changeBox, 1000);
+            }
+        };
+
+        function changeBox() {
+            for (var i = 0; i < aBtn.length; i++) {
+                aBtn[i].className = '';
+                aBox[i].style.display = 'none';
+            }
+            aBtn[n].className = 'active';
+            aBox[n].style.display = 'block';
+        }
+    };
+</script>
+
+<body>
+    <input type="button" name="" value="DOTA" class="active">
+    <input type="button" name="" value="LOL">
+    <input type="button" name="" value="WOW">
+    <div style="display: block">DOTA</div>
+    <div>LOL</div>
+    <div>WOW</div>
+</body>
+
+</html>
