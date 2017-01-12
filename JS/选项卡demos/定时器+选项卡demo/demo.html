@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .clearfix:after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+    
+    .clearfix {
+        zoom: 1;
+    }
+    
+    .box {
+        width: 670px;
+        height: 240px;
+        position: relative;
+    }
+    
+    ul>li {
+        width: 670px;
+        height: 240px;
+        display: none;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    ol {
+        position: absolute;
+        bottom: 4px;
+        left: 50%;
+        margin-left: -75px;
+    }
+    
+    ol>li {
+        height: 15px;
+        width: 20px;
+        margin-right: 5px;
+        background: white;
+        opacity: 0.7;
+        float: left;
+        border-radius: 25%;
+    }
+    
+    .active {
+        background: gray;
+    }
+    
+    #left {
+        color: grey;
+        opacity: 0.7;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        font-size: 30px;
+        margin-top: -15px;
+    }
+    
+    #right {
+        color: grey;
+        opacity: 0.7;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        font-size: 30px;
+        margin-top: -15px;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var oBox = document.getElementById('box');
+        var aBtn = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+        var aUl = document.getElementsByTagName('ul')[0].getElementsByTagName('li');
+        var l_mark = document.getElementById('left');
+        var r_mark = document.getElementById('right');
+        var n = 0;
+        var timer = null;
+        //onclick
+        for (var i = 0; i < aBtn.length; i++) {
+            aBtn[i].index = i;
+            aBtn[i].onclick = function () {
+                n = this.index;
+                changeImg(n);
+            };
+        }
+        //auto picture show
+        autoPlay();
+        timer = setInterval(autoPlay, 1500);
+        //oBox onmouseover clear interval
+        oBox.onmouseover = function () {
+            clearInterval(timer);
+        }
+        //oBox onmouseout restart auto picture show
+        oBox.onmouseout = function () {
+            clearInterval(timer);
+            timer = setInterval(autoPlay, 1500);
+        }
+        //right arrow onclick
+        r_mark.onclick = rightPlay;
+        //left arrow onclick
+        l_mark.onclick = leftPlay;
+        //FUNCTION changeImg
+        function changeImg(index) {
+            for (var i = 0; i < aBtn.length; i++) {
+                //clear style
+                aBtn[i].className = '';
+                aUl[i].style.display = 'none';
+            }
+            aBtn[index].className = 'active';
+            aUl[index].style.display = 'block';
+        }
+        //FUNCTION autoPlay
+        function autoPlay() {
+            n++;
+            if (n == aBtn.length) {
+                n = 0;
+            }
+            changeImg(n);
+        }
+        //FUNCTION rightPlay
+        function rightPlay() {
+            autoPlay();
+        }
+        //FUNCTION leftPlay
+        function leftPlay() {
+            n--;
+            if (n == -1) {
+                n = aBtn.length - 1;
+            }
+            changeImg(n);
+        }
+    };
+</script>
+
+<body>
+    <div class="box" id="box">
+        <ul>
+            <li style="display: block"><img src="img/pic1.jpg" alt=""></li>
+            <li><img src="img/pic2.jpg" alt=""></li>
+            <li><img src="img/pic3.jpg" alt=""></li>
+            <li><img src="img/pic4.jpg" alt=""></li>
+            <li><img src="img/pic5.jpg" alt=""></li>
+            <li><img src="img/pic6.jpg" alt=""></li>
+        </ul>
+        <ol class="clearfix">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+        <a href="javascript:;" id="left">&lt;&lt;</a>
+        <a href="javascript:;" id="right">&gt;&gt;</a>
+    </div>
+</body>
+
+</html>
