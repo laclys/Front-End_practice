@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+div{
+    width: 200px;
+    height: 200px;
+    background: yellowgreen;
+}
+</style>
+<script>
+    function setStyle(){
+        for(var k in arguments[1]){
+            // arguments[0].style[k]=arguments[1][k];
+            arguments[0].style[k]=arguments[1][k];
+        }
+    }
+
+
+    window.onload=function(){
+        var obox=document.getElementsByTagName('div')[0];
+        obox.onclick=function(){
+            setStyle(obox,{
+                width:'400px',
+                height:'400px',
+                background:'black'
+
+            })
+        }
+    }
+</script>
+<body>
+    <div></div>
+</body>
+</html>
