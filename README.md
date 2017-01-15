@@ -10,10 +10,11 @@
 
 3,用sass写的一个静态页面。（学习sass）
 
-除此之外还有一些html/css的小练习页面和JS的小demo。
+4,html/css的练习页面。
 
+5,JS特效，效果Demo。
 
-
+6,IE6bug解决方案（via Internet）
 。
 
 。
@@ -24,5 +25,4 @@
 
 持续更新中
 
-
-
+TODO···
