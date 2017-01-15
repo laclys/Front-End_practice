@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    /*清除默认样式*/
+    
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    a img {
+        border: none;
+    }
+    
+    a {
+        color: grey;
+        text-decoration: none;
+    }
+    
+    body {
+        font-size: 12px;
+        line-height: 24px;
+        text-align: center;
+    }
+    
+    a:hover {
+        color: red;
+    }
+    
+    #box {
+        width: 399px;
+        border: 5px solid #ababab;
+        border-radius: 15px;
+        box-shadow: 2px 2px 10px #ababab;
+        margin: 50px auto 0;
+        text-align: left;
+    }
+    
+    #title {
+        height: 62px;
+        font-size: 26px;
+        line-height: 62px;
+        padding-left: 30px;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f05e6f), color-stop(1, #c9394a));
+        border: 1px solid #f05e6f;
+        border-radius: 8px 8px 0 0;
+        color: #fff;
+        position: relative;
+    }
+    
+    #title a {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: inline;
+        color: #fff;
+        font-size: 12px;
+        line-height: 24px;
+    }
+    
+    #conBox {
+        height: 144px;
+        width: 335px;
+        margin-left: 25px;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+    
+    #box ul li {
+        height: 24px;
+    }
+    
+    #box ul li a {
+        width: 180px;
+        float: left;
+        display: block;
+        overflow: hidden;
+        text-indent: 15px;
+        height: 24px;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var obox = document.getElementById('conBox');
+        /*  var con1 = document.getElementById('con1');
+        var con2 = document.getElementById('con2');*/
+        var iliHeight = 24; //单行滚动的高度
+        var speed = 50; //滚动的速度
+        var time;
+        var delay = 2000;
+        obox.scrollTop = 1;
+        obox.innerHTML += obox.innerHTML; //克隆一份
+        function startScroll() {
+            time = setInterval(scrollUp, speed);
+            // obox.scrollTop++;
+        }
+
+        function scrollUp() {
+            if (obox.scrollTop % iliHeight == 0) {
+                clearInterval(time);
+                setTimeout(startScroll, delay);
+                obox.scrollTop++;
+            } else {
+                obox.scrollTop++;
+                if (obox.scrollTop >= obox.scrollHeight / 2) {
+                    obox.scrollTop = 0;
+                }
+            }
+        }
+        setTimeout(startScroll, delay);
+    };
+</script>
+
+<body>
+    <div id="box">
+        <!--  头部-->
+        <h3 id="title">最新公告<a href="">More>></a></h3>
+        <!--中间-->
+        <div id="conBox">
+            <ul id="con1">
+                <li><a href="#">1.AAAAAAAAAAAAAAAAAAA</a><span>2017-01-13</span></li>
+                <li><a href="#">2.BBBBBBBBBBBBBBBBBBB</a><span>2017-01-13</span></li>
+                <li><a href="#">3.CCCCCCCCCCCCCCCCCCC</a><span>2017-01-14</span></li>
+                <li><a href="#">4.DDDDDDDDDDDDDDDDDDD</a><span>2017-01-14</span></li>
+                <li><a href="#">5.EEEEEEEEEEEEEEEEEEE</a><span>2017-01-15</span></li>
+                <li><a href="#">6.FFFFFFFFFFFFFFFFFFF</a><span>2017-01-15</span></li>
+                <li><a href="#">7.GGGGGGGGGGGGGGGGGGG</a><span>2017-01-16</span></li>
+                <li><a href="#">8.HHHHHHHHHHHHHHHHHHH</a><span>2017-01-17</span></li>
+                <li><a href="#">9.IIIIIIIIIIIIIIIIIII</a><span>2017-01-18</span></li>
+            </ul>
+            <ul id="con2">
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
