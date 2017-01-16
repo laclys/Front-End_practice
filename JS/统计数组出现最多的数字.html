@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    var arr = [1, 1, 1, 2, 3, 4, 5, 3, 3, 2, 2, 3, 5, 3, 1, 4];
+    var json = {};
+    var str = '';
+    var n_max = 0;
+    for (var i = 0; i < arr.length; i++) {
+        if (json[arr[i]]) {
+            json[arr[i]]++;
+        } else {
+            json[arr[i]] = 1;
+        }
+    }
+    for (var k in json) {
+        // console.log(k+':'+json[k]);
+        if (json[k] > n_max) {
+            n_max = json[k];
+            str = k;
+        }     
+    }
+    alert('出现最多的数字是'+str+'出现了'+n_max+'次');
+
+</script>
+
+<body>
+</body>
+
+</html>

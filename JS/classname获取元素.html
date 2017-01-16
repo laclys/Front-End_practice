@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    /*target：让ul标签下的class为red的li标签背景变红！！！！！*/
+
+
+    
+    window.onload = function () {
+        var oul = document.getElementsByTagName('ul')[0];
+        //获取oul下的所有元素
+        var ul_red = oul.getElementsByTagName('*');
+
+        function findInArr(item, arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == item) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        for (var i = 0; ul_red.length; i++) {
+            //声明一个临时数组，把每一个元素获取过来的className存起来
+            var temp = ul_red[i].className.split(' ');
+            //在temp中找class里包括red的元素，如果存在则true。让这个元素背景色变红
+            if (findInArr('red', temp)) {
+                ul_red[i].style.background = 'red';
+            }
+        }
+    };
+</script>
+
+<body>
+    <ul>
+        <li class="red"></li>
+        <li></li>
+        <li class="red2 blue"></li>
+    </ul>
+    <ol>
+        <li class="red"></li>
+        <li></li>
+        <li></li>
+    </ol>
+</body>
+
+</html>

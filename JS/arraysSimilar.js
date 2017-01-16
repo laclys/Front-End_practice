@@ -18,12 +18,12 @@
                  return false;
              }
              //将数组中的值，替换成其对应的类型字符串
-             arr1.forEach(function (value, index, array)) {
+             arr1.forEach(function (value, index, array) {
                  array[index] = getType(value);
-             }
-             arr2.forEach(function (value, index, array)) {
+             });
+             arr2.forEach(function (value, index, array){
                  array[index] = getType(value);
-             }
+             });
 
              //利用sort（）排序，比较两者，返回判断类型
              return arr1.sort().join('') === arr2.sort().join('');
