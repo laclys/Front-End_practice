@@ -66,7 +66,20 @@
         var redBall = box.getElementsByClassName('red');
         var blueBall = box.getElementsByClassName('blue');
         var btn = document.getElementById('do');
+        var timer = null;
+        //页面刷新先执行一遍
+        playBall();
+        //
         btn.onclick = function () {
+            clearInterval(timer);
+            playBall();
+            /*timer = setInterval(play, 80);
+               setTimeout(function () {
+               clearInterval(timer);
+              }, 400)*/
+        };
+        //获得6个不同的红球随机数和一个蓝球随机数
+        function play() {
             var arr = [];
             //红球
             for (var i = 0; i < 6; i++) {
@@ -84,7 +97,16 @@
             for (var i = 0; i < list.length; i++) {
                 list[i].innerHTML = arr[i];
             }
-        };
+        }
+        //400毫秒球变化特效
+        function playBall() {
+            //每80毫秒执行一次
+            timer = setInterval(play, 80);
+            //400毫秒后清空定时器
+            setTimeout(function () {
+                clearInterval(timer);
+            }, 400);
+        }
     };
 </script>
 
