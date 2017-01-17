@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background: black;
+        color: white;
+        text-align: center;
+        font-size: 50px;
+    }
+</style>
+<script>
+    function toD(n) {
+        if (n < 10) {
+            return '0' + n;
+        } else {
+            return '' + n;
+        }
+    }
+    window.onload = function () {
+        var aImg = document.getElementsByTagName('img');
+        clock();
+        setInterval(clock, 100);
+
+        function clock() {
+            var oDate = new Date();
+            var iH = oDate.getHours();
+            var iM = oDate.getMinutes();
+            var iS = oDate.getSeconds();
+            var str = toD(iH) + toD(iM) + toD(iS);
+            for (var i = 0; i < aImg.length; i++) {
+                aImg[i].src = 'img/' + str.charAt(i) + '.png';
+            }
+        }
+    }
+</script>
+
+<body>
+    <img src="img/1.png" alt="">
+    <img src="img/1.png" alt="">:
+    <img src="img/1.png" alt="">
+    <img src="img/1.png" alt="">:
+    <img src="img/1.png" alt="">
+    <img src="img/1.png" alt="">
+</body>
+
+</html>

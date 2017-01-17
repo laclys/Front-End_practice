@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #div1 {
+            width: 640px;
+            height: 100px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 50%;
+            margin-left: -220px;
+            margin-top: -150px;
+            top: 50%;
+            overflow: hidden;
+        }
+        
+        #div1 img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+        
+        #div1 a {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            z-index: 2;
+            opacity: 0;
+            filter: alpha(opacity:0);
+        }
+        
+        #top {
+            top: 0;
+            background: red;
+        }
+        
+        #down {
+            bottom: 0;
+            background: green;
+        }
+    </style>
+    <script>
+        function getStyle(obj, name) {
+            if (obj.currntStyle) {
+                return obj.currentStyle[name];
+            } else {
+                return getComputedStyle(obj, false)[name];
+            }
+        }
+        window.onload = function () {
+            var toTop = document.getElementById('top');
+            var toDown = document.getElementById('down');
+            var get_img = document.getElementById('img1');
+            var oBox = document.getElementById('div1');
+            var temp = parseInt(getStyle(get_img, 'top'));
+            var imgH = parseInt(getStyle(get_img, 'height'));
+            var boxH = parseInt(getStyle(oBox, 'height'));
+            var timer;
+            toTop.onmouseover = function () {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    if (temp == boxH-imgH) {
+                        get_img.style.top = (boxH-imgH)+'px';
+                        clearInterval(timer);
+                    } else {
+                        temp = temp - 1;
+                        var r = temp + 'px';
+                        get_img.style.top = r;
+                    }
+                }, 1);
+            };
+            toDown.onmouseover = function () {
+                clearInterval(timer);
+                timer = setInterval(function () {
+                    if (temp == 0) {
+                        get_img.style.top = '0px';
+                        clearInterval(timer);
+                    } else {
+                        temp = temp + 1;
+                        var r = temp + 'px';
+                        get_img.style.top = r;
+                    }
+                }, 1);
+            };
+            oBox.onmouseout=function(){
+                clearInterval(timer);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <img src="img/1.jpg" id="img1">
+        <a href="javascript:;" id="top"></a>
+        <a href="javascript:;" id="down"></a>
+    </div>
+</body>
+
+</html>

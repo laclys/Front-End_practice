@@ -12,7 +12,7 @@
 
 4,html/css的练习页面。
 
-5,JS特效，效果Demo。
+5,各种JS特效，效果Demo。
 
 6,IE6bug解决方案（via Internet）
 。
