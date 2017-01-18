@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+li{
+    border-bottom: 1px dashed gray;
+    width: 195px;
+}
+</style>
+<script>
+    window.onload=function(){
+        var oT=document.getElementsByTagName('input')[0];
+        var obtn=document.getElementsByTagName('input')[1];
+        var oul=document.getElementsByTagName('ul')[0];
+        //点击事件
+        obtn.onclick=function(){
+            //获取文本框内容
+            var str=oT.value;
+            //为空弹窗，跳出
+            if(!str){
+                alert('请输入文字');
+                return
+            }
+            //创建一个li标签对象
+            var oli=document.createElement('li');
+            oli.innerHTML=str;
+            // oul.appendChild(oli);
+            //插入获取的文本值
+            oul.insertBefore(oli,oul.children[0]);
+            oT.value='';
+            
+        }
+    }
+</script>
+<body>
+    <input type="text" name="" value="">
+    <input type="button" value="留言">
+    <ul>
+        <!--<li>1111</li>-->
+    </ul>
+</body>
+</html>

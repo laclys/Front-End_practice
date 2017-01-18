@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    li {
+        border-bottom: 1px dashed gray;
+        width: 195px;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var oT = document.getElementsByTagName('input')[0];
+        var obtn = document.getElementsByTagName('input')[1];
+        var oul = document.getElementsByTagName('ul')[0];
+
+        obtn.onclick = function () {
+            var str = oT.value;
+            if (!str) {
+                alert('请输入文字');
+                return
+            }
+            var oli = document.createElement('li');
+            oli.innerHTML = str + '<a href="javascript:;">delete</a>';
+            // oul.appendChild(oli);
+            oul.insertBefore(oli, oul.children[0]);
+            oT.value = '';
+            //获取前面创建的li文本对象子级标签a
+            var oA=oli.children[0];
+            // 标签a加点击事件
+            oA.onclick=function(){
+                //删除其父级节点
+                oul.removeChild(this.parentNode);
+            }
+        }
+    }
+</script>
+
+<body>
+    <input type="text" name="" value="">
+    <input type="button" value="留言">
+    <ul>
+        <!--<li>1111</li>-->
+        <a href="javascript:;"></a>
+    </ul>
+</body>
+
+</html>

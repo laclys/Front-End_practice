@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+</head>
+<script>
+    window.onload = function () {
+        var oUl = document.getElementsByTagName('ul')[0];
+        var aA = document.getElementsByTagName('a');
+        for (var i = 0; i < aA.length; i++) {
+            if (i % 2 == 0) {
+                aA[i].onclick = function () {
+                    // alert('up');
+
+                    var oParent =this.parentNode;
+                    if(oParent==oUl.children[0]){
+                        alert('到头了！');
+                        return
+                    }
+                    var preNode=oParent.previousElementSibling || oParent.previousSibling;
+                    oUl.insertBefore(oParent,preNode);
+
+                }
+            } else {
+                aA[i].onclick = function () {
+                    // alert('dwon');
+                    var oParent=this.parentNode;
+                    if(oParent==(oUl.lastElementChild||oUl.lastChild)){
+                        alert('到底了！');
+                        return
+                    }
+                    var nextNode=oParent.nextElementSibling ||oParent.nextSibling;
+                    var nexyNextNode=nextNode.nextElementSibling ||nextNode.nextSibling;
+                    oUl.insertBefore(oParent,nexyNextNode);
+                }
+            }
+        }
+    }
+</script>
+
+<body>
+    <ul>
+        <li><a href="javascript:;">up</a>111<a href="javascript:;">dwon</a></li>
+        <li><a href="javascript:;">up</a>222<a href="javascript:;">dwon</a></li>
+        <li><a href="javascript:;">up</a>333<a href="javascript:;">dwon</a></li>
+        <li><a href="javascript:;">up</a>444<a href="javascript:;">dwon</a></li>
+        <li><a href="javascript:;">up</a>555<a href="javascript:;">dwon</a></li>
+        <li><a href="javascript:;">up</a>666<a href="javascript:;">dwon</a></li>
+    </ul>
+</body>
+
+</html>
