@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 400px;
+            height: 400px;
+            background: lightgrey;
+        }
+        
+        img {
+            width: 200px;
+            /*height: 200px;*/
+            margin: 20px;
+            margin: auto 100px;
+        }
+    </style>
+    <script>
+        /* 在img标签创建一个假标签_src用来存储图片地址。
+        当可视区（clientH）+滚动长度（scrollT）
+        大于图片到父级body最顶部高度（oImgT）-20（缓冲）时，再加载图片
+        将_src中图片路径赋值到img标签自带的src中从而实现延迟加载图片*/
+        window.onload = window.onscroll = function () {
+            var aImg = document.getElementsByTagName('img');
+            var clientH = document.documentElement.clientHeight;
+            var scrollT = document.documentElement.scrollTop || document.body.scrollTop;
+            for (var i = 0; i < aImg.length; i++) {
+                var oImgT = aImg[i].offsetTop;
+                if (scrollT + clientH >= oImgT - 20) {
+                    aImg[i].src = aImg[i].getAttribute('_src');
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div><img src="" _src="img/1.jpg" alt=""></div>
+    <div><img src="" _src="img/2.jpg" alt=""></div>
+    <div><img src="" _src="img/3.jpg" alt=""></div>
+    <div><img src="" _src="img/4.jpg" alt=""></div>
+    <div><img src="" _src="img/5.jpg" alt=""></div>
+    <div><img src="" _src="img/6.jpg" alt=""></div>
+    <div><img src="" _src="img/7.jpg" alt=""></div>
+    <div><img src="" _src="img/8.jpg" alt=""></div>
+    <div><img src="" _src="img/9.jpg" alt=""></div>
+</body>
+
+</html>
