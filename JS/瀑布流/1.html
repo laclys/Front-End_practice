@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul {
+            width: 200px;
+            border: 1px solid grey;
+            float: left;
+        }
+        
+        li {
+            width: 180px;
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function rnd(n, m) {
+            return parseInt(Math.random() * (m - n) + n);
+        }
+
+        function createLi() {
+            var oLi = document.createElement('li');
+            oLi.style.height = rnd(150, 300) + 'px';
+            oLi.style.background = 'rgb(' + rnd(0, 256) + ',' + rnd(0, 256) + ',' + rnd(0, 256) + ')';
+            return oLi;
+        }
+        window.onload = function () {
+            var aUl = document.getElementsByTagName('ul');
+            var arr = [];
+
+            function create20Li() {
+                for (var i = 0; i < 20; i++) {
+                    var oLi = createLi();
+                    for (var j = 0; j < aUl.length; j++) {
+                        arr.push(aUl[j]);
+                    }
+                    arr.sort(function (obj1, obj2) {
+                        return obj1.offsetHeight - obj2.offsetHeight
+                    });
+                    arr[0].appendChild(oLi);
+                }
+            }
+            create20Li();
+            window.onscroll = function () {
+                var scrollT = document.documentElement.scrollTop || document.body.scrollTop;
+                var clientH = document.documentElement.clientHeight;
+                var bodyH = document.body.scrollHeight;
+                console.log(scrollT,clientH,bodyH);
+                if (scrollT + clientH >= bodyH-100) {
+                    create20Li();
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div <!--style="overflow: hidden"-->>
+        <ul></ul>
+        <ul></ul>
+        <ul></ul>
+    </div>
+</body>
+
+</html>
