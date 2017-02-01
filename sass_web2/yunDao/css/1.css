@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.clearfix {
+  zoom: 1; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+ul, ol, li {
+  list-style: none; }
+
+i, a {
+  text-decoration: none;
+  font-style: normal; }
+
+.inner {
+  margin: 0 auto; }
+
+.updiv {
+  background: white;
+  height: 110px;
+  background: url("../img/login_1.jpg") no-repeat 391px 29px;
+  width: 1920px; }
+
+.middiv {
+  width: 1920px;
+  height: 560px;
+  background: url("../img/login_2.jpg") no-repeat;
+  position: relative; }
+
+.bottomdiv {
+  height: 266px;
+  width: 1920px;
+  font-size: 10px;
+  text-align: center;
+  padding-top: 45px; }
+
+.login_box {
+  width: 340px;
+  height: 330px;
+  background: white;
+  position: absolute;
+  top: 90px;
+  right: 371px;
+  text-align: center; }
+
+.box_logo {
+  padding-top: 29px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: #333333; }
+
+.error_message {
+  padding-top: 7px;
+  font-size: 12px;
+  color: #FB0303;
+  width: 257px;
+  height: 17px;
+  border: 1px solid #ffe57d;
+  background: #fff6d2;
+  position: absolute;
+  top: 59px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  display: none; }
+
+.user, .password {
+  width: 258px;
+  height: 34px;
+  border: 1px solid #cccccc;
+  position: absolute;
+  top: 94px;
+  right: 0;
+  left: 0;
+  margin: 0 auto; }
+  .user div, .password div {
+    width: 31px;
+    height: 34px;
+    background: #f3f4f4; }
+    .user div img, .password div img {
+      width: 21px;
+      height: 21px;
+      padding-top: 7px; }
+  .user .input, .password .input {
+    width: 221px;
+    height: 26px;
+    color: #cccccc;
+    border: #cccccc;
+    font-size: 14px;
+    padding-left: 6px;
+    padding-top: 8px; }
+
+.password {
+  top: 150px;
+  border: 1px solid #c0ddfb; }
+  .password div {
+    background: #e9f3fd; }
+
+.checkb {
+  position: absolute;
+  top: 211px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 258px; }
+  .checkb input {
+    position: absolute;
+    left: 0; }
+  .checkb .s1 {
+    font-size: 12px;
+    position: absolute;
+    left: 18px;
+    color: #666666; }
+  .checkb .s2 {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    color: #666666; }
+
+.btn_login {
+  position: absolute;
+  top: 240px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 260px;
+  height: 25px;
+  padding-top: 11px;
+  background: #3e7ee7; }
+  .btn_login span {
+    font-size: 14px;
+    color: white; }
+
+.register {
+  position: absolute;
+  bottom: 31px;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  width: 260px; }
+  .register span {
+    font-size: 12px;
+    position: absolute;
+    right: 0;
+    color: #666666; }
