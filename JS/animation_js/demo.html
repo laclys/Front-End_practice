@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+            left: -200px;
+            top: 0;
+        }
+        
+        #div1 span {
+            width: 20px;
+            height: 50px;
+            background: blue;
+            position: absolute;
+            left: 200px;
+            top: 75px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onmouseover = function () {
+
+                startMove(0);
+            }
+            oDiv.onmouseout = function () {
+                // startMove1();
+                startMove(-200);
+            }
+        }
+        var time = null;
+
+        function startMove(target) {
+            clearInterval(time);
+            var oDiv = document.getElementById('div1');
+            var speed = 0;
+            if (oDiv.offsetLeft > target) {
+                speed = -10;
+            } else {
+                speed = 10;
+            }
+            time = setInterval(() => {
+                if (oDiv.offsetLeft == target) {
+                    clearInterval(time);
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                    console.log(oDiv.offsetLeft);
+
+                }
+            }, 30);
+        }
+        /*        function startMove1() {
+                    clearInterval(time);
+                    var oDiv = document.getElementById('div1');
+                    time = setInterval(() => {
+                        if (oDiv.offsetLeft <= -200) {
+                            clearInterval(time);
+                        } else {
+                            oDiv.style.left = oDiv.offsetLeft - 10 + 'px';
+                            console.log(oDiv.offsetLeft);
+
+                        }
+                    }, 30);
+                }*/
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <span>分享</span>
+        <!-- 点分享时div1有效，事件冒泡 -->
+    </div>
+</body>
+
+</html>
