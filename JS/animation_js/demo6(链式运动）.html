@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--先变宽，再变高-->
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+#div1{
+    width: 200px;
+    height: 200px;
+    background: cornflowerblue;
+    border: 1px solid red;
+    opacity:0.3;
+}
+</style>
+<script src="./move.js"></script>
+<script>
+    window.onload=function(){
+        var oDiv=document.getElementById('div1');
+        oDiv.onmouseover=function(){
+            startMove(oDiv,'width',400,()=>{
+                startMove(oDiv,'height',400)
+            });
+        }
+    }
+</script>
+<body>
+    <div id="div1">
+    </div>
+</body>
+
+</html>
