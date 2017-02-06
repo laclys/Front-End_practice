@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scroll-icon with move.js</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 12px '微软雅黑';
+            color: #3c3c3c;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul a {
+            display: block;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        a:hover,h3:hover{
+            color: #f40;
+        }
+
+        li {
+            display: inline-block;
+            /*border: 1px solid #eaeaea;*/
+            /*border-left-color: transparent;*/
+            /*border-top-color: transparent;*/
+        }
+
+        img{
+            /*margin: 10px auto 0px auto;*/
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            margin-left: -15px;
+        }
+
+        #appPanel{
+            width: 280px;
+            margin: 20px auto;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        p{
+            margin-top: 43px;
+        }
+
+        #title{
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        h3{
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="move.js"></script>
+    <script type="text/javascript">
+        window.onload=function () {
+            var Oa = document.getElementsByTagName('a');
+            for(var i = 0;i<Oa.length;i++){
+                Oa[i].onmouseenter=function () {
+                    var oImg = this.getElementsByTagName('img')[0];
+                    onMove(oImg,{top:-30,opacity:0},15,function () {
+                        oImg.style.top = 50 + 'px';
+                        onMove(oImg,{top:10,opacity:100},15)
+                    })
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="appPanel">
+    <div id="title"><h3>APP下载</h3></div>
+    <ul>
+        <li><a href="javascript:;"><img src="icon/ailitravel.jpg" height="30" width="30"/>
+            <p>阿里旅行</p></a></li
+        ><li><a href="javascript:;"><img src="icon/alimovie.jpg" height="30" width="30"/>
+            <p>淘影院</p></a></li
+        ><li><a href="javascript:;"><img src="icon/alipay.jpg" height="30" width="30"/>
+            <p>支付宝</p></a></li
+        ><li><a href="javascript:;"><img src="icon/ddc.jpg" height="30" width="30"/>
+            <p>点点虫</p></a></li
+        ><br><li><a href="javascript:;"><img src="icon/gdmap.jpg" height="30" width="30"/>
+            <p>高德地图</p></a></li><li><a href="javascript:;"><img src="icon/mayijf.jpg" height="30" width="30"/>
+            <p>蚂蚁金服</p></a></li><li><a href="javascript:;"><img src="icon/taobao.jpg" height="30" width="30"/>
+            <p>手机淘宝</p></a></li><li><a href="javascript:;"><img src="icon/tianmao.jpg" height="30" width="30"/>
+            <p>天猫</p></a></li><br><li><a href="javascript:;"><img src="icon/uc.jpg" height="30" width="30"/>
+            <p>UC浏览器</p></a></li><li><a href="javascript:;"><img src="icon/wx.jpg" height="30" width="30"/>
+            <p>旺信</p></a></li><li><a href="javascript:;"><img src="icon/xianyu.jpg" height="30" width="30"/>
+            <p>闲鱼</p></a></li><li><a href="javascript:;"><img src="icon/youku.jpg" height="30" width="30"/>
+            <p>优酷</p></a></li>
+    </ul>
+</div>
+</body>
+</html>
