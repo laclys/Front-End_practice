@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * { 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body {text-align:center;}
+    </style>
+    <script>
+        window.onload = function () {
+            var oT1 = document.getElementById('txt1');
+            var oT2 = document.getElementById('txt2');
+            var oBtn = document.getElementById('btn1');
+
+            oBtn.onclick = function () {
+                var str = oT1.value;
+                var arr = str.split(' ');
+                var json = {};
+                for (var i = 0; i < arr.length; i++) {
+                    var c = arr[i];
+                    if (json[c]) {
+                        json[c]=json[c]+1;
+                    } else {
+                        json[c] = 1;
+                    }
+                }
+                    var arr3 = [];
+                    for (var name in json) {
+                        arr3.push({
+                            'name': name,
+                            'count': json[name]
+                        });
+                    }
+                    arr3.sort(function (n1, n2) {
+                        return n1.count - n2.count
+                    });
+                    var str2 = '';
+                    for (var i = 0; i < arr3.length; i++) {
+                        str2 += arr3[i].name + '(' + arr3[i].count + ')' + '\n';
+                    }
+                    oT2.value = str2;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    输入原始文本(空格隔开)：<br>
+    <textarea style="width:300px; height:200px;" id="txt1">衣服 运动鞋 篮球鞋 跑步鞋 休闲鞋 帆布鞋 足球鞋 衣服 衣服 衣服 跑步鞋 跑步鞋 跑步鞋 跑步鞋 休闲鞋 帆布鞋 休闲鞋 帆布鞋 休闲鞋 帆布鞋</textarea><br>
+    <br>
+    <input type="button" value="变" id="btn1" /><br>
+    <br> 这里输出结果：
+    <br>
+    <textarea style="width:300px; height:200px;" id="txt2"></textarea>
+</body>
+
+</html>

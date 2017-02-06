@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul {
+            width: 200px;
+            border: 1px solid white;
+            float: left;
+            margin: 10px;
+        }
+        
+        li {
+            width: 180px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function rnd(n, m) {
+            return Math.floor(Math.random() * (m - n) + n);
+        }
+
+        function creatLi() {
+            var oLi = document.createElement('li');
+            oLi.style.height = rnd(50, 400) + 'px';
+            oLi.style.background = 'rgb(' + rnd(0, 256) + ',' + rnd(0, 256) + ',' + rnd(0, 256) + ')';
+            return oLi;
+        }
+        window.onload = function () {
+            var aUl=document.getElementsByTagName('ul');
+            function createManyLi(n){
+                for(var i=0;i<n;i++){
+                    var oLi=creatLi();
+                    //创建一个数组保存ul的每一列,并得到ul中高度最小的一个，为其放置li元素。
+                    var arr=[];
+                    for(var j=0;j<aUl.length;j++){
+                        arr.push(aUl[j]);
+                    }
+                    arr.sort(function(n1,n2){
+                        return n1.offsetHeight-n2.offsetHeight;
+                    });
+                    arr[0].appendChild(oLi);
+                }
+            }
+            createManyLi(40);
+            window.onscroll=function(){
+                //滚动距离
+                var scrollT=document.documentElement.scrollTop || document.body.scrollTop;
+                //可视区高度
+                var clientH=document.documentElement.clientHeight;
+                //内容高度
+                var bodyH=document.body.scrollHeight;
+                if(scrollT+clientH>=bodyH-100){
+                    createManyLi(40);
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+    <ul></ul>
+</body>
+
+</html>

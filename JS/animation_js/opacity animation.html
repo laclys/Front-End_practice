@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 200px;
+            opacity: 0.3;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            filter: alpha(opacity:30);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oImg = document.getElementsByTagName('img')[0];
+            var timer = null;
+            opa = 30;
+            oImg.onmouseover = function () {
+                changeOpa(100);
+            }
+            oImg.onmouseout = function () {
+                changeOpa(30);
+            }
+
+            function changeOpa(nTarget) {
+                clearInterval(timer);
+                timer = setInterval(change, 100);
+
+                function change() {
+                    var speed = 0;
+                    if (opa < nTarget) {
+                        speed = 10;
+                    } else {
+                        speed = -10;
+                    }
+                    if (opa == nTarget) {
+                        clearInterval(timer);
+                    } else {
+                        opa += speed;
+                        oImg.style.filter = 'alpha(opacity:' + opa + ')';
+                        oImg.style.opacity = opa / 100;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <img src="./pic.jpg" alt="">
+</body>
+
+</html>
