@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var oT = document.getElementById('txt');
+            var oBtn = document.getElementById('btn');
+            var oUl = document.getElementById('ul1');
+ 
+            function createLi() {
+                var str = oT.value;
+                if (!str) {
+                    return
+                }
+                var oLi = document.createElement('li');
+                oLi.innerHTML = str + '<a href="javascript:;">删除</a>';
+                oUl.insertBefore(oLi, oUl.children[0]);
+                oT.value = '';
+                var oA = oLi.children[0];
+                oA.onclick = function () {
+                    oUl.removeChild(this.parentNode);
+                };
+            };
+            oBtn.onclick = createLi;
+            //键盘回车时处理
+            oT.onkeydown = function (ev) {
+                var oEvent = ev || event;
+                if (oEvent.keyCode == 13) {
+                    createLi();
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" value="" id="txt">
+    <input type="button" id="btn" value="留言">
+    <ul id="ul1">
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title> 
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul {
+            width: 50px;
+            height: 57px;
+            border: 1px solid lightblue;
+            color: black;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .on{
+            background: #eee;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oUl = document.getElementsByTagName('ul')[0];
+            var aLi = oUl.children;
+            document.oncontextmenu = function (ev) {
+                var oEvent = ev || event;
+                oUl.style.top = oEvent.clientY + 'px';
+                oUl.style.left = oEvent.clientX + 'px';
+                oUl.style.display = 'block';
+                return false;
+            };
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].onmouseover = function () {
+                    for (var i = 0; i < aLi.length; i++) {
+                        aLi[i].className = '';
+                    }
+                    this.className = 'on';
+                };
+            }
+            document.onclick=function(){
+                oUl.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>搜索</li>
+        <li>复制</li>
+        <li>检查</li>
+    </ul>
+</body>
+
+</html>

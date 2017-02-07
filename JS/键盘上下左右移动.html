@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px; 
+            background: lightskyblue;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var l = 0;
+            var t = 0;
+            document.onkeydown = function (ev) {
+                var oEvent = ev || event;
+
+                switch (oEvent.keyCode) {
+                    case 37:
+                        l -= 5;
+                        oDiv.style.left = l + 'px';
+                        break;
+                    case 38:
+                        t -= 5;
+                        console.log(oDiv);
+                        oDiv.style.top = t + 'px';
+                        break;
+                    case 39:
+                        l += 5;
+                        oDiv.style.left = l + 'px';
+                        break;
+                    case 40:
+                        t += 5;
+                        oDiv.style.top = t + 'px';
+                        break;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+    </div>
+</body>
+
+</html>
