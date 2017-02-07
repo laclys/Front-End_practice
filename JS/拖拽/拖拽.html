@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        } 
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onmousedown = function (ev) {
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - oDiv.offsetLeft;
+                var disY = oEvent.clientY - oDiv.offsetTop;
+                var clientW = document.documentElement.clientWidth;
+                var oDivW = oDiv.offsetWidth;
+                var clientH = document.documentElement.clientHeight;
+                var oDivH = oDiv.offsetHeight;
+                document.onmousemove = function (ev) {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;
+                    var t = oEvent.clientY - disY;
+                    //限制范围 最小0，最大可视区宽高-物体宽高
+                    if (l <= 0) {
+                        l = 0;
+                    } else if (l >= (clientW - oDivW)) {
+                        l = clientW - oDivW;
+                    }
+                    if (t <= 0) {
+                        t = 0;
+                    } else if (t >= (clientH - oDivH)) {
+                        t = clientH - oDivH;
+                    }
+                    oDiv.style.left = l + 'px';
+                    oDiv.style.top = t + 'px';
+                };
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+                //干掉浏览器的默认行为；
+                return false
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <p>1234567890234567890</p>
+</body>
+
+</html>

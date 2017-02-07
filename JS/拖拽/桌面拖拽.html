@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+         
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed #ccc;
+            position: absolute;
+            top: 300px;
+            left: 300px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            oDiv.onmousedown = function (ev) {
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - oDiv.offsetLeft;
+                var disY = oEvent.clientY - oDiv.offsetTop;
+                var oBox = oDiv.cloneNode();
+                oBox.style.opacity = 0.3;
+                document.body.appendChild(oBox);
+                document.onmousemove = function (ev) {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;
+                    var t = oEvent.clientY - disY;
+                    console.log(l + ':' + t);
+                    oBox.style.top = t + 'px';
+                    oBox.style.left = l + 'px';
+                };
+                document.onmouseup = function () {
+                    oDiv.style.top = oBox.offsetTop + 'px';
+                    oDiv.style.left = oBox.offsetLeft + 'px';
+                    document.body.removeChild(oBox);
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+
+                }
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1" class="div1">111</div>
+</body>
+
+</html>
