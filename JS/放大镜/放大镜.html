@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #left {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    #left span {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: deepskyblue;
+        opacity: 0.5;
+        display: none;
+    }
+    
+    #right {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 420px;
+        overflow: hidden;
+        display: none;
+    }
+    
+    #right img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+<script>
+    window.onload = function () {
+        var oBox = document.getElementById('box');
+        var oL = document.getElementById('left');
+        var oSpan = oL.getElementsByTagName('span')[0];
+        var oR = document.getElementById('right');
+        var Rimg = oR.getElementsByTagName('img')[0];
+        //鼠标移入
+        oL.onmouseover = function () {
+            oSpan.style.display = 'block';
+            oR.style.display = 'block';
+        };
+        //鼠标移出
+        oL.onmouseout = function () {
+            oSpan.style.display = 'none';
+            oR.style.display = 'none';
+        }
+        // 鼠标移动
+        oL.onmousemove = function (ev) {
+            var oEvent = ev || event;
+            var cX = oEvent.clientX - oSpan.offsetWidth / 2;
+            var cY = oEvent.clientY - oSpan.offsetHeight / 2;
+            if (cX <= 0) {
+                cX = 0;
+            } else if (cX >= oL.offsetWidth - oSpan.offsetWidth) {
+                cX = oL.offsetWidth - oSpan.offsetWidth;
+            }
+            if (cY <= 0) {
+                cY = 0;
+            } else if (cY >= oL.offsetHeight - oSpan.offsetHeight) {
+                cY = oL.offsetHeight - oSpan.offsetHeight;
+            }
+            oSpan.style.top = cY + 'px';
+            oSpan.style.left = cX + 'px';
+            //右边放大镜定位x，y定位
+            Rimg.style.left = -cX / (oL.offsetWidth - oSpan.offsetWidth) * (Rimg.offsetWidth - oR.offsetWidth)+'px';
+            Rimg.style.top = -cY / (oL.offsetHeight - oSpan.offsetHeight) * (Rimg.offsetHeight - oR.offsetHeight)+'px';
+
+        };
+    };
+</script>
+
+<body>
+    <div id="box">
+        <div id="left">
+            <img src="small.jpg" alt="">
+            <span></span>
+        </div>
+        <div id="right">
+            <img src="big.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

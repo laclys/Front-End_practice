@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #box {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        border: 1px solid darkgrey;
+    }
+    
+    #left {
+        width: 280px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: whitesmoke;
+        overflow: hidden;
+    }
+    
+    #left p {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    #right {
+        width: 20px;
+        height: 300px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: white;
+    }
+    
+    #right span {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background: orangered;
+    }
+</style>
+<script>
+    //滚轮函数
+    function addWheel(obj, fn) {
+        if (navigator.userAgent.toLowerCase().indexOf('firefox') != -1) {
+            //兼容火狐
+            obj.addEventListener('DOMMouseScroll', show, false);
+        } else {
+            //兼容非火狐
+            obj.onmousewheel = show;
+        }
+
+        function show(ev) {
+            var uP = true;
+            var oEvent = ev || event;
+            if (oEvent.wheelDelta) {
+                if (oEvent.wheelDelta > 0) {
+                    uP = true;
+                } else {
+                    uP = false;
+                }
+            } else {
+                if (oEvent.detail < 0) {
+                    uP = true;
+                } else {
+                    uP = false;
+                }
+            }
+            fn(uP);
+        }
+    }
+    window.onload = function () {
+        var oBox = document.getElementById('box');
+        var oL = document.getElementById('left');
+        var oTxt = oL.getElementsByTagName('p')[0];
+        var oR = document.getElementById('right');
+        var oBar = document.getElementById('bar');
+        var t = 0;
+
+        function wheel() {
+            if (t <= 0) {
+                t = 0;
+            } else if (t >= oR.offsetHeight - oBar.offsetHeight) {
+                t = oR.offsetHeight - oBar.offsetHeight
+            }
+            oBar.style.top = t + 'px';
+            oTxt.style.top = -t / (oR.offsetHeight - oBar.offsetHeight) * (oTxt.offsetHeight - oL.offsetHeight) +
+                'px';
+        }
+        oBar.onmousedown = function (ev) {
+            var oEvent = ev || event;
+            var oldY = oEvent.clientY;
+            var oldT = oBar.offsetTop;
+            //封装滚动函数
+            document.onmousemove = function (ev) {
+                var oEvent = ev || event;
+                var newY = oEvent.clientY;
+                //移动后oBar距父级的top值为鼠标按下时y轴坐标 - 鼠标移动后y轴坐标 + 鼠标按下时oBar到父级的top值
+                t = newY - oldY + oldT;
+                wheel();
+            };
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            };
+            return false;
+        };
+        //给oBox加滚轮事件
+        addWheel(oBox, function (uP) {
+            if (uP) {
+                // alert('向上');
+                t -= 5;
+                wheel();
+
+            } else {
+                // alert('向下');
+                t += 5;
+                wheel();
+            }
+        });
+    };
+</script>
+
+<body>
+    <div id="box">
+        <div id="left">
+            <p>据外媒报道，近日国外知名直播平台Twitch公开了2016年度电竞赛事收视榜单。其中，《英雄联盟》无疑成为了众多游戏之中的王者，全年累计观众突破10亿。MOBA类游戏成为观众们最喜爱的游戏类型，《英雄联盟》、《反恐精英：全球攻势》和《DOTA2》成为三大电竞观看项目。除了《英雄联盟》、《反恐精英：全球攻势》和《DOTA2》这三大电竞项目之外，动视暴雪公司出品的《守望先锋》、《炉石传说》和《魔兽世界》也是观众们的最爱。值得一提的是，《英雄联盟》全年累计用户达到10亿，几乎是排名第二的《反恐精英：全球攻势》2倍。《DOTA2》和《炉石传说》也获得了不错的收视成绩，均超过了4亿的收视率。《使命召唤：黑色行动3》和《江湖》均挤进了前八名，收视率和《守望先锋》以及《魔兽世界》均超过了１亿收视率。据外媒报道，近日国外知名直播平台Twitch公开了2016年度电竞赛事收视榜单。其中，《英雄联盟》无疑成为了众多游戏之中的王者，全年累计观众突破10亿。MOBA类游戏成为观众们最喜爱的游戏类型，《英雄联盟》、《反恐精英：全球攻势》和《DOTA2》成为三大电竞观看项目。除了《英雄联盟》、《反恐精英：全球攻势》和《DOTA2》这三大电竞项目之外，动视暴雪公司出品的《守望先锋》、《炉石传说》和《魔兽世界》也是观众们的最爱。值得一提的是，《英雄联盟》全年累计用户达到10亿，几乎是排名第二的《反恐精英：全球攻势》2倍。《DOTA2》和《炉石传说》也获得了不错的收视成绩，均超过了4亿的收视率。《使命召唤：黑色行动3》和《江湖》均挤进了前八名，收视率和《守望先锋》以及《魔兽世界》均超过了１亿收视率。</p>
+        </div>
+        <div id="right">
+            <span id="bar"></span>
+        </div>
+    </div>
+</body>
+
+</html>
