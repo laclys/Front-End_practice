@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<script>
+    window.onload = function () { 
+        var oT = document.getElementsByTagName('input')[0];
+        var oSpan = document.getElementsByTagName('span')[0];
+        //一直按无法统计。
+        /*        oT.onkeyup=function(){
+                    oSpan.innerHTML=oT.value.length;
+                }*/
+        //不兼容ie9
+/*        oT.oninput = oT.onpropertychange = function () {
+            oSpan.innerHTML = oT.value.length;
+        }*/
+        oT.onfocus=function(){
+            setInterval(function(){
+                oSpan.innerHTML=oT.value.length;
+            },1)
+        }
+        
+    }
+</script>
+
+<body>
+    <input type="text" name="" value="">
+    <span></span>
+</body>
+
+</html>
