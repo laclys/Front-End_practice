@@ -24,26 +24,36 @@ i, a {
   font-style: normal; }
 
 .inner {
-  margin: 0 auto; }
+  margin: 0 auto;
+  width: 1200px; }
 
 .updiv {
   background: white;
   height: 110px;
-  background: url("../img/login_1.jpg") no-repeat 391px 29px;
-  width: 1920px; }
+  background: url("../img/login_1.jpg") no-repeat 30px 34px; }
 
 .middiv {
-  width: 1920px;
   height: 560px;
+  width: 100%;
   background: url("../img/login_2.jpg") no-repeat;
-  position: relative; }
+  position: absolute;
+  top: 110px;
+  left: 0; }
+
+.box_inner {
+  position: relative;
+  margin: 0 auto;
+  width: 1200px;
+  height: 560px; }
 
 .bottomdiv {
   height: 266px;
-  width: 1920px;
+  width: 1200px;
   font-size: 10px;
   text-align: center;
-  padding-top: 45px; }
+  padding-top: 45px;
+  position: absolute;
+  top: 670px; }
 
 .login_box {
   width: 340px;
@@ -51,7 +61,7 @@ i, a {
   background: white;
   position: absolute;
   top: 90px;
-  right: 371px;
+  right: 11px;
   text-align: center; }
 
 .box_logo {
@@ -103,9 +113,7 @@ i, a {
 
 .password {
   top: 150px;
-  border: 1px solid #c0ddfb; }
-  .password div {
-    background: #e9f3fd; }
+  border: 1px solid #cccccc; }
 
 .checkb {
   position: absolute;

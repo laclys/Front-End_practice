@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.clearfix {
+  zoom: 1; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+ul, ol, li {
+  list-style: none; }
+
+i, a {
+  text-decoration: none;
+  font-style: normal; }

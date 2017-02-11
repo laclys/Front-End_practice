@@ -1,0 +1,91 @@
+@import 'all.scss';
+.inner {
+    margin: 0 auto;
+    width: $inner_w2;
+}
+
+.topMenu {
+    @include bgcolor(white);
+    height: 100px;
+    @extend .clearfix;
+    h1 {
+        height: 66px;
+        width: 326px;
+        background: url(../img/logo.png);
+        // position: absolute;
+        // left: 0px;
+        // top: 17px;
+        float: left;
+        margin-top: 17px;
+        .logo {
+            width: 100%;
+            height: 100%;
+            text-indent: -999em;
+            display: block;
+        }
+    }
+    .nav {
+        width: 660px;
+        height: 100px - 49px;
+        margin-top: 49px;
+        margin-right: 28px;
+        float: right;
+        font-size: 18px;
+        color: #333333;
+        li {
+            float: left;
+            img {
+                width: 16px;
+                height: 9px;
+                margin-bottom: 4px;
+                margin-left: 9px;
+            }
+        }
+        li:nth-child(1) {
+            color: #3e83e1;
+        }
+        li:nth-child(2) {
+            margin-left: 59px;
+        }
+        li:nth-child(3) {
+            margin-left: 79px;
+        }
+        li:nth-child(4) {
+            margin-left: 58px;
+        }
+        li:nth-child(5) {
+            color: #3e83e1;
+            margin-left: 59px;
+        }
+    }
+}
+
+.tabImg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+    #tabBtn {
+        position: absolute;
+        @extend .clearfix;
+        bottom: 20px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        width: 90px;
+        height: 12px;
+        li {
+            float: left;
+            width: 12px;
+            height: 12px;
+            background: whitesmoke;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+    }
+}

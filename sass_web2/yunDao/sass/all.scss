@@ -23,13 +23,13 @@ i,a{
     text-decoration: none;
     font-style: normal;
 }
-.inner{
-    margin:0 auto;
-}
+
 @mixin bgcolor($color){
     background: $color;
 }
 @mixin bgimg($url){
     background: url($url) no-repeat;
 }
-$inner_w: 1920px;
+
+$inner_w: 1200px;
+$inner_w2: 1228px;
