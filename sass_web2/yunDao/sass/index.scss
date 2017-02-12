@@ -69,6 +69,9 @@
     img {
         height: 100%;
         width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0;
     }
     #tabBtn {
         position: absolute;
@@ -86,6 +89,185 @@
             background: whitesmoke;
             border-radius: 50%;
             margin-right: 10px;
+        }
+    }
+}
+
+.service {
+    padding-top: 64px;
+    width: 1053px;
+    height: 668px;
+    position: relative;
+    background: #fafafa;
+    // 居中
+    margin: 0 auto;
+    text-align: center;
+    .lineR {
+        height: 0;
+        width: 421px;
+        border-bottom: 1px solid #cccccc;
+        position: absolute;
+        top: 80px;
+        left: 30px;
+    }
+    .lineL {
+        height: 0;
+        width: 421px;
+        border-bottom: 1px solid #cccccc;
+        position: absolute;
+        top: 80px;
+        right: 30px;
+    }
+    p {
+        font-size: 23px;
+        color: #333333;
+    }
+    i {
+        font-size: 12px;
+        color: #707070;
+    }
+    span {
+        display: block;
+        font-size: 14px;
+        color: #707070;
+    }
+    ol {
+        height: 510px;
+        width: 100%;
+        margin-top: 50px;
+        @extend .clearfix;
+        li {
+            float: left;
+            width: 318px;
+            height: 508px;
+            border: 1px solid #e7e8e9;
+            background: white;
+            text-align: center;
+            p {
+                font-size: 23px;
+                color: #333333;
+            }
+            span {
+                display: block;
+                color: #666666;
+                font-size: 14px;
+                padding-top: 20px;
+                padding-left: 43px;
+                padding-right: 41px;
+                padding-bottom: 40px;
+                line-height: 24px;
+            }
+            button {
+                width: 150px;
+                height: 38px;
+                // background: orange;
+                // color: #fff;
+                background: white;
+                color: darkorange;
+                border: 1px solid darkorange;
+                border-radius: 2px;
+            }
+            button:hover {
+                background: orange;
+                color: #fff;
+            }
+        }
+        li:nth-child(1) {
+            margin-right: 47px;
+            div {
+                width: 238px;
+                height: 130px;
+                margin-left: 40px;
+                margin-top: 42px;
+                background: url(../img/service.png) no-repeat 0 0;
+                margin-bottom: 44px;
+            }
+        }
+        li:nth-child(2) {
+            margin-right: 47px;
+            div {
+                width: 238px;
+                height: 147px;
+                margin-left: 40px;
+                margin-top: 42px;
+                background: url(../img/service.png) no-repeat 0 -131px;
+                margin-bottom: 26px;
+            }
+        }
+        li:nth-child(3) {
+            div {
+                margin-left: 40px;
+                margin-top: 42px;
+                width: 253px;
+                height: 130px;
+                background: url(../img/service.png) no-repeat 0 -278px;
+                margin-bottom: 44px;
+            }
+        }
+    }
+}
+
+.problem {
+    width: 1053px;
+    height: 640px;
+    background: white;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding-top: 64px;
+    .lineR {
+        height: 0;
+        width: 421px;
+        border-bottom: 1px solid #cccccc;
+        position: absolute;
+        top: 80px;
+        left: 30px;
+    }
+    .lineL {
+        height: 0;
+        width: 421px;
+        border-bottom: 1px solid #cccccc;
+        position: absolute;
+        top: 80px;
+        right: 30px;
+    }
+    p {
+        font-size: 23px;
+        color: #333333;
+    }
+    i {
+        font-size: 12px;
+        color: #707070;
+    }
+    ul {
+        width: 1053px;
+        height: 421px;
+        // background: lightcoral;
+        margin-top: 49px;
+        @extend .clearfix;
+        li {
+            float: left;
+            height: 198px;
+            width: 338px;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+        }
+        li:nth-child(1) {
+            margin-right: 16px;
+        }
+        li:nth-child(2) {
+            margin-right: 15px;
+        }
+        li:nth-child(4) {
+            margin-right: 16px;
+            margin-top: 20px;
+        }
+        li:nth-child(5) {
+            margin-right: 15px;
+            margin-top: 20px;
+        }
+        li:nth-child(6) {
+            margin-top: 20px;
         }
     }
 }
