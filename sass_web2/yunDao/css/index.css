@@ -56,6 +56,9 @@ i, a {
         height: 9px;
         margin-bottom: 4px;
         margin-left: 9px; }
+    .topMenu .nav li:hover {
+      cursor: pointer;
+      color: #3e83e1; }
     .topMenu .nav li:nth-child(1) {
       color: #3e83e1; }
     .topMenu .nav li:nth-child(2) {
@@ -65,8 +68,47 @@ i, a {
     .topMenu .nav li:nth-child(4) {
       margin-left: 58px; }
     .topMenu .nav li:nth-child(5) {
-      color: #3e83e1;
       margin-left: 59px; }
+  .topMenu #menuArrow {
+    position: absolute;
+    z-index: 999;
+    width: 14px;
+    height: 7px;
+    top: 81px;
+    right: 225px;
+    display: none; }
+    .topMenu #menuArrow img {
+      width: 100%;
+      height: 100%; }
+  .topMenu #centerMenu {
+    position: absolute;
+    z-index: 999;
+    height: 175px;
+    width: 187px;
+    background: #fcfbfb;
+    top: 100px;
+    right: 127px;
+    text-align: center;
+    border-radius: 3px;
+    display: none; }
+    .topMenu #centerMenu li {
+      font-size: 14px;
+      color: #666666;
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto; }
+    .topMenu #centerMenu li:hover {
+      color: #3190f6;
+      cursor: pointer; }
+    .topMenu #centerMenu li:nth-child(1) {
+      top: 21px; }
+    .topMenu #centerMenu li:nth-child(2) {
+      top: 56px; }
+    .topMenu #centerMenu li:nth-child(3) {
+      top: 90px; }
+    .topMenu #centerMenu li:nth-child(4) {
+      top: 123px; }
 
 .tabImg {
   height: 100%;
@@ -95,6 +137,8 @@ i, a {
       background: whitesmoke;
       border-radius: 50%;
       margin-right: 10px; }
+    .tabImg #tabBtn .on {
+      background: lightgrey; }
 
 .service {
   padding-top: 64px;
@@ -237,3 +281,20 @@ i, a {
       margin-top: 20px; }
     .problem ul li:nth-child(6) {
       margin-top: 20px; }
+
+.consult #consult1 {
+  position: fixed;
+  top: 380px;
+  right: 12px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 2px; }
+.consult #consult2 {
+  position: fixed;
+  top: 445px;
+  right: 12px;
+  z-index: 999;
+  width: 50px;
+  height: 50px;
+  border-radius: 2px; }
