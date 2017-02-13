@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #box{
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            top: 40px;
+            left: 130px;
+            overflow: hidden;
+        }
+        #box div{
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        window.onload=function(){
+            var oBox=document.getElementById('box');
+            var aDiv=oBox.children;
+            //布局，给每个div设置left值
+            for(var i=1;i<aDiv.length;i++){
+                aDiv[i].style.left=150-(aDiv.length-i)*15+'px';
+            }
+            //鼠标移入事件
+            for(var i=0;i<aDiv.length;i++){
+                aDiv[i].index=i;
+                aDiv[i].onmouseover=function(){
+                    for(var i=0;i<aDiv.length;i++){
+                        if(i<=this.index){
+                            //aDiv[i].style.left=15*i+'px';
+                            $(aDiv[i]).animate({'left':15*i+'px'})
+                        }else{
+                            //aDiv[i].style.left=150-(aDiv.length-i)*15+'px';
+                            $(aDiv[i]).animate({'left':150-(aDiv.length-i)*15+'px'})
+                        }
+                    }
+                };
+            }
+
+        };
+    </script>
+</head>
+<body>
+    <div id="box">
+        <div style="background: #42bb25"></div>
+        <div style="background: #2dbbb2"></div>
+        <div style="background: #9f53bb"></div>
+        <div style="background: #ff934c"></div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
