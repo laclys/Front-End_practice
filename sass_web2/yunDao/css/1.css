@@ -135,6 +135,9 @@ i, a {
     position: absolute;
     right: 0;
     color: #666666; }
+  .checkb .s2:hover {
+    color: #2288f6;
+    cursor: pointer; }
 
 .btn_login {
   position: absolute;
@@ -150,6 +153,9 @@ i, a {
     font-size: 14px;
     color: white; }
 
+.btn_login:hover {
+  cursor: pointer; }
+
 .register {
   position: absolute;
   bottom: 31px;
@@ -162,3 +168,6 @@ i, a {
     position: absolute;
     right: 0;
     color: #666666; }
+  .register span:hover {
+    color: #2288f6;
+    cursor: pointer; }

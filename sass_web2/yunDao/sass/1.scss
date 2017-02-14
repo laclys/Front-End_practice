@@ -134,6 +134,10 @@
         right: 0;
         color: #666666;
     }
+    .s2:hover {
+        color: #2288f6;
+        cursor: pointer;
+    }
 }
 
 .btn_login {
@@ -151,6 +155,9 @@
         color: white;
     }
 }
+.btn_login:hover{
+    cursor: pointer;
+}
 
 .register {
     position: absolute;
@@ -164,5 +171,9 @@
         position: absolute;
         right: 0;
         color: #666666;
+    }
+    span:hover{
+        color: #2288f6;
+        cursor: pointer;
     }
 }
