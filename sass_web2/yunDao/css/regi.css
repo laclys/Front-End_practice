@@ -84,6 +84,16 @@ body {
       margin-bottom: 20px;
       color: #cccccc;
       border-radius: 2px; }
+    .regi_box .form_content input[type="password"] {
+      width: 365px;
+      height: 40px;
+      border: 1px solid #cccccc;
+      background: #ffffff;
+      line-height: 40px;
+      font-size: 15px;
+      margin-bottom: 20px;
+      color: #cccccc;
+      border-radius: 2px; }
     .regi_box .form_content select {
       width: 365px;
       height: 40px;
@@ -117,6 +127,8 @@ body {
       position: relative;
       left: 11px;
       border-radius: 2px; }
+    .regi_box .form_content #message_button:hover {
+      cursor: pointer; }
     .regi_box .form_content #nume_check {
       width: 174px;
       height: 40px;
@@ -168,7 +180,8 @@ body {
       left: 140px;
       top: -19px; }
     .regi_box .form_content span:hover {
-      cursor: pointer; }
+      cursor: pointer;
+      color: #2288f6; }
   .regi_box .errorM {
     width: 185px;
     height: 638px;

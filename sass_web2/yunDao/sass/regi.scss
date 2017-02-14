@@ -72,6 +72,17 @@ body {
             color: #cccccc;
             border-radius: 2px;
         }
+        input[type="password"] {
+            width: 365px;
+            height: 40px;
+            border: 1px solid #cccccc;
+            background: #ffffff;
+            line-height: 40px;
+            font-size: 15px;
+            margin-bottom: 20px;
+            color: #cccccc;
+            border-radius: 2px;
+        }
         select {
             width: 365px;
             height: 40px;
@@ -109,6 +120,9 @@ body {
             position: relative;
             left: 11px;
             border-radius: 2px;
+        }
+        #message_button:hover{
+            cursor: pointer;
         }
         #nume_check {
             width: 174px;
@@ -175,6 +189,7 @@ body {
         }
         span:hover {
             cursor: pointer;
+            color: #2288f6;
         }
     }
     .errorM {
@@ -222,20 +237,21 @@ body {
         top: 5px;
     }
 }
+
 footer {
     width: 1202px;
     height: 90px;
-    background:whitesmoke;
+    background: whitesmoke;
     margin: 0 auto;
     text-align: center;
-    a{
+    a {
         text-decoration: none;
         color: #606060;
     }
-    .active{
+    .active {
         color: #2288f6;
     }
-    a:hover{
+    a:hover {
         color: #2288f6;
     }
 }

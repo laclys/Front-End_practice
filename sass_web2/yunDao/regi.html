@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>注册页</title>
     <link rel="stylesheet" type="" href="css/regi.css">
+    <script src="./js/regi.js" defer></script>
 </head>
 
 <body>
@@ -27,13 +28,13 @@
                 <span><red>*</red> 短信验证 ：</span>
                 <span><red>*</red> 验证码 ：</span>
             </div>
-            <form class="form_content">
+            <form class="form_content" id="form">
                 <input type="text" name="" value=" 限8位，含数字及字母">
                 <input type="text" name="" value=" 6-16个数字或者字母">
+                <input type="password" name="" value="">
                 <input type="text" name="" value="">
                 <input type="text" name="" value="">
-                <input type="text" name="" value="">
-                <select>
+                <select id="select1">
                     <option value="">请选择区域</option>
                     <option value="1">上野</option>
                     <option value="2">池袋</option>
@@ -51,46 +52,49 @@
                 <span class="loginNow"><< 立即登陆</span>
             </form>
             <div class="errorM">
-                <div class="singleMessage">
+                <div class="singleMessage" id="m1">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>账号已存在</red></span>
+                    <span><red>请输入账号名</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m2">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>请输入6-16个数字或字母</red></span>
+                    <span><red>请输入密码</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m3">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>密码上下不一致</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m4">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m5">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>请输入联系人</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m6">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>请选择区域</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m7">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>号码错误或手机号不存在</red></span>
+                     <span><red>请输入手机号</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m8">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>验证码不正确，请重新获取</red></span>
                 </div>
-                <div class="singleMessage">
+                <div class="singleMessage" id="m9">
                     <img src="./img/right.png" alt="">
                     <img src="./img/wrong.png" alt="">
                     <span><red>验证码不正确，请重新获取</red></span>
