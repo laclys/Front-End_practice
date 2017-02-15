@@ -126,7 +126,26 @@ aIn[5].onblur = function () {
     }
 };
 //获取短信验证码
+var timer = null;
 message_button.onclick = function () {
+    // alert(1);
+    clearInterval(timer);
+    var allTime = 60;
+    clock();
+    timer = setInterval(clock, 1000);
+
+    function clock() {
+        if (!allTime == 0) {
+            allTime--;
+            message_button.innerHTML = allTime + '秒后可重新发送';
+            // message_button.value = allTime + '秒后可重新发送';
+            message_button.disabled = true;
+        } else {
+            message_button.disabled = false;
+            // message_button.value = '获得短信验证码';
+            message_button.innerHTML = '获得短信验证码';
+        }
+    }
     return false;
 }
 //点击-同意协议并注册
@@ -177,7 +196,7 @@ aIn[8].onclick = function () {
         m8.getElementsByTagName('span')[0].style.display = 'block';
     }
     //验证码
-    if (aIn[7].value == ''||aIn[7].value != '4wa6') {
+    if (aIn[7].value == '' || aIn[7].value != '4wa6') {
         m9.getElementsByTagName('img')[0].style.display = 'none';
         m9.getElementsByTagName('img')[1].style.display = 'inline-block';
         m9.getElementsByTagName('span')[0].style.display = 'block';
