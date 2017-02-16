@@ -2,6 +2,7 @@ $(function () {
     start();
 });
 $(window).resize(function () {
+     window.location.reload();
     start();
 });
 
