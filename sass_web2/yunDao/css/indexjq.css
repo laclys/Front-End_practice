@@ -70,24 +70,24 @@ i, a {
     .topMenu .nav li:nth-child(5) {
       margin-left: 59px; }
   .topMenu #menuArrow {
-    position: absolute;
+    position: relative;
     z-index: 999;
     width: 14px;
     height: 7px;
-    top: 81px;
-    right: 225px;
+    top: 8px;
+    right: -592px;
     display: none; }
     .topMenu #menuArrow img {
       width: 100%;
       height: 100%; }
   .topMenu #centerMenu {
-    position: absolute;
+    position: relative;
     z-index: 999;
     height: 175px;
     width: 187px;
     background: #fcfbfb;
-    top: 100px;
-    right: 127px;
+    top: 44px;
+    right: -511px;
     text-align: center;
     border-radius: 3px;
     display: none; }
