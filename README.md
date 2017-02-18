@@ -38,8 +38,13 @@
   
   > * JS动画（缓冲动画，多物体动画，链式动画，同时动画）及整合JS运动框架（moveJson.js&move.js)
   
-
+  > * JS效果之拖拽/放大镜
+  
+  > * 手风琴运动效果
+   
 6,IE6bug解决方案（via Internet）
+
+7,SASS作成，并使用原生JS和JQ添加动态效果的前端页面练习（sass_web2/yunDao）
 。
 
 。
