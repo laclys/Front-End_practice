@@ -23,9 +23,11 @@
     <script>
         window.onload = function () {
             var oBox = document.getElementsByTagName('div')[0];
-            var arr=eval(getCookie('pos'));
-            oBox.style.left=arr[0]+'px';
-            oBox.style.top=arr[1]+'px';
+            var arr = eval(getCookie('pos'));
+            if (arr) {
+                oBox.style.left = arr[0] + 'px';
+                oBox.style.top = arr[1] + 'px';
+            }
             oBox.onmousedown = function (ev) {
                 var oEvent = ev || event;
                 var disX = oEvent.clientX - oBox.offsetLeft;
@@ -39,7 +41,7 @@
                 }
                 document.onmouseup = function () {
                     //[x,y];
-                    setCookie('pos', `[${oBox.offsetLeft},${oBox.offsetTop}]`)
+                    setCookie('pos', `[${oBox.offsetLeft},${oBox.offsetTop}]`,3);
                     document.onmousemove = null;
                     document.onmouseup = null;
                 };
