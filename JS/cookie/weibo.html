@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        input {
+            width: 300px;
+            height: 30px;
+            border: 1px solid deepskyblue;
+            position: absolute;
+            top: 30px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="cookie.js"></script>
+    <script>
+        window.onload = function () {
+            var oIn=document.getElementsByTagName('input')[0];
+            oIn.value=getCookie('input_value');
+            oIn.oninput=function(){
+               setCookie('input_value',oIn.value,3);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" value="">
+</body>
+
+</html>
