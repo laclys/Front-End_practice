@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 80px;
+            height: 80px;
+            background: deepskyblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="cookie.js"></script>
+    <script>
+        window.onload = function () {
+            var oBox = document.getElementsByTagName('div')[0];
+            var arr=eval(getCookie('pos'));
+            oBox.style.left=arr[0]+'px';
+            oBox.style.top=arr[1]+'px';
+            oBox.onmousedown = function (ev) {
+                var oEvent = ev || event;
+                var disX = oEvent.clientX - oBox.offsetLeft;
+                var disY = oEvent.clientY - oBox.offsetTop;
+                document.onmousemove = function (ev) {
+                    var oEvent = ev || event;
+                    var l = oEvent.clientX - disX;
+                    var t = oEvent.clientY - disY;
+                    oBox.style.top = t + 'px';
+                    oBox.style.left = l + 'px';
+                }
+                document.onmouseup = function () {
+                    //[x,y];
+                    setCookie('pos', `[${oBox.offsetLeft},${oBox.offsetTop}]`)
+                    document.onmousemove = null;
+                    document.onmouseup = null;
+                };
+                return false;
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

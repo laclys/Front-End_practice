@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #box {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            top: 40px;
+            left: 130px;
+            overflow: hidden;
+        }
+        
+        #box div {
+            width: 150px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script>
+        $(function () {
+            var oBox = $('#box');
+            var aDiv = $('#box div');
+            aDiv.each(function (i, arr) {
+                console.log(arr);
+                $(arr).css({
+                    'left': 150 - (aDiv.length - i) * 15 + 'px'
+                });
+            });
+                aDiv.mouseover(function () {
+                   for(var i=0;i<aDiv.length;i++){
+                        console.log($(this).index());
+                        if (i <= $(this).index()) {
+                            $(aDiv[i]).animate({
+                                'left': 15 * i + 'px'
+                            })
+                        } else {
+                            $(aDiv[i]).animate({
+                                'left': 150 - (aDiv.length - i) * 15 + 'px'
+                            })
+                        }
+                    }
+                });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div style="background: #42bb25"></div>
+        <div style="background: #2dbbb2"></div>
+        <div style="background: #9f53bb"></div>
+        <div style="background: #ff934c"></div>
+    </div>
+</body>
+
+</html>

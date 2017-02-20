@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after, .topMenu:after, .products ul:after, .why ol:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.clearfix, .topMenu, .products ul, .why ol {
+  zoom: 1; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+ul, ol, li {
+  list-style: none; }
+
+i, a {
+  text-decoration: none;
+  font-style: normal; }
+
+.inner {
+  margin: 0 auto;
+  width: 1228px; }
+
+.topMenu {
+  background: white;
+  height: 100px; }
+  .topMenu h1 {
+    height: 66px;
+    width: 326px;
+    background: url(../img/logo.png);
+    float: left;
+    margin-top: 17px; }
+    .topMenu h1 .logo {
+      width: 100%;
+      height: 100%;
+      text-indent: -999em;
+      display: block; }
+  .topMenu .nav {
+    width: 660px;
+    height: 51px;
+    margin-top: 49px;
+    margin-right: 28px;
+    float: right;
+    font-size: 18px;
+    color: #333333; }
+    .topMenu .nav li {
+      float: left; }
+      .topMenu .nav li img {
+        width: 16px;
+        height: 9px;
+        margin-bottom: 4px;
+        margin-left: 9px; }
+    .topMenu .nav li:hover {
+      cursor: pointer;
+      color: #3e83e1; }
+    .topMenu .nav li:nth-child(2) {
+      margin-left: 59px;
+      color: #3e83e1; }
+    .topMenu .nav li:nth-child(3) {
+      margin-left: 79px; }
+    .topMenu .nav li:nth-child(4) {
+      margin-left: 58px; }
+    .topMenu .nav li:nth-child(5) {
+      margin-left: 59px; }
+  .topMenu #menuArrow {
+    position: relative;
+    z-index: 999;
+    width: 14px;
+    height: 7px;
+    top: 8px;
+    right: -592px;
+    display: none; }
+    .topMenu #menuArrow img {
+      width: 100%;
+      height: 100%; }
+  .topMenu #centerMenu {
+    position: relative;
+    z-index: 999;
+    height: 175px;
+    width: 187px;
+    background: #fcfbfb;
+    top: 44px;
+    right: -511px;
+    text-align: center;
+    border-radius: 3px;
+    display: none; }
+    .topMenu #centerMenu li {
+      font-size: 14px;
+      color: #666666;
+      position: absolute;
+      right: 0;
+      left: 0;
+      margin: 0 auto; }
+    .topMenu #centerMenu li:hover {
+      color: #3190f6;
+      cursor: pointer; }
+    .topMenu #centerMenu li:nth-child(1) {
+      top: 21px; }
+    .topMenu #centerMenu li:nth-child(2) {
+      top: 56px; }
+    .topMenu #centerMenu li:nth-child(3) {
+      top: 90px; }
+    .topMenu #centerMenu li:nth-child(4) {
+      top: 123px; }
+
+.bigImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 100px; }
+  .bigImg img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0; }
+
+.bigImg:hover {
+  cursor: pointer; }
+
+.products {
+  padding-top: 63px;
+  width: 1200px;
+  height: 593px;
+  position: relative;
+  background: #ffffff;
+  margin: 0 auto;
+  text-align: center; }
+  .products .lineR {
+    height: 0;
+    width: 421px;
+    border-bottom: 1px solid #cccccc;
+    position: absolute;
+    top: 80px;
+    left: 30px; }
+  .products .lineL {
+    height: 0;
+    width: 421px;
+    border-bottom: 1px solid #cccccc;
+    position: absolute;
+    top: 80px;
+    right: 30px; }
+  .products p {
+    font-size: 23px;
+    color: #333333; }
+  .products i {
+    font-size: 12px;
+    color: #707070; }
+  .products span {
+    display: block;
+    font-size: 14px;
+    color: #707070; }
+  .products ul {
+    height: 475px;
+    width: 100%;
+    margin-top: 49px; }
+    .products ul li {
+      float: left;
+      width: 260px;
+      height: 430px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative; }
+      .products ul li div {
+        width: 520px;
+        height: 260px;
+        border-radius: 8px;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .products ul li div .off {
+          width: 260px;
+          height: 260px;
+          position: absolute;
+          background: #f6f6f6;
+          top: 0;
+          left: 0; }
+          .products ul li div .off img {
+            height: 110px;
+            width: 109px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto; }
+          .products ul li div .off span {
+            text-align: center;
+            font-size: 20px;
+            color: #333333;
+            padding-top: 205px; }
+        .products ul li div .on {
+          width: 260px;
+          height: 260px;
+          position: absolute;
+          background: #ff7d75;
+          top: 0;
+          left: 260px; }
+          .products ul li div .on img {
+            height: 110px;
+            width: 109px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto; }
+          .products ul li div .on span {
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            padding-top: 205px; }
+      .products ul li div:hover {
+        cursor: pointer; }
+      .products ul li p {
+        font-size: 18px;
+        color: #333333;
+        text-align: left;
+        padding-top: 281px;
+        padding-bottom: 10px; }
+      .products ul li span {
+        line-height: 30px;
+        color: #666666;
+        font-size: 15px;
+        text-align: left; }
+    .products ul li:nth-child(2) {
+      margin-left: 53px; }
+    .products ul li:nth-child(3) {
+      margin-left: 53px; }
+    .products ul li:nth-child(4) {
+      margin-left: 53px; }
+
+.why {
+  width: 1200px;
+  height: 743px;
+  background: #fafafa;
+  margin: 0 auto;
+  position: relative; }
+  .why .whyImg {
+    width: 345px;
+    height: 37px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-top: 65px; }
+  .why ol {
+    width: 1200px;
+    height: 440px;
+    position: relative;
+    top: 233px;
+    left: 0; }
+    .why ol li {
+      height: 430px;
+      width: 228px;
+      background: #ffffff;
+      border: 1px solid #e7e8e9;
+      float: left;
+      position: relative; }
+      .why ol li div {
+        height: 470px;
+        width: 180px;
+        position: absolute;
+        top: -80px;
+        left: 25px;
+        overflow: hidden; }
+        .why ol li div div {
+          width: 180px;
+          height: 455px;
+          position: absolute;
+          top: 120px;
+          left: 0; }
+          .why ol li div div img {
+            width: 178px;
+            height: 178px; }
+          .why ol li div div p {
+            font-size: 18px;
+            color: #333333;
+            text-align: center;
+            padding-top: 110px;
+            padding-bottom: 13px; }
+          .why ol li div div span {
+            text-align: center;
+            color: #707070;
+            font-size: 14px;
+            line-height: 23px; }
+        .why ol li div div:hover {
+          cursor: pointer; }
+    .why ol li:nth-child(2) {
+      margin-left: 13px; }
+    .why ol li:nth-child(3) {
+      margin-left: 13px; }
+    .why ol li:nth-child(4) {
+      margin-left: 12px; }
+    .why ol li:nth-child(5) {
+      margin-left: 12px; }
+
+.bottomBox {
+  width: 1280px;
+  height: 595px;
+  background: url(../img/mall-bttom.png) no-repeat 0px 95px;
+  margin: 0 auto;
+  position: relative; }
+  .bottomBox p {
+    position: absolute;
+    top: 189px;
+    left: 695px;
+    color: #333333;
+    font-size: 20px; }
+  .bottomBox span {
+    display: block;
+    left: 695px;
+    font-size: 30px;
+    line-height: 40px;
+    position: absolute;
+    top: 240px;
+    left: 695px;
+    color: #2281ef; }
+  .bottomBox .bottomBtn {
+    width: 260px;
+    height: 64px;
+    color: white;
+    background: #2281ef;
+    line-height: 64px;
+    text-align: center;
+    border-radius: 5px;
+    position: absolute;
+    top: 359px;
+    left: 695px; }
+  .bottomBox .bottomBtn:hover {
+    cursor: pointer; }
+
+footer {
+  width: 1053px;
+  height: 90px;
+  background: white;
+  margin: 0 auto;
+  text-align: center; }
+  footer a {
+    text-decoration: none;
+    color: #606060; }
+  footer .active {
+    color: #2288f6; }
+  footer a:hover {
+    color: #2288f6; }

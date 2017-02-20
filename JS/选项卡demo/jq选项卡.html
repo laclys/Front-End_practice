@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        input.on {
+            background: red;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background: grey;
+            display: none;
+        }
+        
+        div.on {
+            display: block;
+        }
+    </style>
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+    $(function(){
+        $('input').click(function(){
+            $('input').removeClass('on');
+            $('div').removeClass('on');
+            $(this).addClass('on');
+            $('div').eq($(this).index()).addClass('on');
+        });
+    });
+    </script>
+</head>
+
+<body>
+    <input type="button" name="" value="aaa" class="on">
+    <input type="button" name="" value="bbb">
+    <input type="button" name="" value="ccc">
+    <div class="on">
+        111
+    </div>
+    <div>
+        222
+    </div>
+    <div>
+        333
+    </div>
+</body>
+
+</html>

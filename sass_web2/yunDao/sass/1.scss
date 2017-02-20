@@ -1,17 +1,31 @@
 @import 'all.scss';
+.inner {
+    margin: 0 auto;
+    width: $inner_w;
+}
+
 .updiv {
     @include bgcolor(white);
     height: 110px;
     // @include bgimg('../img/login_1.jpg');
-    background: url('../img/login_1.jpg') no-repeat 391px 29px;
-    width: $inner_w;
+    background: url('../img/login_1.jpg') no-repeat 30px 34px;
+    // width: $inner_w;
 }
 
 .middiv {
+    height: 560px;
+    width: 100%;
+    background: url('../img/login_2.jpg') no-repeat;
+    position: absolute;
+    top: 110px;
+    left: 0;
+}
+
+.box_inner {
+    position: relative;
+    margin: 0 auto;
     width: $inner_w;
     height: 560px;
-    background: url('../img/login_2.jpg') no-repeat;
-    position: relative;
 }
 
 .bottomdiv {
@@ -20,6 +34,8 @@
     font-size: 10px;
     text-align: center;
     padding-top: 45px;
+    position: absolute;
+    top: 560px + 110px;
 }
 
 .login_box {
@@ -28,7 +44,7 @@
     background: white;
     position: absolute;
     top: 90px;
-    right: 371px;
+    right: 11px;
     text-align: center;
 }
 
@@ -89,9 +105,9 @@
 .password {
     @extend .user;
     top: 150px;
-    border: 1px solid #c0ddfb;
+    border: 1px solid #cccccc;
     div {
-        background: #e9f3fd;
+        // background: #cccccc;
     }
 }
 
@@ -118,6 +134,10 @@
         right: 0;
         color: #666666;
     }
+    .s2:hover {
+        color: #2288f6;
+        cursor: pointer;
+    }
 }
 
 .btn_login {
@@ -135,6 +155,9 @@
         color: white;
     }
 }
+.btn_login:hover{
+    cursor: pointer;
+}
 
 .register {
     position: absolute;
@@ -148,5 +171,9 @@
         position: absolute;
         right: 0;
         color: #666666;
+    }
+    span:hover{
+        color: #2288f6;
+        cursor: pointer;
     }
 }

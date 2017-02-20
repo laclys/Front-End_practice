@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 85px;
+            height: 85px;
+            border: 1px solid red;
+            display: none;
+        }
+        
+        div.on {
+            display: block;
+        }
+        
+        input.on {
+            background: greenyellow;
+        }
+    </style>
+    <script src="cookie.js"></script>
+    <script>
+        window.onload = function () {
+            var aBtn = document.getElementsByTagName('input');
+            var oBox = document.getElementsByTagName('div');
+            var indexTemp = getCookie('index');
+            if (indexTemp) {
+                aBtn[indexTemp].className = 'on';
+                oBox[indexTemp].className = 'on';
+            } else {
+                aBtn[0].className = 'on';
+                oBox[0].className = 'on';
+            }
+            for (var i = 0; i < aBtn.length; i++) {
+                aBtn[i].index = i;
+                aBtn[i].onclick = function () {
+                    for (var i = 0; i < aBtn.length; i++) {
+                        aBtn[i].className = '';
+                        oBox[i].className = '';
+                    }
+                    this.className = 'on';
+                    oBox[this.index].className = 'on';
+                    setCookie('index', this.index);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" name="" value="psv">
+    <input type="button" name="" value="ps4">
+    <input type="button" name="" value="3ds">
+    <div>111</div>
+    <div>222</div>
+    <div>333</div>
+</body>
+
+</html>
