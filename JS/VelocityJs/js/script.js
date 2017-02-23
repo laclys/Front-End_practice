@@ -47,7 +47,7 @@ $(function () {
 
     });
     //自定义
-    $.Velocity.RegisterEffect('lixin.pulse',{
+    $.Velocity.RegisterEffect('lac.pulse',{
         defaultDuration:300,
         calls:[
             [{scaleX:1.1},0.5],
@@ -55,7 +55,7 @@ $(function () {
         ]
     });
     $('#div2').on('mouseover',function(){
-        $(this).velocity('lixin.pulse'); //'callout.shake'velocity预定义动画
+        $(this).velocity('lac.pulse'); //'callout.shake'velocity预定义动画
 
     });
 })

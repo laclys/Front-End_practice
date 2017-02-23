@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function createObj(name, age) { 
+            /*            var obj=new Object();
+                        obj.name=name; 
+                        obj.age=age;
+                        obj.eat=function(){
+                            alert('eat');
+                        }
+                        return obj;*/
+            this.name = name;
+            this.age = age;
+        }
+        /*        var p1=createObj('lac',25);
+                p1.eat();*/
+        var p1 = new createObj('lac', 25);
+        alert(p1.name);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
