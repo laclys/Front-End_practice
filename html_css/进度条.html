@@ -11,17 +11,41 @@
             list-style: none;
         }
         
-        div {
+        #div1 {
             width: 300px;
             height: 20px;
-            background:repeating-linear-gradient(160deg,black 0px,black 10px,whitesmoke 10px,whitesmoke 20px);
+            /*background:repeating-linear-gradient(160deg,black 0px,black 10px,whitesmoke 10px,whitesmoke 20px);*/
+            border: 1px solid black; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        
+        #div2 {
+            width: 200%;
+            height: 20px;
+            background: repeating-linear-gradient(160deg, black 0px, black 10px, whitesmoke 10px, whitesmoke 20px);
+            animation: 4s test linear infinite;
+                        position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        @keyframes test {
+            from {
+                left: 0;
+            }
+            to {
+                left: -100%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div>
-
+    <div id="div1">
+        <div id="div2"></div>
     </div>
 </body>
 
