@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+        }
+        
+        html,
+        body {
+            height: 100%;
+        }
+        
+        body {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+        }
+        
+        header,
+        footer {
+            height: 50px;
+            background: springgreen;
+            line-height: 50px;
+            text-align: center;
+            color: white;
+        }
+        
+        section {
+            -webkit-box-flex: 1;
+            background: lightseagreen;
+            display: -webkit-box;
+        }
+        
+        header {
+            display: -webkit-box;
+            text-align: center;
+            line-height: 50px;
+            color: white;
+        }
+        
+        #left,
+        #right {
+            width: 50px;
+            background: powderblue;
+            /*-webkit-box-flex: 1;*/
+        }
+        
+        #center {
+            -webkit-box-flex: 1;
+            -webkit-box-flex: 1;
+        }
+        
+        section ul {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            width: 100%;
+        }
+        
+        section li {
+            -webkit-box-flex: 1;
+            width: 100%;
+        }
+        
+        section li:nth-child(2n) {
+            background: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="left">left</div>
+        <div id="center">center</div>
+        <div id="right">right</div>
+    </header>
+    <section>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+    <footer>
+footer
+    </footer>
+</body>
+
+</html>
