@@ -68,20 +68,21 @@ header {
         border-top: pxTorem(1px) solid #e1e1e1;
         float: left;
         position: relative;
-        img{
+        img {
             position: absolute;
             width: pxTorem(58px);
             height: pxTorem(58px);
             top: pxTorem(17px);
             left: pxTorem(58px);
         }
-        span{
+        span {
             font-size: pxTorem(31px);
             line-height: pxTorem(82px);
             padding-left: pxTorem(137px);
+            color: #818086;
         }
     }
-    i{
+    i {
         display: block;
         width: pxTorem(2px);
         height: pxTorem(60px);
@@ -89,5 +90,77 @@ header {
         top: pxTorem(9px);
         left: calc(50% - 1px);
         position: absolute;
+    }
+}
+
+.big_pic {
+    width: 100%;
+    height: pxTorem(311px);
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.artical_list {
+    padding: 0 pxTorem(16px);
+    text-align: center;
+    li {
+        height: pxTorem(80px);
+        border-bottom: pxTorem(2px) solid #ececec;
+        line-height: pxTorem(80px);
+        font-size: pxTorem(30px);
+        color: #272727;
+    }
+    li:last-child {
+        border-bottom: 0 solid #ececec;
+    }
+}
+
+.content_box {
+    height: pxTorem(754px);
+    width: 100%;
+    border-top: pxTorem(4px) solid #58c1b0;
+    .content_title {
+        height: pxTorem(80px);
+        background: #f8f8f8;
+        position: relative;
+        padding: 0 pxTorem(30px);
+        @extend .clearfix;
+        span {
+            font-size: pxTorem(30px);
+            color: black;
+            line-height: pxTorem(80px);
+            float: left;
+        }
+        img {
+            width: pxTorem(58px);
+            height: pxTorem(59px);
+            float: right;
+            padding-top: pxTorem(10px);
+        }
+    }
+    .content_tab {
+        @extend .clearfix;
+        height: pxTorem(82px);
+        padding: 0 pxTorem(30px);
+        border-top: pxTorem(2px) solid #e2e2e2;
+        border-bottom: pxTorem(2px) solid #e2e2e2;
+        position: relative;
+        li {
+            float: left;
+            line-height: pxTorem(82px);
+            font-size: pxTorem(30px);
+            margin-right: pxTorem(66px);
+            color: #313131;
+        }
+        .on {
+            height: pxTorem(4px);
+            width: pxTorem(125px);
+            background: #d43553;
+            position: absolute;
+            top: pxTorem(82px);
+            left: pxTorem(-30px);
+        }
     }
 }
