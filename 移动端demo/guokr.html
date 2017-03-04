@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0/no">
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>guokr</title>
+    <link rel="stylesheet" href="./css/guokr.css">
+    <script>
+        (function () {
+            function initFontSize() {
+                document.documentElement.style.fontSize = 20 * document.documentElement.clientWidth / 320 + 'px';
+            }
+            initFontSize();
+
+            window.addEventListener('resize', initFontSize, false);
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        <span>Guokr.com</span>
+        <div class="menu"></div>
+        <div class="topc"></div>
+    </header>
+    <div class="login_resi">
+        <div>
+            <img src="./img/user.png" alt="">
+            <span>用户登陆</span>
+        </div>
+        <div>
+            <img src="./img/user2.png" alt="">
+            <span>用户注册</span>
+        </div>
+        <i class="cut_line"></i>
+    </div>
+</body>
+
+</html>

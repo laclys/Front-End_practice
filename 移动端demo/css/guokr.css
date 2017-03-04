@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.clearfix:after, .login_resi:after {
+  clear: both;
+  content: '';
+  display: block; }
+
+.clearfix, .login_resi {
+  zoom: 1; }
+
+html {
+  font-size: 20px; }
+
+header {
+  width: 100%;
+  height: 2.225rem;
+  border-bottom: 0.025rem solid #46c9b9;
+  background: #262626;
+  position: relative;
+  text-align: center; }
+  header .menu {
+    width: 1.575rem;
+    height: 1.425rem;
+    background: url(../img/top1.png);
+    background-size: contain;
+    position: absolute;
+    top: 0.4rem;
+    left: 0.4rem; }
+  header .topc {
+    width: 1.45rem;
+    height: 1.25rem;
+    background: url(../img/top2.png);
+    background-size: contain;
+    position: absolute;
+    top: 0.525rem;
+    right: 0.4rem; }
+  header span {
+    font-size: 1rem;
+    line-height: 2.225rem;
+    color: white; }
+
+.login_resi {
+  background: #fafafa;
+  position: relative; }
+  .login_resi div {
+    width: 8rem;
+    height: 2.05rem;
+    border-bottom: 0.025rem solid #e1e1e1;
+    border-top: 0.025rem solid #e1e1e1;
+    float: left;
+    position: relative; }
+    .login_resi div img {
+      position: absolute;
+      width: 1.45rem;
+      height: 1.45rem;
+      top: 0.425rem;
+      left: 1.45rem; }
+    .login_resi div span {
+      font-size: 0.775rem;
+      line-height: 2.05rem;
+      padding-left: 3.425rem; }
+  .login_resi i {
+    display: block;
+    width: 0.05rem;
+    height: 1.5rem;
+    background: #e0e0e0;
+    top: 0.225rem;
+    left: calc(50% - 1px);
+    position: absolute; }
+
+/*# sourceMappingURL=guokr.css.map */
