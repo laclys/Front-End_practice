@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        video {}
+        
+        body {
+            text-align: center;
+        }
+        
+        input {
+            margin: 0 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oT = document.getElementsByTagName('input');
+            var oV = document.getElementsByTagName('video')[0];
+            oT[0].onclick = function () {
+                oV.play();
+            }
+            oT[1].onclick = function () {
+                oV.pause();
+            }
+            oT[2].onclick = function () {
+                oV.currentTime++;
+            }
+            oT[3].onclick = function () {
+                oV.currentTime--;
+            }
+            oT[4].onclick = function () {
+                oV.volume += 0.1;
+            }
+            oT[5].onclick = function () {
+                oV.volume -= 0.1;
+            }
+            var v = true;
+            oT[6].onclick = function () {
+                if (v) {
+                    oV.muted = true;
+                    this.value = 'sound on';
+                } else {
+                    oV.muted = false;
+                    this.value = 'sound off';
+                }
+                v = !v;
+            }
+            oT[7].onclick = function () {
+                oV.webkitRequestFullScreen();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <video src="冰血暴.Fargo.S01E01.中英字幕.WEBrip.720X400.v2.mp4">
+
+    </video>
+    <br>
+    <input type="button" value="play">
+    <input type="button" value="pause">
+    <input type="button" value="FF">
+    <input type="button" value="back">
+    <input type="button" value="V++">
+    <input type="button" value="V--">
+    <input type="button" value="sound off">
+    <input type="button" value="fullScreen">
+</body>
+
+</html>

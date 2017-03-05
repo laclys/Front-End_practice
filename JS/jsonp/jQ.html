@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery-1.7.2.js"></script>
+    <script>
+        $(function () {
+            $('#inp').keypress(function () {
+                var str = $(this).val();
+                $.ajax({
+                    url: 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su',
+                    data: {
+                        wd: str
+                    },
+                    dataType: 'jsonp',
+                    jsonp: 'cb',
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function () {
+
+                    }
+
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" value="" id="inp">
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    #box div{
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+    }
+    #box{
+        position: absolute;
+        top: 200px;
+        left: 400px;
+        width: 200px;
+        height: 200px;
+        /*background: red;*/
+        transform-style: preserve-3d;
+        transform: perspective(800px) rotateY(-60deg) rotateX(30deg);
+    }
+    #front{
+        background: deeppink;
+        transform: translateZ(100px);
+        opacity: 0.5;
+    }
+    #back{
+        background: deepskyblue;
+        transform: translateZ(-100px);
+        opacity: 0.5;
+    }
+    #left{
+        background: lawngreen;
+        transform: translateX(-100px) rotateY(90deg);
+        opacity: 0.5;;
+    }
+    #right{
+        background: lightyellow;
+        transform: translateX(100px) rotateY(90deg);
+        opacity: 0.5;;
+    }
+    #top{
+        background: lightslategray;
+        transform: translateY(-100px) rotateX(90deg);
+        opacity: 0.5;
+    }
+    #bottom{
+        background: rebeccapurple;
+        transform: translateY(100px) rotateX(90deg);
+        opacity: 0.5;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="front"></div>
+        <div id="back"></div>
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="top"></div>
+        <div id="bottom"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var dataBase = openDatabase('db', '1.0', 'play', 1);
+        // if (!dataBase) {
+        //     alert("数据库创建失败！");
+        // } else {
+        //     alert("数据库创建成功！");
+        // }
+
+        dataBase.transaction(function (tx) {
+            tx.executeSql('CREATE table news(title TEXT,href TEXT)');
+            tx.executeSql('INSERT INTO news VALUES("zzzzbbbbbbssss","baidu.com")');
+        });
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

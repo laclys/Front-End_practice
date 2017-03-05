@@ -1,0 +1,32 @@
+@charset "utf-8";
+#box {
+  width: 250px;
+  height: 300px;
+  background: red;
+  border: solid #0000ff 3px;
+}
+.border {
+  border: solid 1px blue;
+}
+#radius_test {
+  width: 30px;
+  height: 30px;
+  background: greenyellow;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+}
+.sanjiao {
+  border-width: 50px;
+  border-color: transparent transparent transparent #0000ff;
+  border-style: dashed dashed dashed solid;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+p {
+  border: 3px #ff0000 solid;
+}
+p:hover {
+  color: red;
+}

@@ -1,0 +1,277 @@
+    //px => rem
+    $browser-default-font-size: 20px;
+    $coefficient:2;
+    @function pxTorem($px) {
+        @return ($px/$browser-default-font-size) / $coefficient * 1rem;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .clearfix:after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+    
+    .clearfix {
+        zoom: 1;
+    }
+    
+    html {
+        font-size: $browser-default-font-size;
+    }
+    
+    header {
+        width: 100%;
+        height: pxTorem(89px);
+        border-bottom: pxTorem(1px) solid #46c9b9;
+        background: #262626;
+        position: relative;
+        text-align: center;
+        .menu {
+            width: pxTorem(63px);
+            height: pxTorem(57px);
+            background: url(../img/top1.png);
+            background-size: contain;
+            position: absolute;
+            top: pxTorem(16px);
+            left: pxTorem(16px);
+        }
+        .topc {
+            width: pxTorem(58px);
+            height: pxTorem(50px);
+            background: url(../img/top2.png);
+            background-size: contain;
+            position: absolute;
+            top: pxTorem(21px);
+            right: pxTorem(16px);
+        }
+        span {
+            font-size: pxTorem(40px);
+            line-height: pxTorem(89px);
+            color: white;
+        }
+    }
+    
+    .login_resi {
+        @extend .clearfix;
+        background: #fafafa;
+        position: relative;
+        div {
+            width: pxTorem(320px);
+            height: pxTorem(82px);
+            border-bottom: pxTorem(1px) solid #e1e1e1;
+            border-top: pxTorem(1px) solid #e1e1e1;
+            float: left;
+            position: relative;
+            img {
+                position: absolute;
+                width: pxTorem(58px);
+                height: pxTorem(58px);
+                top: pxTorem(17px);
+                left: pxTorem(58px);
+            }
+            span {
+                font-size: pxTorem(31px);
+                line-height: pxTorem(82px);
+                padding-left: pxTorem(137px);
+                color: #818086;
+            }
+        }
+        i {
+            display: block;
+            width: pxTorem(2px);
+            height: pxTorem(60px);
+            background: #e0e0e0;
+            top: pxTorem(9px);
+            left: calc(50% - 1px);
+            position: absolute;
+        }
+    }
+    
+    .big_pic {
+        width: 100%;
+        height: pxTorem(311px);
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .artical_list {
+        padding: 0 pxTorem(16px);
+        text-align: center;
+        li {
+            height: pxTorem(80px);
+            border-bottom: pxTorem(2px) solid #ececec;
+            line-height: pxTorem(80px);
+            font-size: pxTorem(30px);
+            color: #272727;
+        }
+        li:last-child {
+            border-bottom: 0 solid #ececec;
+        }
+    }
+    
+    .content_box {
+        height: pxTorem(754px);
+        width: 100%;
+        border-top: pxTorem(4px) solid #58c1b0;
+        .content_title {
+            height: pxTorem(80px);
+            background: #f8f8f8;
+            position: relative;
+            padding: 0 pxTorem(30px);
+            @extend .clearfix;
+            span {
+                font-size: pxTorem(30px);
+                color: black;
+                line-height: pxTorem(80px);
+                float: left;
+            }
+            img {
+                width: pxTorem(58px);
+                height: pxTorem(59px);
+                float: right;
+                padding-top: pxTorem(10px);
+            }
+        }
+        .content_tab {
+            @extend .clearfix;
+            height: pxTorem(82px);
+            padding: 0 pxTorem(30px);
+            border-top: pxTorem(2px) solid #e2e2e2;
+            border-bottom: pxTorem(2px) solid #e2e2e2;
+            position: relative;
+            li {
+                float: left;
+                line-height: pxTorem(82px);
+                font-size: pxTorem(30px);
+                margin-right: pxTorem(66px);
+                color: #313131;
+            }
+            .on {
+                height: pxTorem(4px);
+                width: pxTorem(125px);
+                background: #d43553;
+                position: absolute;
+                top: pxTorem(82px);
+                left: pxTorem(-30px);
+            }
+        }
+        .content_main {
+            height: pxTorem(260px);
+            // width: 100%;
+            padding: 0 pxTorem(30px);
+            p {
+                font-size: pxTorem(32px);
+                padding-top: pxTorem(25px);
+                padding-bottom: pxTorem(23px);
+            }
+            .main_box {
+                @extend .clearfix;
+                // height: pxTorem(208px);
+                img {
+                    width: pxTorem(208px);
+                    height: pxTorem(148px);
+                    float: left;
+                    margin-right: pxTorem(28px);
+                }
+                span {
+                    display: block;
+                    font-size: pxTorem(28px);
+                    line-height: pxTorem(51px);
+                    color: #8a8a8a;
+                }
+            }
+        }
+        ol {
+            padding: 0 pxTorem(30px);
+            li {
+                height: pxTorem(80px);
+                border-top: pxTorem(2px) solid #ececec;
+                font-size: pxTorem(31px);
+                line-height: pxTorem(80px);
+            }
+        }
+    }
+    
+    footer {
+        .toTop {
+            width: 100%;
+            height: pxTorem(120px);
+            border-top: pxTorem(2px) solid #ececec;
+            border-bottom: pxTorem(4px) solid #4dcaa8;
+            background: #fafafa;
+            position: relative;
+            img {
+                width: pxTorem(58px);
+                height: pxTorem(57px);
+                position: absolute;
+                top: pxTorem(35px);
+                left: pxTorem(220px);
+            }
+            p {
+                font-size: pxTorem(30px);
+                color: #88878c;
+                position: absolute;
+                top: pxTorem(40px);
+                left: pxTorem(296px);
+            }
+        }
+        .bottom_box {
+            height: pxTorem(150px);
+            width: 100%;
+            @extend .clearfix;
+            background: #262626;
+            position: relative;
+            div {
+                float: left;
+                width: 50%;
+                height: pxTorem(150px);
+                position: relative;
+            }
+            .bottomPic1 {
+                width: pxTorem(58px);
+                height: pxTorem(50px);
+                position: absolute;
+                top: pxTorem(56px);
+                left: pxTorem(81px);
+            }
+            .bottomPic2 {
+                width: pxTorem(32px);
+                height: pxTorem(55px);
+                position: absolute;
+                top: pxTorem(53px);
+                left: pxTorem(70px);
+            }
+            .pc {
+                font-size: pxTorem(28px);
+                display: block;
+                position: absolute;
+                top: pxTorem(62px);
+                right: pxTorem(83px);
+                color: #c5c5c5;
+            }
+            .mo {
+                font-size: pxTorem(28px);
+                display: block;
+                position: absolute;
+                top: pxTorem(62px);
+                right: pxTorem(75px);
+                color: #c5c5c5;
+            }
+            .cut_line {
+                height: pxTorem(76px);
+                width: pxTorem(2px);
+                background: #686868;
+                position: absolute;
+                top: pxTorem(36px);
+                left: calc(50% - 1px);
+            }
+        }
+    }

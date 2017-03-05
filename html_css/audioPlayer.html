@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        audio {
+            /*display: none;*/
+        }
+        
+        li {
+            cursor: pointer;
+        }
+        
+        .on {
+            color: red;
+        }
+    </style>
+    <script>
+        function rnd(n, m) {
+            return parseInt(Math.random() * (m - n) + n);
+        }
+        window.onload = function () {
+            mp3Arr = [
+                '家入レオ - Shine.mp3',
+                '家入レオ - Silly.mp3',
+                '96猫 - トルコ行進曲 - オワタ＼(^o^).mp3',
+                '陈一发儿 - 童话镇.mp3'
+            ];
+            var oA = document.querySelector('audio');
+            var aLi = document.querySelectorAll('li');
+            var aBtn = document.querySelectorAll('input');
+            var iNow = 0;
+
+            function playPlay(index) {
+                for (var i = 0; i < aLi.length; i++) {
+                    aLi[i].className = '';
+                }
+                aLi[index].className = 'on';
+                oA.src = mp3Arr[index];
+                oA.play();
+            }
+            for (var i = 0; i < aLi.length; i++) {
+                aLi[i].index = i;
+                aLi[i].ondblclick = function () {
+                    iNow = this.index;
+                    playPlay(iNow);
+                }
+            }
+            aBtn[0].onclick = function () {
+                oA.playState = 1;
+            };
+            aBtn[1].onclick = function () {
+                oA.playState = 2;
+            };
+            aBtn[2].onclick = function () {
+                oA.playState = 3;
+            };
+            aBtn[3].onclick = function () {
+                oA.playState = 4;
+            };
+            oA.onended = function () {
+                switch (oA.playState) {
+                    case 1:
+                        //单曲循环
+                        oA.play();
+                        break
+                    case 2:
+                        iNow++;
+                        if (iNow < mp3Arr.length) {
+                            playPlay(iNow);
+                        }
+
+                        break
+                    case 3:
+                        iNow = rnd(0, mp3Arr.length);
+                        playPlay(iNow);
+                        break
+                    case 4:
+                        iNow++;
+                        if (iNow == mp3Arr.length) {
+                            iNow = 0;
+                        }
+                        playPlay(iNow);
+                        break
+                }
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <audio src="家入レオ - Shine.mp3" controls>
+    </audio>
+    <ul>
+        <li>Shine</li>
+        <li>Silly</li>
+        <li>トルコ行進曲 - オワタ＼(^o^)</li>
+        <li>童话镇</li>
+    </ul>
+    <input type="button" name="" value="单曲循环">
+    <input type="button" name="" value="顺序播放">
+    <input type="button" name="" value="随机播放">
+    <input type="button" name="" value="循环播放">
+
+</body>
+
+</html>

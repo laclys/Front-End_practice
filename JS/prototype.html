@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var arr = [1, 2, 3, 4];
+        Array.prototype.charAt = function (n) {
+            return this[n];
+        }
+        console.log(arr.charAt(1));
+        var str = '     asdasd    ';
+        String.prototype.trim =String.prototype.trim||function () {
+            /*var arr = this.split(''); 
+            var str = '';
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i]!=' ') {
+                    str += arr[i];
+                }
+            }*/
+            return this.replace(/^\s+|\s+$/g,'');
+        }
+        alert(str.trim());
+        var oDate=new Date();
+        Date.prototype.getCnDay=function(){
+            var arr=['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+           return arr[this.getDay()];
+        }
+        console.log(oDate.getCnDay());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

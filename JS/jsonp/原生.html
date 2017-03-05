@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function show(data) {
+            var oUl = document.getElementById('ull');
+            var arr = data.s;
+            oUl.innerHTML='';
+            for(var i=0;i<arr.length;i++){
+                var oLi=document.createElement('li');
+                oLi.innerHTML=arr[i];
+                oUl.appendChild(oLi);
+            }
+        }
+
+        window.onload = function () {
+            /*        Request URL:https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=&json=1&p=3&sid=1424_21114_17001_21930_22036&req=2&sc=eb&csor=0&cb=jQuery1102046236072265332595_1487773614923&_=1487773614925*/
+            var oT = document.getElementById('inp');
+            oT.oninput = function () {
+                var str = oT.value;
+                var oScript = document.createElement('script');
+                oScript.src = `https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${str}&cb=show`;
+                document.head.appendChild(oScript);
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <input type="text" name="" value="" id="inp">
+    <input type="button" name="" value="baidu" id="inp">
+    <ul id="ull">
+
+    </ul>
+</body>
+
+</html>

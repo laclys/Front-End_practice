@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+    <script>
+        function setCss3Style(obj, name, value) {
+            // obj['style'][name] = value;
+            obj['style']['Webkit' + name.charAt(0).toUpperCase() + name.slice(1)] = value;
+            obj['style']['Moz' + name.charAt(0).toUpperCase() + name.slice(1)] = value;
+            obj['style']['O' + name.charAt(0).toUpperCase() + name.slice(1)] = value;
+            obj['style']['ms' + name.charAt(0).toUpperCase() + name.slice(1)] = value;
+        } 
+        window.onload = function () {
+            // var obox = document.getElementsByTagName('div')[0];
+            var obox=document.getElementById('box');
+            setCss3Style(obox, 'transform', 'translate(200px)'); 
+            // obox.style.WebkitTransform='translate(200px)';
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+</body>
+
+</html>
