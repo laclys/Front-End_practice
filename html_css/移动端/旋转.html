@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 50px auto;
+        }
+    </style>
+    <script>
+        function a2d(n) {
+            return n * 180 / Math.PI
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            var oDiv = document.getElementsByTagName('div')[0];
+            oDiv.addEventListener('touchstart', function (ev) {
+                function getDeg(ev) {
+                    var x1 = ev.targetTouches[0].pageX - (oDiv.offsetWidth / 2 + oDiv.offsetLeft);
+                    var y1 = (oDiv.offsetHeight / 2 + oDiv.offsetTop) - ev.targetTouches[0].pageY;
+                    var d = Math.atan2(x1, y1);
+                    return a2d(d);
+                }
+
+                // Math.atan2(x1,y1);
+                var downD = getDeg(ev);
+                // alert(downD);
+                document.addEventListener('touchmove', function (ev) {
+                    var moveD = getDeg(ev);
+                    // alert(moveD);
+                    oDiv.style.webkitTransform = `rotate(-${downD-moveD}deg)`;
+                }, false);
+                ev.preventDefault();
+            }, false);
+        }, false);
+    </script>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

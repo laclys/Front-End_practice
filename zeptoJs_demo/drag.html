@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            background: darkred;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script src="zepto.js"></script>
+    <script>
+        $(function () {
+            var x = 0;
+            var y = 0;
+            var oDiv = $('div');
+            oDiv.on('touchstart', function (ev) {
+                var disX = ev.targetTouches[0].pageX - x;
+                var disY = ev.targetTouches[0].pageY - y;
+                console.log(disX+':'+disY);
+                $(document).on('touchmove', function (ev) {
+                    x = ev.targetTouches[0].pageX - disX;
+                    y = ev.targetTouches[0].pageY - disY;
+                    console.log(x + ':' + y);
+                    oDiv.css({
+                        '-webkit-transform': 'translate3d(' + x + 'px,' + y + 'px,0)'
+                    });
+                    // console.log(this);
+                });
+                $(document).on('touchend', function (ev) {
+                    $(document).off('touchmove', 'touchend');
+                });
+                ev.preventDefault();
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>
