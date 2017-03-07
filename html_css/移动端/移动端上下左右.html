@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        html {
+            font-size: 20px;
+        }
+        
+        #box {
+            width: 16rem;
+            height: 60rem;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        #box ul {
+            width: 96rem;
+            overflow: hidden;
+        }
+        
+        #box ul li {
+            width: 16rem;
+            float: left;
+            height: 60rem;
+            text-align: center;
+            /*line-height: 5rem;*/
+            /*color: #fff;*/
+            font-size: 11rem;
+        }
+    </style>
+    <script>
+        //自适应
+        (function (doc, win) {
+            function change() {
+                doc.documentElement.style.fontSize = 20 * doc.documentElement.clientWidth / 320 + 'px';
+            }
+            change();
+            win.addEventListener('resize', change, false);
+        })(document, window);
+        document.addEventListener('DOMContentLoaded', function (ev) {
+            var oUl = document.querySelector('#box ul');
+            var aLi = oUl.children;
+            var x = 0;
+            var y = 0;
+            var iNow = 0;
+            var dir = '';
+            oUl.addEventListener('touchstart', function (ev) {
+
+                var downX = ev.targetTouches[0].pageX;
+                var downY = ev.targetTouches[0].pageY;
+
+                var disX = downX - x;
+                var disY = downY - y;
+                console.log(disX + ':' + disY);
+                oUl.style.WebkitTransition = 'none';
+
+                function fnMove(ev) {
+                    if (dir) {
+                        if (dir == 'lr') {
+                            //水平
+                            console.log('水平移动');
+
+                            x = ev.targetTouches[0].pageX - disX;
+                            oUl.style.WebkitTransform = 'translateX(' + x + 'px)';
+
+                        } else if (dir == 'tb') {
+                            //上下
+                            console.log('上下移动');
+                        }
+                    } else {
+                        if (Math.abs(ev.targetTouches[0].pageX - downX) > 20) {
+                            dir = 'lr';
+                        } else if (Math.abs(ev.targetTouches[0].pageY - downY) > 20) {
+                            dir = 'tb';
+                        }
+                    }
+                }
+
+                function fnEnd(ev) {
+                    if (dir == 'lr') {
+                        var upX = ev.changedTouches[0].pageX;
+                        if (Math.abs(upX - downX) > 80) {
+                            //到下一张
+                            if (downX > upX) {
+                                iNow++;
+                                if (iNow == aLi.length) {
+                                    iNow = aLi.length - 1
+                                }
+                            } else {
+                                iNow--;
+                                if (iNow == -1) {
+                                    iNow = 0;
+                                }
+                            }
+                        }
+                        x = -iNow * aLi[0].offsetWidth;
+                        oUl.style.WebkitTransition = '.5s all ease';
+                        oUl.style.WebkitTransform = 'translate(' + x + 'px)';
+                    }
+                    dir = '';
+                    document.removeEventListener('touchmove', fnMove, false);
+                    document.removeEventListener('touchend', fnEnd, false);
+
+                }
+                document.addEventListener('touchmove', fnMove, false);
+                document.addEventListener('touchend', fnEnd, false);
+            }, false);
+        }, false);
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li style="background: deepskyblue">0<br>1<br>2<br>3</li>
+            <li style="background: orangered">0<br>1<br>2<br>3</li>
+            <li style="background: greenyellow">0<br>1<br>2<br>3</li>
+        </ul>
+    </div>
+</body>
+
+</html>
