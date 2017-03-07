@@ -32,9 +32,9 @@
     <script>
         $(function(){
             var aLi=$('ul li');
-            aLi.on('swipeLeft',function(ev){
-                $(this).css('background','yellow');
-            })
+            aLi.swipe(function(ev){
+                $(this).remove();
+            });
         });
     </script>
 </head>
