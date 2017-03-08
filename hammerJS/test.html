@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        div {
+            width: 250px;
+            background: red;
+            height: 250px;
+            margin: 20px auto;
+        }
+    </style>
+    <script src="hammer.min.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv = document.querySelector('div');
+            var oldD = 0;
+            var hammer = new Hammer(oDiv);
+            hammer.get('rotate').set({
+                enable: true
+            });
+            hammer.on('rotatestart', function (ev) {
+                oldD=ev.rotation;
+                ev.preventDefault();
+            });
+            hammer.on('rotatemove',function(ev){
+                var disD=ev.rotation-oldD;
+                oDiv.style.webkitTransform='rotate('+disD+'deg)';
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

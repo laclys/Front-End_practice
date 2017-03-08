@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            /* var aLi=document.querySelectorAll('ul li');
+                        for(var i=0;i<aLi.length;i++){
+                            aLi[i].onclick=function(){
+                                alert(i);
+                            }
+                        }*/
+            /*现在弹出结果是4*4，原因是没有块作用域*/
+            //~~~~~~~~~~~~~~~~~~~~思路一封闭空间（1）
+            /*var aLi = document.querySelectorAll('ul li');
+            for (var i = 0; i < aLi.length; i++) {
+                (function (index) {
+                    aLi[index].onclick=function(){
+                         alert(index);
+                    }
+                })(i)
+            }*/
+            //~~~~~~~~~~~~~~~~~~~~思路一封闭空间（2）
+            /*var aLi = document.querySelectorAll('ul li');
+            for (var i = 0; i < aLi.length; i++) {
+                ! function (node, index) {
+                    node.onclick = function () {
+                        alert(index);
+                    }
+                }(aLi[i], i);
+            }*/
+            //~~~~~~~~~~~~~~~~~~~~let
+            var aLi = document.querySelectorAll('ul li');
+            for (let i = 0; i < aLi.length; i++) {
+                aLi[i].onclick = function () {
+                    alert(i);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>0</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+
+</html>
