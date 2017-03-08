@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            background: black;
+        }
+        
+        body,
+        html {
+            background: white;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        function rnd(n, m) {
+            return Math.floor(Math.random() * ((m - n) + n));
+        }
+        window.onload = function () {
+            var oC = document.getElementById('cc');
+            var gd = oC.getContext('2d');
+            var winW = document.documentElement.clientWidth;
+            var winH = document.documentElement.clientHeight;
+            oC.width = winW;
+            oC.height = winH;
+
+            var N = 6;
+            var aPoint = [];
+
+            for (var i = 0; i < N; i++) {
+                aPoint[i] = {
+                    x: rnd(0, winW),
+                    y: rnd(0, winH),
+                    iSpeedX: rnd(-10, 10),
+                    iSpeedY: rnd(-10, 10)
+                }
+            }
+            var LEN = 10;
+            var oldArr = [];
+ 
+            function drawPoint(p) {
+                var pW = 10;
+                var pH = 10;
+                gd.fillStyle = 'white';
+                gd.fillRect(p.x - pW / 2, p.y - pH / 2, pW, pH);
+            }
+            setInterval(function () {
+                gd.clearRect(0, 0, oC.width, oC.height);
+                for (var i = 0; i < aPoint.length; i++) {
+                    aPoint[i].x += aPoint[i].iSpeedX;
+                    aPoint[i].y += aPoint[i].iSpeedY;
+                    if (aPoint[i].y >= winH) {
+                        aPoint[i].y = winH;
+                        aPoint[i].iSpeedY *= -1;
+                    }
+                    if (aPoint[i].x >= winW) {
+                        aPoint[i].x = winW;
+                        aPoint[i].iSpeedX *= -1;
+                    }
+                    if (aPoint[i].y <= 0) {
+                        aPoint[i].y = 0;
+                        aPoint[i].iSpeedY *= -1;
+                    }
+                    if (aPoint[i].x <= 0) {
+                        aPoint[i].x = 0;
+                        aPoint[i].iSpeedX *= -1;
+                    }
+                    drawPoint(aPoint[i]);
+                }
+                gd.beginPath();
+                gd.strokeStyle = 'white';
+                gd.moveTo(aPoint[0].x, aPoint[0].y);
+                for (var i = 1; i < aPoint.length; i++) {
+                    gd.lineTo(aPoint[i].x, aPoint[i].y);
+                }
+
+                gd.closePath();
+                gd.stroke();
+
+                var arr = [];
+                for (var i = 0; i < aPoint.length; i++) {
+                    arr[i] = {
+                        x: aPoint[i].x,
+                        y: aPoint[i].y,
+
+                    }
+                }
+                oldArr.push(arr);
+                if (oldArr.length > LEN) {
+                    oldArr.shift();
+                }
+                for (var i = 0; i < oldArr.length; i++) {
+                    gd.beginPath();
+                    var opacity = i / oldArr.length;
+                    gd.strokeStyle = 'rgba(255,255,255,' + opacity + ')';
+                    gd.moveTo(oldArr[i][0].x, oldArr[i][0].y);
+                    for (var j = 1; j < oldArr[i].length; j++) {
+                        gd.lineTo(oldArr[i][j].x, oldArr[i][j].y);
+                    }
+                    gd.closePath();
+                    gd.stroke();
+                }
+            }, 16);
+        };
+    </script>
+</head>
+
+<body>
+    <canvas id="cc">
+        <span>您的浏览器版本过低</span>
+    </canvas>
+</body>
+
+</html>

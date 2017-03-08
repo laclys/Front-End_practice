@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            background: white;
+        }
+        
+        body {
+            background: black;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var oC=document.getElementById('cc');
+            var gd=oC.getContext('2d');
+            gd.moveTo(306,237);
+            gd.lineTo(401,85);
+            gd.lineTo(490,234);
+            
+            gd.strokeStyle='red';
+            gd.lineWidth=30; 
+
+            gd.closePath();
+            gd.fillStyle='yellow'
+            gd.fill();
+            gd.stroke();
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="cc"  width="800px" height="600px">
+        <span>您的浏览器版本过</span>
+    </canvas>
+</body>
+
+</html>

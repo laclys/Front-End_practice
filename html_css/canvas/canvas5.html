@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        canvas {
+            background: white;
+            padding: 50px 50px 0 50px;
+        }
+        
+        body {
+            background: black;
+        }
+    </style>
+    <script>
+        function rnd(n, m) {
+            return Math.floor(Math.random()*((m - n) + n));
+        }
+        window.onload = function () {
+            var oC = document.getElementById('cc');
+            var gd = oC.getContext('2d');
+            var arr = [300, 200, 50, 80, 250, 800]; 
+            var iMax = Math.max.apply(null, arr);
+            var aHeight = [];
+            for (var i = 0; i < arr.length; i++) {
+                aHeight[i] = arr[i] / iMax * oC.height;
+            }
+            var w = oC.width / (3 * aHeight.length-2);
+            var space = w * 2;
+            for (var i = 0; i < aHeight.length; i++) {
+                gd.fillStyle = `rgba(${rnd(0,256)},${rnd(0,256)},${rnd(0,256)},0.7)`;
+                //  gd.strokeRect(i * w + space * i, oC.height - aHeight[i], w, aHeight[i]);
+                gd.fillRect(i * w + space * i, oC.height - aHeight[i], w, aHeight[i]);
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="cc" width="800px" height="600px">
+        <span>您的浏览器版本过低</span>
+    </canvas>
+</body>
+
+</html>
