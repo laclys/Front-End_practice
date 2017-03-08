@@ -34,6 +34,7 @@
             var scrollT = document.documentElement.scrollTop || document.body.scrollTop;
             for (var i = 0; i < aImg.length; i++) {
                 var oImgT = aImg[i].offsetTop;
+                console.log(oImgT);
                 if (scrollT + clientH >= oImgT - 20) {
                     aImg[i].src = aImg[i].getAttribute('_src');
                 }

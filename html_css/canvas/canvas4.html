@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		background: black;
+	}
+	canvas{
+		background: #fff;
+	}
+	</style> 
+	<script>
+	function rnd(n,m){
+		return Math.floor(Math.random()*(m-n)+n);
+	}
+		window.onload=function(){
+			var oC=document.getElementById('c1');
+			var gd=oC.getContext('2d'); //得到画笔
+			gd.lineWidth=1;
+			var N=100;
+			var arr=[];//{x:坐标，y:坐标}
+			for(var i=0;i<N;i++){
+				arr[i]={
+					x:rnd(0,oC.offsetWidth),
+					y:rnd(0,oC.offsetWidth)}
+			}
+			gd.beginPath();    //创建新的路径
+
+			gd.strokeStyle='rgb('+rnd(0,256)+','+rnd(0,256)+','+rnd(0,256)+')';
+			gd.stroke();
+/*			gd.fillStyle='#ccc';//填充色
+			gd.fill();*/
+			gd.moveTo(arr[0].x,arr[0].y);
+			for(var i=1;i<arr.length;i++){
+				gd.lineTo(arr[i].x,arr[i].y);
+
+			}
+			gd.closePath();
+			gd.stroke();
+
+		}
+	</script>
+</head>
+<body>
+	<canvas id="c1" width="600" height="600">
+	<span>您的浏览器版本过低</span>
+	</canvas>
+</body>
+</html>
