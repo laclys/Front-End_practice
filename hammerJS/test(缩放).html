@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        div {
+            width: 250px;
+            background: red;
+            height: 250px;
+            margin: 20px auto;
+        }
+    </style>
+    <script src="hammer.min.js"></script>
+    <script>
+        window.onload = function () {
+            var oDiv = document.querySelector('div');
+            var oldD = 0;
+            var hammer = new Hammer(oDiv);
+            hammer.get('pinch').set({
+                enable: true
+            });
+            hammer.on('pinchstart', function (ev) {
+                oldD=ev.scale;
+                ev.preventDefault();
+            });
+            hammer.on('pinchmove',function(ev){
+                var disD=ev.scale-oldD;
+                oDiv.style.webkitTransform='scale('+disD+')';
+            });
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>
