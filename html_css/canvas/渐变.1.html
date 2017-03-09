@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+        #c1 {
+            background: white;
+        }
+    </style>                                                                      
+    <script>
+        window.onload = function () {
+            var oC = document.getElementById('c1');
+        
+            var gd = oC.getContext('2d');
+
+            var ra=gd.createRadialGradient(200,200,40,200,200,120);
+            ra.addColorStop(0,'yellow');
+            ra.addColorStop(0.5,'pink');
+            ra.addColorStop(1,'red');
+            gd.fillStyle=ra;
+            gd.fillRect(100,100,200,200);
+            // gd.stroke();
+            document.onclick=function(){
+                var src=oC.toDataURL();
+                var oImg=new Image();
+                oImg.src=src;
+                document.body.appendChild(oImg);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="c1" width="800" height="600"></canvas>
+</body>
+
+</html>

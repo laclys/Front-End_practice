@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			body{
+				background: #000;
+			}
+			#c1{ 
+				background: #fff;
+			}
+		</style>
+		<script type="text/javascript">
+		function d2a(n){
+				return n*Math.PI/180
+			}
+			/*function rnd(n,m){
+				return Math.floor(Math.random()*(m-n)+n);
+			}*/
+			window.onload=function(){
+				var oC=document.getElementById('c1');
+				
+				var gd=oC.getContext('2d');
+				
+				gd.lineWidth=20;
+				
+				var d=0;
+				var cx=200;
+				var cy=200;
+				
+			function drawArc(start,end,r,color){
+					start=start-90;
+					end=end-90;
+					gd.beginPath();
+					gd.strokeStyle=color;
+					gd.lineWidth=20;
+					gd.arc(cx,cy,r,d2a(start),d2a(end),false);
+					gd.stroke();
+				}
+			//时钟
+			setInterval(function(){
+				gd.clearRect(0,0,oC.width,oC.height);
+				var oDate=new Date();
+				var h=oDate.getHours();
+				var m=oDate.getMinutes();
+				var s=oDate.getSeconds();
+				
+				drawArc(0,h%12*30,80,'pink');
+				drawArc(0,m*6,60,'blue');
+				drawArc(0,s*6,40,'yellow');
+			},1000)
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="800" height="600">
+			<span>您的版本过低</span>
+		</canvas>
+	</body>
+</html>
