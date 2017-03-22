@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('board', function ($scope) {
+            $scope.content = []; 
+            $scope.msg = '';
+            $scope.doit = function () {
+                $scope.content.unshift($scope.msg);
+                $scope.msg = '';
+            }
+            $scope.remove = function (i) {
+                $scope.content.splice(i, 1);
+            };
+
+
+        });
+    </script>
+</head>
+
+<body ng-app="app" ng-controller="board">
+    <input type="text" name="" ng-model="msg">
+    <input type="button" value="button" ng-click="doit()">
+    <hr>
+    <ul>
+        <li ng-repeat="v in content">
+            {{v}}<a href="javascript:;" ng-click="remove($index)">删除</a>
+        </li>
+
+    </ul>
+</body>
+
+</html>

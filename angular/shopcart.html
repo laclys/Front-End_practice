@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.1.1.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous"> 
+
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .list {
+            margin-left: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed gray;
+        }
+
+        .red {
+            color: red;
+        }
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('shopcart', function ($scope) {
+            $scope.data = [{
+                name: 'iphone7',
+                price: 5888,
+                num: 0
+            }, {
+                name: 'iphone6',
+                price: 3888,
+                num: 0
+            }, {
+                name: 'iphoneSE',
+                price: 2888,
+                num: 0
+            }];
+            $scope.sum = function () {
+                var sum = 0;
+                angular.forEach($scope.data, function (v, i) {
+                    sum += v.price * v.num;
+                });
+                return sum;
+            }
+
+        });
+    </script>
+</head>
+
+<body ng-app="app">
+    <!--<ul ng-controller="shopcart">
+        <li class="list" ng-repeat="v in data">
+            <p>Name:{{v.name}}</p>
+            <p>Price:{{v.price}}</p>
+            Num: <input type="number" name="num" min=0 max=10 ng-model=v.num>
+            <p>Total:{{v.price*v.num}}</p>
+        </li>
+        <p class="red">All:{{sum()}}</p>
+    </ul>-->
+    <table class="table table-striped" ng-controller="shopcart">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Num</td>
+                <td>Total</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="v in data">
+                <td>{{v.name}}</td>
+                <td>{{v.price|currency:'￥'}}</td>
+                <td><input type="number" name="num" min=0 max=10 ng-model=v.num></td>
+                <td>{{v.price*v.num|currency:'￥'}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    ALL:{{sum()|currency:'￥'}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
