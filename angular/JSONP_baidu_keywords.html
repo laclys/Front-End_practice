@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./a/angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('show', function ($scope, $http, $sce) {
+            $scope.arr = [];
+            $scope.msg = '';
+            $scope.$watch('msg', function () {
+                var url = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su';
+                var temp = $scope.msg;
+                console.log(temp);
+                $http.jsonp(
+                    $sce.trustAsResourceUrl(url), {
+                        params: {
+                            wd: temp
+                        },
+                        jsonpCallbackParam: 'cb'
+                    }
+                ).then(function (res) {
+                    // alert(res.data.s)
+                    $scope.arr = res.data.s;
+                }, function (res) {
+                    alert('res')
+                });
+            });
+        });
+    </script>
+</head>
+
+<body ng-controller="show">
+    <input type="text" ng-model="msg">
+    <ul>
+        <li ng-repeat="v in arr">{{v}}</li>
+    </ul>
+</body>
+
+</html>

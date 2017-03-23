@@ -1,0 +1,1 @@
+window.onload=function(){console.log(11),console.log(123);!function(n1,n2){console.log(n1+n2)}(123,123)};

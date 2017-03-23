@@ -34,7 +34,7 @@
                 ev.preventDefault();
             });
             hammer.on('pinchemove',function(ev){
-                var disS=ev.scale
+                var disS=ev.scale-oldS
                 oDiv.style.webkitTransform='scale('+disS+')';
             });
         };

@@ -42,9 +42,25 @@
   
   > * 手风琴运动效果
    
+  > * VelocityJs插件Demo（模拟慕课网）
+  
+  > * JQ-ui/echartJs/fancyBox插件小Demo
+  
+  > * 移动端相关事件练习
+   
 6,IE6bug解决方案（via Internet）
 
 7,SASS作成，并使用原生JS和JQ添加动态效果的前端页面练习（sass_web2/yunDao）
+
+8,移动端自适应布局页面练习
+
+9,LESS语法尝试Demo
+
+10,移动端zepotoJS/hammerJS练习及demo
+
+11,H5新特性运用练习
+
+12,canvasDemo
 。
 
 。

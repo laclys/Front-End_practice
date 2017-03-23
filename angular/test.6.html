@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('show', function ($scope) {
+            $scope.arr=[1,2,3,4,5];
+        });
+    </script>
+</head>
+
+<body>  
+    <div ng-controller="show">
+        <input type="text" name="" ng-model="msg">
+        <ul>
+            <li ng-repeat="v in arr">{{v}}</li>
+        </ul>
+    </div>
+</body>
+
+</html>

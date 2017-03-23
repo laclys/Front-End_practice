@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background: black;
+        }
+         
+        #c1 {
+            background: white;
+        }
+    </style>                                                                     
+    <script>
+        window.onload = function () {
+            var oC = document.getElementById('c1');
+        
+            var gd = oC.getContext('2d');
+            gd.strokeStyle='orange'
+            gd.lineWidth=2
+            gd.font='90px 楷体';
+            gd.shadowOffsetX=20;
+            gd.shadowOffsetY=20;
+            gd.shadowColor='red';
+            gd.shadowBlur=20;
+            gd.strokeText('萨瓦迪卡',100,100);
+            gd.stroke();
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="c1" width="800" height="600"></canvas>
+</body>
+
+</html>

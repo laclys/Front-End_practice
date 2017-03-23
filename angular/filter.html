@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('show', function ($scope) {
+            $scope.data=[
+                { 
+                    name:'zyy1',
+                    age:18
+                },
+                {
+                    name:'lac',
+                    age:28
+                },
+                {
+                    name:'mac',
+                    age:19
+                },
+                {
+                    name:'zhang',
+                    age:99
+                },
+            ]
+
+        });
+    </script>
+</head>
+
+<body ng-controller="show">
+    <input type="text" name="" ng-model="msg">
+    <hr>
+    <ul>
+        <li ng-repeat="v in data|filter:msg">
+           {{v.name}}----------------{{v.age}}
+        </li>
+
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body { 
+            background: black;
+        }
+        
+        #c1 {
+            background: white;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oC = document.getElementById('c1');
+
+            var gd = oC.getContext('2d');
+            /*gd.fillStyle = 'red';
+            var x = 100;
+            var y = 100;
+            var w = 100;
+            var h = 100;
+            gd.fillRect(x, y, w, h);
+            oC.onclick = function (ev) {
+                if (ev.clientX > x && ev.clientX < x + w && ev.clientY > y && ev.clientY < y + h) {
+                    alert(1);
+                }
+            }*/
+            /*gd.fillStyle = 'red';
+                        var x = 200;
+                        var y = 200;
+                        var r = 100;
+                        gd.arc(x, y, r, 0, Math.PI * 2, false);
+                        gd.fill();
+                        oC.onclick = function (ev) {
+                            var a = x - ev.clientX;
+                            var b = y - ev.clientY;
+                            var c = Math.sqrt(a * a + b * b);
+                            if (c < r) {
+                                alert(1);
+                            }
+                        }*/
+            // gd.fillStyle = 'red';
+            var x = 100;
+            var y = 100;
+            var w = 100;
+            var h = 100;
+            gd.rect(x, y, w, h);
+            gd.stroke();
+            oC.onclick = function (ev) {
+                if (gd.isPointInPath(ev.clientX,ev.clientY)) {
+                    alert(1);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="c1" width="800" height="600"></canvas>
+</body>
+
+</html>

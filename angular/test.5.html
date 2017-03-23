@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        p {
+            width: 200px;
+            height: 200px
+        }
+    </style>
+    <script src="angular.js"></script>
+</head>
+
+<body ng-init="arr=[1,2,3,4,5,6,7,8]">
+    <input type="text" name="t1" ng-model="msg">
+    <input type="button" name="t2" value="button" ng-click="arr.push(msg)">
+    <ul> 
+        <li ng-repeat="v in arr track by $index">{{v}}</li>
+    </ul>
+</body>
+
+</html>

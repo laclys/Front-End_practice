@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script src="angular.js"></script>
+    <script>
+        var app = angular.module('app', []);
+        app.controller('show', function ($scope) {});
+        app.directive('ngBlue', function () {
+            return {
+                link: function (scope, element, attr) {
+                    element.css('color', 'red');
+                },
+                restrict:'ECMA',
+                replace:true,
+                template:'<div>111</div>'
+
+            } 
+        });
+    </script>
+</head>
+
+<body>
+    <div ng-controller="show">
+        <p ng-blue>啊啊啊</p>
+        <ng-blue>啊啊啊</ng-blue>
+        <!-- directive:ng-blue -->
+    </div>
+</body>
+
+</html>
