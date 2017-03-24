@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+    <style>
+    #list123{
+        color: blue;
+    }
+    </style>
+    <script src="angular1-5-6.js"></script>
+    <script src="angular-route.js"></script>
+    <script type="text/ng-template" id="index">
+        <p>{{con}}</p>
+        <p>{{title}}</p>
+    </script>
+    <script type="text/ng-template" id="list">
+        <ul id="list123">
+            <li ng-repeat="v in arr">{{v}}</li>
+
+        </ul>
+    </script>
+
+    <script>
+        var app = angular.module('app', ['ngRoute']);
+        app.config(function ($routeProvider) {
+            $routeProvider.when('/index', {
+                templateUrl: 'index',
+                controller:'indexCon'
+            }).when('/list', {
+                templateUrl: 'list',
+                controller:'listCon'
+            }).otherwise(
+                {
+                    redirectTo:'/index'
+                }
+            )
+        })
+        app.controller('indexCon',function($scope){
+            $scope.con='hahahah';
+            $scope.title='index';
+        })
+        app.controller('listCon',function($scope){
+            $scope.arr=[1,2,3,4,5];
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#/index">index</a>
+        </li>
+        <li>
+            <a href="#/list">list</a>
+        </li>
+    </ul>
+    <div ng-view>
+
+    </div>
+</body>
+
+</html>
