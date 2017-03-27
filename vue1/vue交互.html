@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    </style>
+    <script src="vue.js"></script>
+    <script src="vue-resource.js"></script>
+    <script>
+        window.onload = function () {
+            var vue = new Vue({
+                el: '.box',//范围 选择器\\
+                data: {
+                    msg:''
+                },
+                methods: {
+                    get: function () {
+                        this.$http.get('a.txt').then(function (res) {
+                            console.log(res.data);
+                            this.msg=res.data;
+                        }, function () {
+                            aler('gg');
+                        }) 
+                    }
+                }
+
+            });
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <input type="button" value="click" @click="get()">
+    <br>
+    {{msg}}
+</div>
+</body>
+</html>
