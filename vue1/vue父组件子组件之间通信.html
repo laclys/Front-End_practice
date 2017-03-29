@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+    <script src="vue.js"></script>
+    <template id="tem1">
+        <div>
+            <h3 @click="send">{{msg}}</h3>
+            <i @click="show">{{p1.a}}</i>
+
+        </div>
+    </template>
+
+    <script>
+        window.onload = function () {
+            Vue.component('hahaha', {
+                template: '#tem1',
+                props: ['p1'],
+                // props:[{
+                //     "p1":String
+                // }],
+                data() {
+                    return {
+                        msg: "子"
+                    }
+                },
+                methods: {
+                    show() {
+                        this.p1.a = 'change now';
+                    },
+                    send() {
+                        this.$emit('childsay', this.msg);
+                    }
+                }
+            })
+            var vue = new Vue({
+                el: '.box', //范围 选择器\\
+                data: {
+                    msg: {
+                        a: '父'
+                    },
+                    child: ''
+                },
+                methods: {
+                    saywhat(d) {
+                        this.child = d;
+                    }
+                },
+                // components:{
+                //     'my-con1':{
+                //         template:'<h1>组件</h1>'
+                //     }
+                // }
+
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        {{msg.a}}
+        <br> {{child}}
+        <!--<my-con1></my-con1>-->
+        <hr>
+        <hahaha :p1="msg" @childsay="saywhat"></hahaha>
+        <hr>
+    </div>
+</body>
+
+</html>
