@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="box">
+
+</div>
+<script src="react.js"></script>
+<script src="react-dom.js"></script>
+<script src="browser.js"></script>
+<script type="text/babel">
+    const oBox = document.querySelector('#box');
+    const Header = React.createClass({
+        render: function () {
+            const {
+                address, color
+            } = this.props;
+            return <div>
+                <h2>123</h2>
+                <span style={{color, fontSize: '28px'}}>{address}</span>
+            </div>
+        }
+    });
+    const Footer = React.createClass({
+        render: function () {
+            return <h2>456</h2>
+        }
+    });
+    const Nav = React.createClass({
+        render: function () {
+            return <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        }
+    });
+    ReactDOM.render(<div>
+        <Header address="Beijing" color="blue"></Header>
+        <Nav></Nav>
+        <Footer></Footer>
+    </div>, oBox);
+</script>
+</body>
+
+</html>

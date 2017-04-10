@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+<div id="oBox">
+
+</div>
+<script src="react.js"></script>
+<script src="react-dom.js"></script>
+<script src="browser.js"></script>
+<script type="text/babel">
+    const oBox = document.querySelector('#oBox');
+    class Header extends React.Component {
+        constructor(...args) {
+            super(...args);
+            this.state = {value: ''};
+        }
+
+        fn(ev) {
+//            alert(1);
+            this.setState({
+                value: ev.target.value
+            })
+        }
+
+
+
+
+    render()
+    {
+        return ( <
+                div >
+            <
+                    input type="text"
+                          onChange={
+                              this.fn.bind(this)
+                          }
+            />
+            <
+            /div>
+            )
+            }
+            }
+            ReactDOM.render( <
+                Header / > , oBox)
+</script>
+</body>
+
+</html>

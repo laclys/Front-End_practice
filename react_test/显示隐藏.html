@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			.div1{
+				width: 100px;
+				height: 100px;
+				background: cornflowerblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="react.js"></script>
+		<script src="react-dom.js"></script>
+		<script src="browser.js"></script>
+		<script type="text/babel">
+			const oBox=document.querySelector('#box');
+			class Header extends React.Component{
+				constructor(...args){
+					super(...args);
+					this.state={
+						display:'block'
+					}
+				}
+				
+				showHide(){
+					this.setState({
+						display:this.state.display=='block'?'none':'block'
+					})
+				}
+				
+				render(){
+					return (
+						<div>
+							<input type="button" value="按钮" onClick={this.showHide.bind(this)}/>
+							<div className="div1" style={{display:this.state.display}}></div>
+						</div>
+					)
+					
+				}
+			};
+			ReactDOM.render(
+				<Header/>
+				,
+				oBox
+			)
+		</script>
+	</body>
+</html>

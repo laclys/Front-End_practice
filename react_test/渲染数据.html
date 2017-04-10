@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+			.div1{
+				width: 100px;
+				height: 100px;
+				background: cornflowerblue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="react.js"></script>
+		<script src="react-dom.js"></script>
+		<script src="browser.js"></script>
+		<script type="text/babel">
+			const oBox=document.querySelector('#box');
+			class List extends React.Component{
+				constructor(...args){
+					super(...args);
+					this.state={
+						arr: [1,2,3,4,5]
+					}
+				}
+				
+				render(){
+					var result = [];
+					var arr = this.state.arr;
+					for (var i = 0;i<arr.length;i++){
+						result.push(<li key={i}>{arr[i]}</li>)
+					}
+					return (
+						<ul>
+							{result}
+						</ul>
+					)
+					
+				}
+			};
+			ReactDOM.render(
+				<List/>
+				,
+				oBox
+			)
+		</script>
+	</body>
+</html>
