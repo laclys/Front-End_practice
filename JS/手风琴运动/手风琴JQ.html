@@ -39,6 +39,7 @@
                     'left': 150 - (aDiv.length - i) * 15 + 'px'
                 });
             });
+            aDiv.eq(0).css('left','0px');
                 aDiv.mouseover(function () {
                    for(var i=0;i<aDiv.length;i++){
                         console.log($(this).index());
