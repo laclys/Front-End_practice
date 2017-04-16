@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    function fn(n) {
+        var arr=[];
+        for(var i = 0;i<n;i++){
+           var tmp = randomNum(2,33);
+            if(!findArr(tmp,arr)) {
+                arr.push(tmp);
+            }else{
+                i--;
+            }
+        }
+        return arr;
+    }
+    function randomNum(n,m){
+        return parseInt(Math.random()*(m-n)+n);
+    }
+    function findArr(n,arr){
+        for(var k = 0;k<arr.length;k++){
+            if(arr[k]==n){
+                return true;
+            }
+        }
+        return false;
+    }
+    console.log(fn(8));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
