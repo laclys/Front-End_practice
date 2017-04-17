@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        (function () {
+            var val = 1;
+            var json = {
+                val: 10,
+                dbl: function () {
+                    val *= 2;
+                }
+            };
+            json.dbl(); //这里调用的是val=1，如果这里是this.val则指向json内部
+            alert(json.val + val); //10+2=12;
+        }());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
