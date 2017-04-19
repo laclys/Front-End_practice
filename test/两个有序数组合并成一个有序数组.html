@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function sortOne(arr1, arr2) {
+            var arr1Len = arr1.length;
+            var arr2Len = arr2.length;
+            var newArr = [];
+            var i = 0;
+            var j = 0;
+            var k = 0;
+            while (i < arr1Len && j < arr2Len) {
+                if(arr1[i]<arr2[j]){
+                    newArr.push(arr1[i]);
+                    i++;
+                }else{
+                    newArr.push(arr2[j]);
+                    j++;
+                }
+            }
+            while(i<arr1Len){
+                newArr.push(arr1[i]);
+                i++;
+            }
+            while(j<arr2Len){
+                newArr.push(arr2[j]);
+                i++;
+            }
+            return newArr;
+        }
+        var a=[2,3,5];
+        var b=[1,2,4];
+        
+        console.log(sortOne(a,b));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
