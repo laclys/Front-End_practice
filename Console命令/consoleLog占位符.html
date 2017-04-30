@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 占位符	作用
+        // %s	字符串
+        // %d or %i	整数
+        // %f	浮点数
+        // %o	可展开的DOM
+        // %O	列出DOM的属性
+        // %c	根据提供的css样式格式化字符串
+        window.onload = function () {
+            console.log("%d-%d-%d", 2017, 04, 30);
+            console.log("%o", document.body.firstElementChild);
+            // %c占位符是最常用的。使用%c占位符时，对应的后面的参数必须是CSS语句，用来对输出内容进行CSS渲染。常见的输出方式有两种：文字样式、图片输出。
+            console.log("%cHello world,欢迎您！", "color: red; font-size: 20px");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+</html>

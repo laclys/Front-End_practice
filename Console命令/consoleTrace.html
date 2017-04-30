@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*函数是如何被调用的，在其中加入console.trace()方法就可以了*/ 　
+        function add(a, b) {
+            console.trace();　　　　
+            return a + b;　　
+        }　　
+        var x = add3(1, 1);　　
+        function add3(a, b) {
+            return add2(a, b);
+        }　　
+        function add2(a, b) {
+            return add1(a, b);
+        }　　
+        function add1(a, b) {
+            return add(a, b);
+        }
+    </script>
+</body>
+
+</html>
