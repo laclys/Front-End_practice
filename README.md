@@ -61,6 +61,21 @@
 11,H5新特性运用练习
 
 12,canvasDemo
+
+13,js简单算法
+
+14,phoneGap Demo(基于canvas的不规则线条屏保）
+
+15,gulp/grunt/yarn练习
+
+16,angular小Demo
+
+17,vue小demo
+
+18,react小demo/react脚手架尝试
+
+19,Console
+
 。
 
 。
