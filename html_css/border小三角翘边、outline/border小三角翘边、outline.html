@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>border</title>
+  <style>
+    html {
+      background: lightgray;
+    }
+
+    .c1 {
+      position: relative;
+      top: 30px;
+      left: 50px;
+      width: 150px;
+      height: 30px;
+      line-height: 30px;
+      font-size: 15px;
+      border-radius: 3px;
+      background: lightblue;
+    }
+
+    .c1::after {
+      position: absolute;
+      left: -12px;
+      top: 8px;
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      border: 6px solid transparent;
+      border-right-color: lightblue;
+    }
+
+    .c2 {
+      position: relative;
+      top: 100px;
+      left: 50px;
+      width: 0;
+      height: 0;
+      border: 50px solid transparent;
+      border-top-color: blue;
+      border-right-color: pink;
+      border-bottom-color: green;
+      border-left-color: yellow;
+    }
+
+    .c3 {
+      position: relative;
+      top: 150px;
+      left: 150px;
+      width: 220px;
+      height: 327px;
+      margin-bottom: 100px;
+      background: url(demo01.jpg) no-repeat;
+      background-size: cover;
+      border: 5px solid #fff;
+    }
+
+    .c3::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 150px;
+      left: 70px;
+      width: 150px;
+      height: 150px;
+      box-shadow: 5px 5px 15px 10px rgb(213, 213, 213);
+      transform: skewX(20deg) rotate(15deg);
+      z-index: -100;
+    }
+
+    .c3::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 18px;
+      left: 12px;
+      width: 150px;
+      height: 150px;
+      box-shadow: 0 0 15px 10px rgba(0, 0, 0, .2);
+      transform: skewX(20deg) rotate(15deg);
+      z-index: -100;
+    }
+
+    .c4 {
+      position: relative;
+      top: 100px;
+      left: 150px;
+      width: 100px;
+      height: 100px;
+      outline: 10px solid rgb(110, 110, 110);
+      outline-offset: -45px;
+      border: 10px solid rgb(110, 110, 110);
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="c1">
+    O(∩_∩)O哈哈哈~
+  </div>
+  <div class="c2"></div>
+  <div class="c3"></div>
+  <div class="c4"></div>
+</body>
+
+</html>
