@@ -1,0 +1,16 @@
+.foo {
+  color: #f00;
+}
+.foo .bar {
+  color: #00f;
+}
+a {
+  color: #f00;
+}
+a:hover {
+  color: #ff0;
+}
+body {
+  font-size: 14px;
+}
+/*# sourceMappingURL=index.css.map */

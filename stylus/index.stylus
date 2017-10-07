@@ -1,0 +1,19 @@
+// 嵌套
+.foo
+  color red
+
+  .bar
+    color blue
+
+// 引用嵌套
+a
+  color red
+
+  &:hover
+    color yellow 
+
+// 变量
+$font-size = 14px
+
+body
+  font-size: $font-size
