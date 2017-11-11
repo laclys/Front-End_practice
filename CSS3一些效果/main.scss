@@ -1,0 +1,82 @@
+%fixedbox {
+  // Basic styling
+  box-sizing: border-box;
+  display: block;
+  font-size: 4em;
+  padding: 1em;
+  width: 6em;
+  height: 3em; // Center box in middle of screen
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.content {
+  // Basic styling
+  @extend %fixedbox;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1000; // Cut-out text effect
+  background: #fff;
+  color: #000;
+  mix-blend-mode: lighten;
+}
+
+section {
+  // Background image styling
+  background-repeat: no-repeat;
+  background-size: cover; // Reset stacking context
+  isolation: isolate; // Must be set to correctly position .wrapper below
+  position: relative; // Height not required. Can be left as auto
+  height: 100vh;
+  padding: 1em;
+}
+
+.wrapper {
+  // Hides box (&:before) outside of section
+  clip: rect(auto auto auto auto); // Clip works only on positions absolute or fixed
+  position: absolute; // Stretch to fill entire section
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  &:before {
+    content: " "; // Basic styling
+    @extend %fixedbox;
+    padding: 2em 3.5em; // Blend with background
+    mix-blend-mode: darken;
+  }
+}
+
+.one {
+  // Section background image
+  background-image: url(https://unsplash.it/1920/1080?image=737);
+  .wrapper:before {
+    // Box background color
+    background: red;
+  }
+}
+
+.two {
+  background-image: url(https://unsplash.it/1920/1080?image=812);
+  .wrapper:before {
+    background: #faaa54;
+    mix-blend-mode: difference;
+  }
+}
+
+.three {
+  background-image: url(https://unsplash.it/1920/1080?image=810);
+  .wrapper:before {
+    background: #6c320a;
+    mix-blend-mode: screen;
+  }
+}
+
+.four {
+  background-image: url(https://unsplash.it/1920/1080?image=634);
+  .wrapper:before {
+    background: #e4135d;
+  }
+}

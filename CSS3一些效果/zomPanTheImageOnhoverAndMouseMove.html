@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zoom + pan the image on hover & mouse move</title>
+  <script src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Roboto+Slab:700);
+    body {
+      background: #fff;
+      color: #fff;
+      margin: 0 auto;
+    }
+
+    .tiles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .tile {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 33.333%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      transition: transform .5s ease-out;
+    }
+
+    .txt {
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 10%;
+      left: 0;
+      font-family: 'Roboto Slab', serif;
+      font-size: 9px;
+      line-height: 12px;
+      text-align: center;
+      cursor: default;
+    }
+
+    .x {
+      font-size: 32px;
+      line-height: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="tiles">
+    <div class="tile" data-scale="1.1" data-image="./test.jpg"></div>
+  </div>
+</body>
+<script>
+  $('.tile')
+    // tile mouse actions
+    .on('mouseover', function () {
+      $(this).children('.photo').css({
+        'transform': 'scale(' + $(this).attr('data-scale') + ')'
+      });
+    })
+    .on('mouseout', function () {
+      $(this).children('.photo').css({
+        'transform': 'scale(1)'
+      });
+    })
+    .on('mousemove', function (e) {
+      $(this).children('.photo').css({
+        'transform-origin': ((e.pageX - $(this).offset().left) / $(this).width()) * 100 + '% ' + ((e.pageY - $(
+          this).offset().top) / $(this).height()) * 100 + '%'
+      });
+    })
+    // tiles set up
+    .each(function () {
+      $(this)
+        // add a photo container
+        .append('<div class="photo"></div>')
+        // some text just to show zoom level on current item in this example
+        .append('<div class="txt"><div class="x">' + $(this).attr('data-scale') + 'x</div>ZOOM ON<br>HOVER</div>')
+        // set up a background image for each tile based on data-image attribute
+        .children('.photo').css({
+          'background-image': 'url(' + $(this).attr('data-image') + ')'
+        });
+    })
+</script>
+
+</html>
