@@ -1,0 +1,1 @@
+console.log(process.cwd()) // 打印出当前命令执行的路径
