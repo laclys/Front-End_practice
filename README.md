@@ -1,4 +1,4 @@
-# Practice about html/css/js
+# Practice about Front-End
 
 #### Practice about html/css/js
 
@@ -76,7 +76,11 @@
 
 19,Console
 
-20,React Native 开源组件尝试（airbnb maps/react-navigation/baidu-map/fetch-blob/img-cache/vector-icons
+20,React Native 开源组件尝试
+
+21,自制mini-redux、react-redux、redux-thunk
+
+22，nodeJS相关联系
 
 。
 
