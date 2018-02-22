@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>createDocumentFragment</title>
+</head>
+
+<body>
+  <ul>
+    <li>Lac</li>
+    <li>Mac</li>
+  </ul>
+  <button onclick="test()">test</button>
+</body>
+<script>
+  function test() {
+    let li = document.getElementsByTagName('li')[0]
+    // alert(li.innerText)
+    let newFrag = document.createDocumentFragment()
+    newFrag.appendChild(li)
+    // 使用appendChid方法将原dom树中的节点添加到DocumentFragment中时，会删除原来的节点。
+    newFrag.childNodes[0].childNodes[0].nodeValue = 'lacly'
+    document.getElementsByTagName('ul')[0].appendChild(newFrag)
+    console.log(newFrag.childNodes[0].childNodes[0])
+  }
+</script>
+
+</html>
