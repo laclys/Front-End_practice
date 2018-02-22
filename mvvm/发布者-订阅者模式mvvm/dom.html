@@ -1,0 +1,129 @@
+<html>
+  <div id='app' >
+    <input type="text" v-model='msg'>
+    {{msg}}
+  </div>
+  <script>
+    var vm = new MVVM({
+      el: '#app',
+      data: {
+        'msg': 'hello word'
+      }
+    })
+    // MVVM实现
+    function MVVM (opts) {
+      this.data = opts.data  // 传入data
+      this.el = opts.el
+      var data = this.data
+      var me = this
+      var el = document.querySelector(this.el)
+      observe(data, this)  // 观察数据
+      var dom = nodeToFragment(el, this)
+      el.appendChild(dom)
+    }
+
+    function nodeToFragment(node, vm) {
+      var frag = document.createDocumentFragment()
+      var appendChild
+      while (child = node.firstChild) {
+        complie(child, vm)
+        frag.append(child)
+      }
+      return frag
+    }
+
+    function complie (node, vm) {
+      var reg = /\{\{(.*)}}\}/
+      if (node.nodeType == 1) {  // 元素
+        var attrs = node.attributes  // 拿到属性键值对
+        for (var i = 0, len = attrs.length; i < len; i++) {
+          if (attrs[i].nodeName == 'v-model') {
+            var name = attrs[i].nodeValue
+            node.addEventListener('input', function(e) {
+              vm[name] = e.target.value
+            })
+            node.value = vm[name]
+            node.removeAttribute('v-model')
+          }
+        }
+        new watch(vm, node, name, 'input')  // 添加监视器
+      }
+      if (node.nodeType == 3) {  // 元素或属性中的文本内容
+
+        if(reg.test(node.nodeValue)) {
+          var name = RegExp.$1
+          name = name.trim()
+          nodeType = 'text'
+          new watch(vm, node, name, 'text')
+        }
+
+      }
+
+
+    }
+
+    function watch (vm, node, name, nodeType) {
+      Dep.target = this
+      this.name = name
+      this.node = node
+      this.vm = vm
+      this.nodeType = nodeType
+      this.update()
+      Dep.target = null
+    }
+    watch.prototype = {
+      update:function () {
+        this.get()
+        if (this.nodeType == 'text') {
+          this.node.nodeValue = this.value
+        }
+        if (this.nodeType == 'input') {
+          this.node.value = this.value
+        }
+      },
+      get: function () {
+        this.value = this.vm[this.nodeToFragment]
+      }
+    }
+
+    // observe
+    function observe(data, vm) {
+      Object.keys(data).forEach(function (key) {
+        defineReactive(vm, key, data[key])
+      })
+    }
+
+    function defineReactive(vm, key, val) {
+      var dep = new Dep()
+      Object.defineProperty(vm, key, {
+        get: function() {
+          if (Dep.target) {
+            dep.addSub(Dep.target)
+          }
+          return val
+        },
+        set: function (newVal) {
+          if (newVal == val) return
+          val = newVal
+          dep.notify()
+        }
+      })
+    }
+
+    function Dep() {
+      this.subs = []
+    }
+    Dep.prototype = {
+      addSub: function(sub) {
+        this.subs.push(sub)
+      },
+
+      notify: function () {
+        this.subs.forEach(function(sub) {
+          sub.update()
+        })
+      }
+    }
+  </script>
+</html>
+
