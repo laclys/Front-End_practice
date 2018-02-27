@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>twitter-good</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .heartAnimation {
+      position: absolute;
+      background-image: url(web_heart_animation_edge.png);
+      background-position: left;
+      background-repeat: no-repeat;
+      height: 100px;
+      width: 100px;
+      left: calc(50% - 50px);
+      top: calc(50% - 50px);
+    }
+
+    .like-active {
+      animation-timing-function: steps(28);
+      animation-name: heart-burst;
+      animation-duration: .8s;
+      animation-iteration-count: 1;
+      display: inline-block;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes heart-burst {
+      0% {
+        background-position: left;
+      }
+      
+      100% {
+        background-position: right;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="heartAnimation" id="redHeart" ></div>
+</body>
+
+<script>
+  let oDiv = document.getElementById('redHeart')
+  oDiv.onclick = function() {
+    if (this.classList.length === 2) {
+      this.className = 'heartAnimation'
+    } else {
+      this.className = 'heartAnimation' + ' ' + 'like-active'
+    }
+  }
+</script>
+<!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $('.heartAnimation').click(function () {
+        var _this = $(this)
+        _this.hasClass('like-active') ? _this.removeClass('like-active') : _this.addClass('like-active')
+    })
+</script> -->
+</html>
