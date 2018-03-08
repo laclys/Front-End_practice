@@ -11,6 +11,4 @@ const thunk = ({dispatch, getState}) => next => action => {
   // 啥事没干 原样返回
   return next(action)
 }
-
-
 export default thunk
