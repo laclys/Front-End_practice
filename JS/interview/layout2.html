@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .layout {
+      position: relative;
+    }
+    .layout div {
+      min-height: 300px;
+    }
+    .layout .left {
+      position: absolute;
+      width: 300px;
+      left: 0;
+      background: blue
+    }
+    .layout .center {
+      position: absolute;
+      left: 300px;
+      right: 300px;
+      background: red;
+    }
+    .layout .right {
+      position: absolute;
+      width: 300px;
+      right: 0;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="left"></div>
+    <div class="center">
+      绝对定位解决三栏布局
+    </div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

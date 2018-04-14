@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .layout {
+      display: table;
+      width: 100%;
+    }
+
+    .layout div {
+      min-height: 300px;
+    }
+
+    .left {
+      display: table-cell;
+      width: 300px;
+      background: red;
+    }
+    .right {
+      display: table-cell;
+      width: 300px;
+      background: red;
+    }
+    .center {
+      background: yellow;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <div class="left"></div>
+    <div class="center">
+      table-cell解决三栏布局
+    </div>
+    <div class="right"></div>
+  </div>
+</body>
+</html>

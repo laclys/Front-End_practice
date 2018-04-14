@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .clearfix:after {
+      display: 'block';
+      content: '';
+      clear:both;
+    }
+    .clearfix {
+      zoom: 1;
+    }
+    .layout div {
+      min-height: 300px;
+    }
+    .layout .left {
+      float: left;
+      width: 300px;
+      background: red;
+    }
+    .layout .center {
+      background: #6cf;
+    }
+    .layout .right {
+      float: right;
+      width: 300px;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout clearfix">
+    <div class="left float-left" ></div>
+    <div class="right float-right"></div>
+    <div class="center" >浮动解决三栏布局</div>
+  </div>
+</body>
+</html>
