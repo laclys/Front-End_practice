@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>history Api router</title>
+</head>
+<body>
+  <div>
+    <a class="api a">a.html</a>
+    <a class="api b">b.html</a>
+  </div>
+  <script>
+    // resigter router
+    document.querySelectorAll('.api').forEach(item => {
+      item.addEventListener('click',(e) => {
+        e.preventDefault()
+        let link = item.textContent
+        window.history.pushState({name: 'api'}, link, link)
+      }, false)
+    })
+    // 监听
+    window.addEventListener('popstate', (e) => {
+      console.log({
+        location: location.href,
+        state: e.state
+      })
+    }, false)
+  </script>
+</body>
+</html>

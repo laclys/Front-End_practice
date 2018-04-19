@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>history Api router</title>
+</head>
+<body>
+  <div>
+    <a class="hash a">a.html</a>
+    <a class="hash b">b.html</a>
+  </div>
+  <script>
+    // 注册
+    document.querySelectorAll('.hash').forEach(item => {
+      item.addEventListener('click',(e) => {
+        e.preventDefault()
+        let link = item.textContent
+        location.hash = link
+      }, false)
+    })
+    // 监听
+    window.addEventListener('hashchange', (e) => {
+      console.log({
+        location: location.href,
+        state: location.hash
+      })
+    }, false)
+  </script>
+</body>
+</html>
