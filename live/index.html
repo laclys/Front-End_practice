@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video</title>
+</head>
+<body>
+  <!-- base -->
+  <!-- <video src="./test.mp4" width="400" height="225" controls controlslist="nodownload nofullscreen"></video> -->
+  <!-- 贴图 -->
+  <!-- <video src="./test.mp4" width="400" height="225" controls  poster="./poster.jpg" ></video> -->
+  <!-- 静音(在移动端非静音的视频是不允许自动播放的) -->
+  <!-- <video src="./test.mp4" width="400" height="225" controls muted></video> -->
+  <!-- 预加载（不同设备表现不一样） -->
+  <!-- <video src="./test.mp4" width="400" height="225" controls preload></video> -->
+  <!-- 音量控制(需要js设置) -->
+  <!-- <video src="./test.mp4" width="400" height="225" id="_volume" controls preload></video>
+  <script>
+    let v = document.getElementById("_volume");
+    v.volume = 0.5
+  </script> -->
+  <!-- 播放时间控制 -->
+  <!-- <video src="./test.mp4" width="400" height="225" id="_time" controls preload></video>
+  <script>
+    let t = document.getElementById("_time");
+    // console.log(t.currentTime)
+    t.currentTime = 60 //单位：秒
+  </script> -->
+  <video src="./test.mp4" width="400" height="225" id="_src" controls preload></video>
+  <script>
+    let s = document.getElementById("_src");
+    setTimeout(function() {
+      s.src = './test2.mp4'
+    },2000)
+  </script>
+</body>
+</html>
