@@ -19,3 +19,71 @@ HTTP-FLV优点（相对RTMP）：
 2.可以很好的兼容HTTP 302跳转
 3.可以使用HTTPS
 4很好的支持移动端
+
+
+直播源的制作
+- Nginx + ffmpeg
+
+1.安装Nginx
+
+换一个github项目下nginx
+
+$ brew tap denji/nginx
+
+$ brew install nginx-full --with-upload-module
+
+验证：http://localhost:8080/
+
+2.安装ffmpeg
+
+brew install ffmpeg
+
+3.配置Nginx
+cd /usr/local/etc/nginx/
+nginx.conf
+```
+rtmp{
+    server {
+        listen 1935;
+        chunk_size 4000;
+
+        # RTMP 直播流配置
+        application rtmplive {
+            live on;
+            max_connections 1024;
+        }
+
+        # hls 直播流配置
+        application hls{
+            live on;
+            hls on;
+            hls_path /usr/local/var/www/hls;
+            hls_fragment 5s;
+        }
+    }
+}
+```
+```
+        location /hls {
+            types{
+                application/vnd.apple.mpegurl m3u8;
+                video/mp2t ts;
+            }
+            root /usr/local/var/www;
+            add_header Cache-Control no-cache;
+        }
+```
+4.准备视频
+5.利用ffmpeg推流
+
+
+RTMP 直播：
+ffmpeg -re -i test2.mp4 -vcodec libx264 -acodec aac -f flv rtmp://localhost:1935/rtmplive/rtmp
+
+
+使用 VLC 打开 rtmp://localhost:1935/rtmplive/rtmp
+
+hls 直播：
+ffmpeg -re -i test2.mp4 -vcodec libx264 -acodec aac -f flv rtmp://localhost:1935/hls/stream
+
+safari http://localhost:8080/hls/stream.m3u8
