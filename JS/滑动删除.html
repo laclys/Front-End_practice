@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+      overflow: hidden;
+    }
+
+    li {
+      font-size: 0;
+      width: calc(100vw + 150px);
+      height: 80px;
+      line-height: 80px;
+      background: yellow;
+      border-bottom: 5px solid #000;
+    }
+
+    .content {
+      width: 100vw;
+      height: 80px;
+      line-height: 80px;
+      text-align: center;
+      display: inline-block;
+      background: #6cf;
+      font-size: 20px;
+    }
+
+    .del {
+      width: 150px;
+      height: 85px;
+      line-height: 80px;
+      text-align: center;
+      display: inline-block;
+      background: red;
+      font-size: 20px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      let oUl = document.getElementById('list')
+      let aLi = oUl.querySelectorAll('li')
+      let aDel = oUl.querySelectorAll('.del')
+      let aDiv = oUl.querySelectorAll('.content')
+
+      for (let i = 0; i < aLi.length; i++) {
+        aLi[i].index = i
+        aDel[i].index = i
+
+        aLi[i].addEventListener('touchstart', function (ev) {
+          ev.preventDefault()
+          let oldX = ev.targetTouches[0].pageX
+          console.log(oldX)
+
+          aLi[i].addEventListener('touchmove', move)
+          aLi[i].addEventListener('touchend', end)
+
+          function move(ev) {
+            // ev.preventDefault();
+            // console.log(111111)
+            let newX = ev.targetTouches[0].pageX - oldX;
+            // console.log('newX', newX)
+            aLi[this.index].style.transform = 'translateX(' + newX + 'px)';
+          }
+
+          function end(ev) {
+            aLi[this.index].removeEventListener('touchmove', move)
+            aLi[this.index].removeEventListener('touchend', end)
+            ev.preventDefault()
+            let changeX = ev.changedTouches[0].pageX
+            // console.log(oldX, changeX, oldX - changeX)
+            if ((oldX - changeX) >= 100) {
+              aLi[this.index].style.transition = 'all .75s ease'
+              aLi[this.index].style.transform = 'translateX(-150px)'
+            } else {
+              aLi[this.index].style.transition = 'all .75s ease'
+              aLi[this.index].style.transform = 'translateX(0)'
+            }
+          }
+        })
+        aDel[i].addEventListener('touchstart', function() {
+          aLi[this.index].innerHTML = ''
+          aLi[this.index].style.height='0'
+          aLi[this.index].style.border='0'
+          aLi[this.index].style.transition='0.5s all ease'
+          aLi[this.index].addEventListener('transitionend', function() {
+            oUl.removeChild(aLi[this.index])
+          })
+        })
+      }
+    }
+    // Note:
+    // querySelectorAll 和 getElementByTagName()等方法的区别
+    // 二者返回的都是NodeList对象，querySelectorAll不是实时的，而getElementByTagName是实时的。
+  </script>
+</head>
+
+<body>
+  <ul id='list'>
+    <li>
+      <div class="content">1</div>
+      <div class="del">Del</div>
+    </li>
+    <li>
+      <div class="content">2</div>
+      <div class="del">Del</div>
+    </li>
+    <li>
+      <div class="content">3</div>
+      <div class="del">Del</div>
+    </li>
+    <li>
+      <div class="content">4</div>
+      <div class="del">Del</div>
+    </li>
+  </ul>
+</body>
+
+</html>
