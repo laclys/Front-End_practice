@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li:nth-child(2n) {
+      width: 100%;
+      height: 100px;
+      background: blue
+    }
+    li:nth-child(2n+1) {
+      width: 100%;
+      height: 100px;
+      background: red
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li>12323123</li>
+    <li>122323</li>
+    <li>1212313</li>
+    <li>121233</li>
+    <li>1231233</li>
+  </ul>
+</body>
+<script>
+  let oUl = document.getElementsByTagName('ul')[0]
+  oUl.addEventListener('click',function(e) {
+    console.log(e.srcElement.nodeName)
+    var target = e.target
+    if (e.srcElement.nodeName === 'LI') target.innerHTML= target.innerHTML.split('').reverse().join('')
+  })
+</script>
+</html>
