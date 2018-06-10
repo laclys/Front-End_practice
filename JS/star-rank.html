@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      position: relative;
+      color: #f5222d;
+    }
+
+    /* div:after {
+      content: '★★★★★';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      overflow: hidden;
+      transition: width 2s;
+      -moz-transition: width 2s;
+      -webkit-transition: width 2s;
+      -o-transition: width 2s;
+    } */
+    #overStar {
+      /* css穿透绝对定位的层使下面的链接可点击 */
+      pointer-events: none;
+      content: '★★★★★';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0em;
+      overflow: hidden;
+      transition: width 1s;
+      -moz-transition: width 1s;
+      -webkit-transition: width 1s;
+      -o-transition: width 1s;
+    }
+
+    /* div:hover:after {
+      width: 0em;
+    } */
+  </style>
+</head>
+
+<body>
+  <div><span id="s1">☆</span><span id="s2">☆</span><span id="s3">☆</span><span id="s4">☆</span><span id="s5">☆</span><div id="overStar" />★★★★★</div>
+</body>
+<script>
+  let oDiv = document.getElementsByTagName('div')[0]
+  let overStar = document.getElementById('overStar')
+  // let star = (num) => "★★★★★☆☆☆☆☆".slice(5 - num, 10 - num)
+  // console.log(star(3))
+  // oDiv.innerHTML = star(0)
+  oDiv.addEventListener('click', function(e) {
+    let t = e.target
+    console.log(t)
+    if (e.srcElement.nodeName === 'SPAN') {
+      let targetNum = e.target.getAttribute('id').slice(1) + 'em'
+      overStar.style.width = targetNum
+    }
+  })
+</script>
+
+</html>
