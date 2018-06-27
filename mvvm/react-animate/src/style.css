@@ -1,0 +1,63 @@
+css3过渡动画效果
+.show {
+  animation: show-item 2s linear forwards;
+}
+/* forwards 是动画保存最后一帧的变化 */
+.hide {
+  /* animation: hide-item 2s linear;这样写动画运行到最后一帧不会保存下来 */
+  animation: hide-item 2s linear forwards;
+}
+
+@keyframes hide-item {
+  0% {
+    opacity: 1;
+    color: red;
+  }
+  50% {
+    opacity: 0.5;
+    color: green;
+  }
+  100% {
+    opacity: 0;
+    color: blue;
+  }
+}
+@keyframes show-item {
+  0% {
+    opacity: 0;
+    color: red;
+  }
+  50% {
+    opacity: 0.5;
+    color: green;
+  }
+  100% {
+    opacity: 1;
+    color: blue;
+  }
+}
+
+
+/* CSSTransition */
+
+
+.fade-enter, .fade-appear {
+  opacity: 0;
+}
+.fade-enter-active, .fade-appear-active {
+  opacity: 1;
+  transition: opacity 1s ease-in
+}
+.fade-enter-done {
+  opacity: 1;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 1s ease-in
+}
+.fade-exit-done {
+  opacity: 0;
+}
