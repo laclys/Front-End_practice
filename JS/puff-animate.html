@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>puff</title>
+  <style>
+    .box {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      border: 1px solid #eee;
+      margin: 0 auto;
+    }
+
+    .ball {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      margin: 40px auto;
+    }
+
+    .ball:nth-child(1) {
+      background-color: #2ae0c8;
+    }
+
+    .ball:nth-child(2) {
+      background-color: #fe6673;
+    }
+
+    .ball:nth-child(3) {
+      background-color: #e3c887;
+    }
+
+    .puff {
+      animation: puff;
+      animation-duration: 0.7s;
+      /* animation-fill-mode 属性 forwards:当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。 */
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(.75, .01, .72, 3.5)
+    }
+
+    @keyframes puff {
+      to {
+        transform: scale(2, 2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box">
+    <div class="ball"></div>
+    <div class="ball"></div>
+    <div class="ball"></div>
+  </div>
+  <script>
+    var balls = document.getElementsByClassName('ball');
+    Array.prototype.slice.call(balls).forEach(function (ball) {
+      ball.onclick = function (e) {
+        if (/puff/g.test(e.target.className)) {
+          e.target.setAttribute('class', 'ball')
+        } else {
+          e.target.setAttribute('class', 'ball puff')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
