@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>棋盘错觉</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100vmin;
+      height: 100vmin;
+      border-bottom: 0.5vmin solid gray;
+    }
+
+    .container span {
+      width: inherit;
+      height: 10vmin;
+      background:
+        linear-gradient(gray, gray 0.5vmin,
+        transparent 0.5vmin, transparent),
+        repeating-linear-gradient(to right,
+        black, black 10vmin,
+        transparent 10vmin, transparent 20vmin)
+    }
+
+    .container span:nth-child(odd) {
+      /* 奇数行的背景向右移动半个色块的位置，移动之后看起来好像奇数行右宽左窄，偶数行左宽右窄 */
+      animation: move 5s linear infinite;
+    }
+
+    .container span:nth-child(even) {
+      /* 让偶数行的背景也移动起来，产生相反方向的错觉 */
+      animation: move 5s linear infinite reverse;
+    }
+
+    @keyframes move {
+
+      0%,
+      55%,
+      100% {
+        background-position: 0 0;
+      }
+
+      5%,
+      50% {
+        background-position: 5vmin 0;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+
+</html>
