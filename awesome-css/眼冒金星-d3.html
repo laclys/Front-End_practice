@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>眼冒金星-D3版</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+      background-color: black;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(var(--columns), 1fr);
+      /* 等价于grid-template-columns: 1fr 1fr 1fr; fr 单元允许你用等分网格容器剩余可用空间来设置 网格轨道(Grid Track) 的大小 */
+
+    }
+
+    .container span {
+      width: 25px;
+      height: 25px;
+      color: lime;
+      background-color: currentColor;
+    }
+
+    .container span {
+      transform: scale(0);
+      animation: spin 5s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      5%,
+      15% {
+        transform: rotate(90deg) scale(0);
+        background: white;
+      }
+
+      17.5% {
+        transform: rotate(180deg) scale(1);
+        background-color: currentColor;
+      }
+
+      20%,
+      100% {
+        transform: rotate(90deg) scale(0);
+      }
+    }
+
+    .container span {
+      /* 设置动画延时，使各子元素的动画随机延时 4 秒之内的任意时间 */
+      animation-delay: calc(var(--delay) * 1s);
+    }
+
+    .container span:nth-child(1) {
+      --delay: 0.8
+    }
+
+    .container span:nth-child(2) {
+      --delay: 0.2
+    }
+
+    .container span:nth-child(3) {
+      --delay: 1.9
+    }
+
+    .container span:nth-child(4) {
+      --delay: 3.9
+    }
+
+    .container span:nth-child(5) {
+      --delay: 2.8
+    }
+
+    .container span:nth-child(6) {
+      --delay: 3.5
+    }
+
+    .container span:nth-child(7) {
+      --delay: 1.5
+    }
+
+    .container span:nth-child(8) {
+      --delay: 2.3
+    }
+
+    .container span:nth-child(9) {
+      --delay: 1.7
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+
+  </div>
+</body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script>
+  const COLUMNS = 30
+  d3.select('.container')
+    .style('--columns', COLUMNS)
+    .selectAll('span')
+    .data(d3.range(COLUMNS * COLUMNS))
+    .enter()
+    .append('span')
+    .style('--delay', () => Math.random() * 4)
+</script>
+
+</html>
