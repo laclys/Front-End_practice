@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      background-image: linear-gradient(-45deg, #8067B7, #EC87C0);
+      min-height: calc(100vh - 40px);
+      margin: 20px;
+      font-family: 'Lato', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ticket-mask {
+      width: 288px;
+      height: 176px;
+      mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/851550/spongebob.gif);
+      mask-size: contain;
+      -webkit-mask: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/851550/spongebob.gif);
+      -webkit-mask-size: contain;
+    }
+
+    .ticket {
+      width: 288px;
+      height: 176px;
+      border-radius: 4px;
+      overflow: hidden;
+      background-image: linear-gradient(134deg, #3023AE 0%, #C86DD7 100%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="ticket-mask">
+    <div class="ticket">
+      <!-- <div class="info">
+        <h3>打骨折</h3>
+        <p>专治各种不服</p>
+      </div>
+      <button>
+        买买买
+      </button> -->
+    </div>
+  </div>
+</body>
+
+</html>
