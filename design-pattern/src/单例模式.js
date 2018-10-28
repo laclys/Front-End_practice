@@ -1,4 +1,5 @@
 // 单例模式 一个类只有一个实例  (JS没有private关键字，不能避免他人去new，无法控制)
+// Jquery只有一个$
 class SingleObject {
   login() {
     console.log('login...')
