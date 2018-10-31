@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>= -> x</title>
+  <script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      height: 300px;
+      background: #b8b1b1;
+      cursor: pointer;
+    }
+
+    .swicth-btn {
+      position: relative;
+      width: 110px;
+      height: 110px;
+    }
+
+    .swicth-btn span {
+      position: absolute;
+      display: inline-block;
+      width: 100%;
+      height: 10px;
+      background: #000;
+      box-sizing: border-box;
+      transition: all .3s;
+    }
+
+    .swicth-btn span:first-child {
+      top: 30px;
+    }
+
+    .swicth-btn span:last-child {
+      top: 70px;
+    }
+
+    .wrapper.active .swicth-btn span:first-child {
+      transform: translateY(20px) rotate(-45deg);
+    }
+    .wrapper.active .swicth-btn span:last-child {
+      transform: translateY(-20px) rotate(45deg);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="wrapper" id="btn">
+    <div class="swicth-btn">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <script>
+    $(function () {
+      $('#btn').click(function () {
+        $(this).toggleClass('active')
+      })
+    })
+  </script>
+</body>
+
+</html>
