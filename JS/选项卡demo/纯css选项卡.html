@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css-tab</title>
+  <style>
+    .tab label {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-right: -1px;
+      text-align: center;
+      float: left;
+      overflow: hidden;
+    }
+
+    .tab::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .box {
+      height: 200px;
+      border: 1px solid #ccc;
+      scroll-behavior: smooth;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .item {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .item input {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      clip: rect(0 0 0 0);
+    }
+  </style>
+</head>
+
+<body>
+  <h1>纯CSS选项卡</h1>
+  <div class="tab">
+    <!-- abel 元素不会向用户呈现任何特殊效果。
+      不过，它为鼠标用户改进了可用性。如果您在 label 
+      元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，
+      浏览器就会自动将焦点转到和标签相关的表单控件上。
+<label> 标签的 for 属性应当与相关元素的 id 属性相同。 -->
+    <label for="tab1">选项卡1</label>
+    <label for="tab2">选项卡2</label>
+    <label for="tab3">选项卡3</label>
+  </div>
+  <div class="box">
+    <div class="item">
+      <input type="text" id="tab1">
+      <p>选项卡1内容</p>
+    </div>
+    <div class="item">
+      <input type="text" id="tab2">
+      <p>选项卡2内容</p>
+    </div>
+    <div class="item">
+      <input type="text" id="tab3">
+      <p>选项卡3内容</p>
+    </div>
+  </div>
+</body>
+
+</html>
