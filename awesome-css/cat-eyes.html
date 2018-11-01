@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>cat-eyes</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+    }
+
+    .eyes {
+      position: relative;
+      width: 40em;
+      height: 10em;
+      font-size: 10px;
+    }
+
+    .eyes > * {
+      position: absolute;
+      width: 15em;
+      height: 10em;
+      border: solid white;
+      border-width: 0 5em;
+      box-sizing: border-box;
+      animation: blink 2s linear infinite;
+    }
+
+    .eyes .left {
+      left: 0;
+      border-radius: 50% 0;
+      transform: rotate(25deg);
+    }
+
+    .eyes .right {
+      right: 0;
+      border-radius: 0 50%;
+      transform: rotate(-25deg);
+    }
+
+@keyframes blink {
+    40%, 60% {
+        border-width: 0 5em;
+    }
+
+    50% {
+        border-width: 0 7.5em;
+    }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="eyes">
+    <span class="left"></span>
+    <span class="right"></span>
+  </div>
+</body>
+
+</html>
