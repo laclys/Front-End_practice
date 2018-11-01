@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>自动裁剪和居中图像</title>
+  <style>
+    .img1 {
+      width: 100px;
+      height: 100px;
+    }
+    .img2-wrapper {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .img2 {
+      min-height: 100%;
+      min-width: 100%;
+      opacity: 0;
+      filter: alpha(opacity=0);
+    }
+    .img3 {
+      object-fit: none; /* Do not scale the image */
+      object-position: center; /* Center the image within the element */
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <img class="img1" src="https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1431174099.11.webp" alt="">
+  <!-- 保留img标签，以便我们不会失去拖动或右键单击来保存图像的能力。 -->
+  <div class="img2-wrapper" style="background-image: url('https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1431174099.11.webp');" >
+    <img class="img2" src="https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1431174099.11.webp" alt="">
+  </div>
+  <!-- object-fit & object-position -->
+  <img class="img3" src="https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1431174099.11.webp" alt="">
+</body>
+</html>
