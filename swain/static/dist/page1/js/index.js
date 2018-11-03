@@ -86,14 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./static/view/page1/css/index.css":
-/*!*****************************************!*\
-  !*** ./static/view/page1/css/index.css ***!
-  \*****************************************/
+/***/ "./static/view/page1/css/index.scss":
+/*!******************************************!*\
+  !*** ./static/view/page1/css/index.scss ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./static/view/page1/css/index.css?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./static/view/page1/css/index.scss?");
 
 /***/ }),
 
@@ -105,7 +105,7 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./stat
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./js/index.js */ \"./static/view/page1/js/index.js\");\n\n__webpack_require__(/*! ./css/index.css */ \"./static/view/page1/css/index.css\");\n\n//# sourceURL=webpack:///./static/view/page1/index.js?");
+eval("\n\n__webpack_require__(/*! ./js/index.js */ \"./static/view/page1/js/index.js\");\n\n__webpack_require__(/*! ./css/index.scss */ \"./static/view/page1/css/index.scss\");\n\n//# sourceURL=webpack:///./static/view/page1/index.js?");
 
 /***/ }),
 

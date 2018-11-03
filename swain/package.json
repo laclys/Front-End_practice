@@ -26,6 +26,8 @@
   "dependencies": {
     "core-decorators": "^0.20.0",
     "css-loader": "^1.0.1",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1"
   }
 }

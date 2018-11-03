@@ -3,11 +3,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
   entry: {
-    page1: './static/view/page1/index.js'
+    page1: './static/view/page1/index.js',
+    page2: './static/view/page2/index.js',
   },
   output: {
-    path: __dirname,
-    filename: './static/dist/page1/index.js'
+    path: __dirname + '/static/dist/',
+    filename: '[name]/js/index.js'
   },
   module: {
     rules: [{
@@ -19,25 +20,30 @@ module.exports = {
         test: /\.css?$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              // you can specify a publicPath here
-              // by default it use publicPath in webpackOptions.output
-              publicPath: ''
-            }
+            loader: MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader'
           }
+        ]
+      },
+      {
+        test: /\.scss?$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          },
+          'sass-loader'
         ]
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "[name].css",
+      filename: "[name]/css/index.css",
       chunkFilename: "[id].css"
     })
   ]
