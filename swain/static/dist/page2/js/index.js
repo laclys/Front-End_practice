@@ -86,6 +86,18 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./static/view/common/common.js":
+/*!**************************************!*\
+  !*** ./static/view/common/common.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nvar aaa = exports.aaa = \"IG是冠军\";\n\n//# sourceURL=webpack:///./static/view/common/common.js?");
+
+/***/ }),
+
 /***/ "./static/view/page2/css/index.css":
 /*!*****************************************!*\
   !*** ./static/view/page2/css/index.css ***!
@@ -117,7 +129,7 @@ eval("\n\n__webpack_require__(/*! ./js/index.js */ \"./static/view/page2/js/inde
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nconsole.log(222);\n\n//# sourceURL=webpack:///./static/view/page2/js/index.js?");
+eval("\n\nvar _common = __webpack_require__(/*! ../../common/common.js */ \"./static/view/common/common.js\");\n\nconsole.log(_common.aaa);\nconsole.log(222);\n\n//# sourceURL=webpack:///./static/view/page2/js/index.js?");
 
 /***/ })
 

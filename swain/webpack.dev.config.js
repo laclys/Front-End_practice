@@ -1,12 +1,23 @@
 const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+const util = require('./webpack.util.js')
+
+function addEntry() {
+  let entryObj = {}
+  util.getEntry().forEach(item => {
+    entryObj[item] = path.resolve(__dirname, 'static/view', item)
+  })
+  return entryObj
+}
 
 module.exports = {
-  entry: {
-    page1: './static/view/page1/index.js',
-    page2: './static/view/page2/index.js',
-  },
+  // entry: {
+  //   page1: path.resolve(__dirname, 'static/view/page1/index.js'),
+  //   page2: path.resolve(__dirname, 'static/view/page2/index.js'),
+  // },
+  entry: addEntry(),
   output: {
     path: __dirname + '/static/dist/',
     filename: '[name]/js/index.js'
@@ -19,8 +30,7 @@ module.exports = {
       },
       {
         test: /\.css?$/,
-        use: [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader
           },
           {
@@ -30,8 +40,7 @@ module.exports = {
       },
       {
         test: /\.scss?$/,
-        use: [
-          {
+        use: [{
             loader: MiniCssExtractPlugin.loader
           },
           {
@@ -49,8 +58,18 @@ module.exports = {
     }),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: {
-          safe: true
+        safe: true
       }
-  })
-  ]
+    })
+  ],
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: "async",
+  //     minSize: 0,
+  //     minChunks: 1,
+  //     maxAsyncRequests: 3,
+  //     maxInitialRequests: 3,
+  //     name: true
+  //   }
+  // }
 }
