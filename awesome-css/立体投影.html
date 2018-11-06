@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>立体投影</title>
+  <style>
+    .container {
+      margin: 20px auto;
+      position: relative;
+      width: 600px;
+      height: 100px;
+      background: hsl(48, 100%, 50%);
+      border-radius: 20px;
+    }
+
+    .container::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      right: 5%;
+      bottom: 0;
+      border-radius: 10px;
+      background: hsl(48, 100%, 20%);
+      transform: translate(0, -15%) rotate(-4deg);
+      transform-origin: center center;
+      box-shadow: 0 0 20px 15px hsl(48, 100%, 20%);
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>blur-shadow</title>
+  <style>
+    /* 利用伪元素，生成一个与原图一样大小的新图叠加在原图之下，
+    然后利用滤镜模糊 filter: blur() 配合其他的亮度/对比度，
+    透明度等滤镜，制作出一个虚幻的影子，伪装成原图的阴影效果。 */
+    .container {
+      width: 200px;
+      margin: 20px auto;
+    }
+
+    .avator {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: url(http://ww2.sinaimg.cn/mw690/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg) no-repeat center center;
+      background-size: 100% 100%;
+    }
+
+    .avator::after {
+      position: absolute;
+      top: 10%;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      background-size: 100% 100%;
+      border-radius: 50%;
+      z-index: -1;
+      transform: scale(.95);
+      filter: blur(10px) brightness(80%) opacity(.8);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="avator"></div>
+  </div>
+</body>
+
+</html>
