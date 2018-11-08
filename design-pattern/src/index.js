@@ -1,43 +1,48 @@
-// 状态模式： 一个对象有状态在变化
-// 每个状态变化都会触发一个逻辑
-// 不能总用if···else控制
+// 有限状态机：有限个状态，以及在这些状态之间的变化
+import StateMachine from 'javascript-state-machine'
+// init
+let fsm = new StateMachine({
+  init: '收藏',
+  transitions: [
+    {
+      name: 'doState',
+      from: '收藏',
+      to: '取消收藏'
+    },
+    {
+      name: 'deleteState',
+      from: '取消收藏',
+      to: '收藏'
+    }
+  ],
+  methods: {
+    // listen
+    onDoState: function() {
+      alert('收藏成功')
+      // do something
+      updateText()
+    },
 
-class State {
-  constructor(color) {
-    this.color = color
+    onDeleteState: function() {
+      alert('已经取消收藏')
+      // do something
+      updateText()
+    }
   }
-  handle(context) {
-    console.log(`turn to ${this.color} light`)
-    context.setState(this)
+})
+
+let btn = document.getElementById('btn1')
+
+btn.onclick = function() {
+  if (fsm.is('收藏')) {
+    fsm.doState()
+  } else {
+    fsm.deleteState()
   }
 }
 
-class Context {
-
-  constructor() {
-    this.state = null
-  }
-  getState() {
-    return this.state
-  }
-  setState(state) {
-    this.state = state
-  }
+function updateText() {
+  btn.innerHTML=fsm.state
 }
 
-//test
-
-let context = new Context()
-
-let green = new State('green')
-let yellow = new State('yellow')
-let red = new State('red')
-
-green.handle(context)
-console.log(context.getState())
-
-yellow.handle(context)
-console.log(context.getState())
-
-red.handle(context)
-console.log(context.getState())
+updateText()
