@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回到顶部-通过锚点+scroll-behavior</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      /* 这种方式之后chrome好使，safiri */
+      scroll-behavior: smooth;
+    }
+
+    div.block {
+      width: 100vw;
+      height: 600px;
+      line-height: 600px;
+      text-align: center;
+      font-size: 40px;
+      background: lightblue;
+    }
+
+    div.block:nth-child(2n) {
+      background: bisque
+    }
+
+    .btn {
+      display: block;
+      width: 100vw;
+      height: 300px;
+      line-height: 300px;
+      text-align: center;
+      font-size: 40px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <a id="top">
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <div class="block">block</div>
+  <a class="btn" id="btn" href="#top" >回到顶部</a>
+</body>
+
+<script>
+</script>
+
+</html>

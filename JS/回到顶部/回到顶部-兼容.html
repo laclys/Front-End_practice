@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>回到顶部-兼容</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div.block {
+      width: 100vw;
+      height: 600px;
+      line-height: 600px;
+      text-align: center;
+      font-size: 40px;
+      background: lightblue;
+    }
+
+    div.block:nth-child(2n) {
+      background: bisque
+    }
+
+    .btn {
+      display: block;
+      width: 100vw;
+      height: 300px;
+      line-height: 300px;
+      text-align: center;
+      font-size: 40px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="top">
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="block">block</div>
+    <div class="btn" id="btn">回到顶部</div>
+</body>
+
+<script>
+  var scrollTopSmooth = function (position) {
+    // 不存在原生`requestAnimationFrame`，用`setTimeout`模拟替代
+    if (!window.requestAnimationFrame) {
+      window.requestAnimationFrame = function (cb) {
+        return setTimeout(cb, 17);
+      }
+    }
+    // 当前滚动的高度
+    var scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+    // step
+    var step = function () {
+      var distance = position - scrollTop
+      scrollTop = scrollTop + distance / 5 // 移动到当前点到目标点距离的缓冲率
+      if (Math.abs(distance) < 1) {
+        window.scrollTo(0, position)
+      } else {
+        window.scrollTo(0, scrollTop)
+        requestAnimationFrame(step)
+      }
+    }
+    step()
+  }
+
+  var oBtn = document.getElementById('btn')
+  oBtn.onclick = function () {
+    scrollTopSmooth(0)
+  }
+</script>
+
+</html>
