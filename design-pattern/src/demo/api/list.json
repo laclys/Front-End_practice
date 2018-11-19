@@ -2,21 +2,25 @@
   {
     "id": 1,
     "name": "梦的化石",
-    "price": 149
+    "price": 149,
+    "discount": 1
   },
   {
-    "id": 1,
+    "id": 2,
     "name": "浪迹",
-    "price": 113
+    "price": 113,
+    "discount": 0
   },
   {
-    "id": 1,
+    "id": 3,
     "name": "天边一星子",
-    "price": 32
+    "price": 32,
+    "discount": 1
   },
   {
-    "id": 1,
+    "id": 4,
     "name": "远处的拉莫",
-    "price": 99
+    "price": 99,
+    "discount": 0
   }
 ]
