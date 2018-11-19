@@ -15,15 +15,14 @@ export default class List {
   }
 
   initItemList(data) {
-    data.map(itemData => {
+    data.forEach(itemData => {
       let item = createItem(this, itemData)
       item.init()
-      return item
     })
   }
 
   render() {
-    this.app.$el.apennd(this.$el)
+    this.app.$el.append(this.$el)
   }
 
   init() {
