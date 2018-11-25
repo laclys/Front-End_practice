@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<style>
+  .wrap {
+  width: 500px;
+  height: 500px;
+  background: #6cf;
+}
+
+.inner {
+  padding: 100px;
+  background: red;
+}
+
+</style>
+
+<body>
+  <div class="wrap" id="wrap">
+    <input type="button" value="点击" id="btn">
+    <div class="inner" style="display: none">
+      我是弹窗
+      <span>span</span>
+    </div>
+  </div>
+</body>
+<script>
+  var wrap = document.getElementById('wrap')
+  var btn = document.getElementById('btn')
+  var inner = document.getElementsByClassName('inner')[0]
+
+  // 方法一
+  /*   btn.addEventListener('click', function (e) {
+      stropCancel(e)
+      inner.style.display = 'block'
+    }, false)
+
+    inner.addEventListener('click', function (e) {
+      stropCancel(e)
+    }, false)
+
+    wrap.addEventListener('click', function(e) {
+      inner.style.display = 'none'
+    }) */
+
+  // 方法二
+  btn.addEventListener('click', function (e) {
+    stropCancel(e)
+    inner.style.display = 'block'
+  }, false)
+
+  document.addEventListener('mouseup', function (e) {
+    console.log(123)
+    var objTarget = inner
+    console.log(!isParent(e.target, objTarget))
+    if (objTarget != e.target && !isParent(e.target, objTarget)) {
+      inner.style.display = 'none'
+    }
+  }, false)
+
+  // --- helper ---
+  function stropCancel(e) {
+    var ev = e || window.event
+    if (ev && ev.stopPropagation) {
+      ev.stopPropagation()
+    } else {
+      ev.cancelable = true
+    }
+  }
+
+  function isParent(obj, parentObj) {
+
+    while (obj != undefined && obj != null && obj.tagName.toUpperCase() != 'BODY') {
+      if (obj == parentObj) {
+        return true
+      }
+      obj = obj.parentNode
+    }
+    return false
+  }
+</script>
+
+</html>
