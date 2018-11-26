@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .btn {
+      width: 100px;
+      height: 100px;
+      background: blanchedalmond;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="btn"></div>
+</body>
+<script>
+  //Chrome 51 开始
+  // Firefox 49
+  // 会报错 原因在于  passive event listener 
+  // touch 事件中，增加了 passive 为 true 的设置，它就不会调用 preventDefault 来阻止默认滑动行为
+  // [Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive. See https://www.chromestatus.com/features/5093566007214080
+  // document.addEventListener('touchstart', function (event) {
+  //   console.log(123)
+  //   event.preventDefault()
+  // }, false)
+
+
+  // 不考虑兼容{passive: false}即可
+
+  // 解决方案（兼容）
+  var supportsPassive = false
+  document.addEventListener("touchstart", function () {
+    console.log(123)
+  }, {
+    get passive() {
+      supportsPassive = true;
+      return false;
+    }
+  })
+</script>
+
+</html>
