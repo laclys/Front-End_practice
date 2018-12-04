@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>圆形、椭圆形、三角形、平行四边形、梯形、六角星、五角星、五边形、六边形、心形、八卦</title>
+  <style>
+    body {
+      padding: 100px;
+      margin: 0;
+      background-color: #f1f1f1;
+    }
+
+    pre {
+      background: transparent;
+      padding: 0;
+      font-size: 14px;
+    }
+
+    #css3-circle {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #232323;
+    }
+
+    #css3-elipse {
+      width: 200px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: #232323;
+    }
+
+    #css3-triangle {
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 150px solid #232323;
+    }
+
+    #css3-parallelogram {
+      width: 200px;
+      height: 100px;
+      background: #232323;
+      -webkit-transform: skew(-45deg);
+      -moz-transform: skew(-45deg);
+      -o-transform: skew(-45deg);
+      transform: skew(-45deg);
+    }
+
+    #css3-trapezoid {
+      width: 100px;
+      height: 0;
+      border-bottom: 100px solid #232323;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+
+    #css3-six-star {
+      width: 0;
+      height: 0;
+      position: relative;
+      border-bottom: 100px solid #232323;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+
+    #css3-six-star:after {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: -50px;
+      top: 35px;
+      border-top: 100px solid #232323;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+    }
+
+    #css3-five-star {
+      width: 0px;
+      height: 0px;
+      margin: 50px 0;
+      position: relative;
+      display: block;
+      color: #232323;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #232323;
+      border-left: 100px solid transparent;
+      -moz-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      -o-transform: rotate(35deg);
+    }
+
+    #css3-five-star:before {
+      border-bottom: 80px solid #232323;
+      ;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -45px;
+      left: -63px;
+      display: block;
+      content: '';
+      -webkit-transform: rotate(-35deg);
+      -moz-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+      -o-transform: rotate(-35deg);
+    }
+
+    #css3-five-star:after {
+      position: absolute;
+      display: block;
+      color: #232323;
+      top: 3px;
+      left: -105px;
+      width: 0px;
+      height: 0px;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #232323;
+      border-left: 100px solid transparent;
+      -webkit-transform: rotate(-70deg);
+      -moz-transform: rotate(-70deg);
+      -ms-transform: rotate(-70deg);
+      -o-transform: rotate(-70deg);
+      content: '';
+    }
+
+    #css3-pentagon {
+      position: relative;
+      width: 54px;
+      border-width: 50px 18px 0;
+      border-style: solid;
+      border-color: #232323 transparent;
+    }
+
+    #css3-pentagon:before {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -85px;
+      left: -18px;
+      border-width: 0 45px 35px;
+      border-style: solid;
+      border-color: transparent transparent #232323;
+    }
+
+    #css3-hexagon {
+      width: 100px;
+      height: 55px;
+      background: #232323;
+      position: relative;
+    }
+
+    #css3-hexagon:before {
+      content: "";
+      position: absolute;
+      top: -25px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 25px solid #232323;
+    }
+
+    #css3-hexagon:after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-top: 25px solid #232323;
+    }
+
+    #css3-heart {
+      position: relative;
+      width: 100px;
+      height: 90px;
+    }
+
+    #css3-heart:before,
+    #css3-heart:after {
+      position: absolute;
+      content: "";
+      left: 50px;
+      top: 0;
+      width: 50px;
+      height: 80px;
+      background: #232323;
+      -moz-border-radius: 50px 50px 0 0;
+      border-radius: 50px 50px 0 0;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transform-origin: 0 100%;
+      -moz-transform-origin: 0 100%;
+      -ms-transform-origin: 0 100%;
+      -o-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+    }
+
+    #css3-heart:after {
+      left: 0;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transform-origin: 100% 100%;
+      -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+      -o-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+    }
+
+    #css3-gossip,
+    .css3-gossip {
+      width: 96px;
+      height: 48px;
+      background: #f1f1f1;
+      border-color: #232323;
+      border-style: solid;
+      border-width: 2px 2px 50px 2px;
+      border-radius: 100%;
+      position: relative;
+    }
+
+    #css3-gossip:before,
+    .css3-gossip:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      background: #f1f1f1;
+      border: 18px solid #232323;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+    }
+
+    #css3-gossip:after,
+    .css3-gossip:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: #232323;
+      border: 18px solid #f1f1f1;
+      border-radius: 100%;
+      width: 12px;
+      height: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>CSS3 圆形</h2>
+  <div id="css3-circle"></div>
+  <h2>CSS3 椭圆形</h2>
+  <div id="css3-elipse"></div>
+  <h2>CSS3 三角形</h2>
+  <div id="css3-triangle"></div>
+  <h2>CSS3 平行四边形</h2>
+  <div id="css3-parallelogram"></div>
+  <h2>CSS3 梯形</h2>
+  <div id="css3-trapezoid"></div>
+  <h2>CSS3 六角星</h2>
+  <div id="css3-six-star"></div>
+  <h2>CSS3 五角星</h2>
+  <div id="css3-five-star"></div>
+  <h2>CSS3 五边形</h2>
+  <div id="css3-pentagon"></div>
+  <h2>CSS3 六边形</h2>
+  <div id="css3-hexagon"></div>
+  <h2>CSS3 心形</h2>
+  <div id="css3-heart"></div>
+  <h2>CSS3 八卦</h2>
+  <div id="css3-gossip"></div>
+
+
+</body>
+
+</html>
