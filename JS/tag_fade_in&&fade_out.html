@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>animate-css</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+    }
+
+    .container {
+      overflow: hidden;
+      position: relative;
+      width: 500px;
+      height: 100vh;
+      background: #333;
+      margin: 0 auto;
+    }
+
+    .mgs-block {
+      position: absolute;
+      top: 30px;
+      right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 25px;
+      font-size: 18px;
+      background: lightblue;
+      color: darkgoldenrod;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="mgs-block animated fadeInRight" id="mgs-block">Aatrox</div>
+  </div>
+</body>
+
+<script>
+  let msgBlock = document.querySelector('#mgs-block')
+  let arr = ['Aatrox', 'Ahri', 'Akali', 'Amumu', 'Anivia', 'Annie', 'Ashe', 'Azir']
+  let len = arr.length
+  let index = 0
+
+  const fadeIn = () => {
+    msgBlock.classList.remove('fadeOut')
+    msgBlock.classList.add('fadeInRight')
+  }
+
+  const fadeOut = () => {
+    msgBlock.classList.remove('fadeInRight')
+    msgBlock.classList.add('fadeOut')
+  }
+
+  const changeContent = () => {
+    index = index + 1
+    if (index === len) index = 0
+    fadeOut()
+    setTimeout(() => {
+      msgBlock.innerHTML = arr[index]
+      fadeIn()
+    }, 3000)
+  }
+
+  setInterval(changeContent, 10000)
+</script>
+
+
+</html>
