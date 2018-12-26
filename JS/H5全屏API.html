@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>H5全屏API</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .img-wrapper {
+      position: relative;
+      width: 500px;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+    }
+
+    .img-wrapper .btn {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 6px;
+      font-size: 18px;
+      color: white;
+      background: #6cf;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="img-wrapper">
+    <img id="img" src="http://wx2.sinaimg.cn/large/68f74d54ly1fyhveknfh7j20qo0zk7ag.jpg" alt="">
+    <div class="btn">full-screen</div>
+  </div>
+</body>
+<script>
+  let oBtn = document.querySelector('.btn')
+  let oImg = document.getElementById('img')
+  oBtn.addEventListener('click', () => {
+    oImg.requestFullscreen()
+  }, false)
+
+  oImg.addEventListener('click', () => {
+    console.log('click')
+    if(isDocumentInFullScreenMode()) {
+      document.webkitCancelFullScreen() // cancelFullScreen()不能用
+    }
+  })
+
+  function isDocumentInFullScreenMode() {
+    return document.fullscreen
+  }
+</script>
+
+</html>
