@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Css文章顶部进度条</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right top, #ffcc00 50%, #eee 50%);
+      background-size: 100% calc(100% - 100vh + 5px);
+      background-repeat: no-repeat;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 5px;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: #fff;
+      z-index: -1;
+    }
+
+    .content {
+      line-height: 2;
+      font-size: 24px;
+      color: #4A4A4A;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content">
+    她一生都在辜负
+    <br>
+    把夕阳下漫山辜负成荒原
+    <br>
+    飞鸟无处可栖
+    <br>
+    只能在临去时落下羽毛
+    <br>
+    旧的事物都会变作灰色
+    <br>
+    而阴影的生机将她拥住
+    <br>
+    甚至使她误会——
+    <br>
+    天上有翅膀
+    <br>
+    她一生都在追逐
+    <br>
+    把夕阳下漫山追逐成荒原
+  </div>
+</body>
+
+</html>
