@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>requestAnimationFrame Demo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background: #4A4A4A;
+    }
+
+    .title {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #f2f2f2;
+    }
+
+    .wrapper {
+      overflow: hidden;
+      width: 800px;
+      height: 50px;
+      border: 1px solid #f2f2f2;
+      border-radius: 25px;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 50px;
+      background: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="title" >Loading~</p>
+  <div class="wrapper" >
+    <div class="progress-bar"></div>
+  </div>
+</body>
+<script>
+  function loadingBar(ele) {
+    let handle
+    return () => {
+      ele.style.width = '0' // 每次触发将进度清零
+      cancelAnimationFrame(handle) // 清空上一个AnimationFrame
+      let _progress = () => {
+        let eleWidth = parseInt(ele.style.width)
+        if (eleWidth < 800) {
+          ele.style.width = `${eleWidth + 5}px`
+          handle = requestAnimationFrame(_progress)
+        } else {
+          cancelAnimationFrame(handle)
+        }
+      }
+      handle = requestAnimationFrame(_progress)
+    }
+  }
+
+  let targetLoadingBar = document.getElementsByClassName('progress-bar')[0]
+  loadingBar(targetLoadingBar)()
+</script>
+
+</html>
