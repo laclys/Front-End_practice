@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hamburger</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .burger {
+      /*奶酪，肉，生菜 */
+      /* 尺寸 */
+      width: 380px;
+      height: 40px;
+      border-radius: 15px;
+      box-shadow:
+        10px 50px #fddb28,
+        10px 85px #681f24,
+        10px 120px #82af15;
+    }
+
+    .burger:before {
+      /* 面包 */
+      display: block;
+      content: "       ▾";
+      /* 空格会显示在 content 中*/
+      white-space: pre;
+      line-height: 25px;
+      width: 400px;
+      height: 55px;
+      color: #fddb28;
+      font-size: 120px;
+      border-top: 80px solid #f5b230;
+      border-bottom: 50px solid #f5b230;
+      border-radius: 30% 30% 20% 20%;
+    }
+
+    .burger:after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 6px;
+      border-radius: 40%;
+      box-shadow:
+        100px -165px #ffffff,
+        160px -165px #ffffff,
+        230px -165px #ffffff,
+        290px -165px #ffffff,
+        60px -135px #ffffff,
+        125px -135px #ffffff,
+        190px -135px #ffffff,
+        255px -135px #ffffff,
+        330px -135px #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='burger' />
+</body>
+
+</html>
