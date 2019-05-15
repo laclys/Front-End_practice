@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>malarquee</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      overflow: hidden;
+      position: relative;
+      margin: 10% auto;
+      width: 40%;
+      height: 40px; 
+      font-size: 0;
+      background: #ddd;
+    }
+
+    .wrap .cont {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 200%;
+      animation: 5s move infinite linear;
+    }
+
+    .wrap .txt {
+      display: inline-block;
+      margin-top: 5px;
+      width: 50%;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 18px;
+      color: #fff;
+      background: #000;
+    }
+
+    .wrap:hover .cont {
+      animation-play-state: paused;
+    }
+
+    @keyframes move {
+      0% {
+        left: 0;
+      }
+
+      100% {
+        left: -100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="cont">
+      <p class="txt">1.xxxxxxxxxxxxxxxxxxxxxx</p>
+      <p class="txt">2.aaaaaaaaaaaaaaaaaaaaaa。</p>
+    </div>
+  </div>
+</body>
+
+</html>
