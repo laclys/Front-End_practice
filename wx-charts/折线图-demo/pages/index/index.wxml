@@ -1,0 +1,5 @@
+<!-- index.wxml -->
+<view class="container">
+  <view>折线图</view>
+  <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas"></canvas>
+</view>
