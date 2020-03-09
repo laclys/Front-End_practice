@@ -1,0 +1,10 @@
+<view wx:if='{{toastObj && toastObj.isShow}}' class='toastContainer'>
+  <view class='pos-bottom'>
+    <view class='toast'>
+      <block wx:if='{{ toastObj.icon }}'>
+        <image class='toast-icon' src='{{ toastObj.icon }}' mode='scaleToFill' />
+      </block>
+      <text class='toast-text'>{{ toastObj.title }}</text>
+    </view>
+  </view>
+</view>
