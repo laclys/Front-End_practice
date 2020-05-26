@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import superagent from 'superagent';
 import Analyzer from './analyzer';
+// import DellAnalyzer from './dellAnalyzer';
 
 export interface AnalyzerType {
   analyze: (html: string, filePath: string) => string
@@ -10,16 +11,16 @@ export interface AnalyzerType {
 class Crowller {
   private filePath = path.resolve(__dirname, '../data/course.json');
 
-  async getRawHtml() {
+  private async getRawHtml() {
     const ret = await superagent.get(this.url);
     return ret.text;
   }
 
-  writeFile(content: string) {
+  private writeFile(content: string) {
     fs.writeFileSync(this.filePath, content);
   }
 
-  async initSpiderProcess() {
+  private async initSpiderProcess() {
     const html = await this.getRawHtml();
     const fileContent = this.analyzer.analyze(html, this.filePath);
     this.writeFile(fileContent);
@@ -32,5 +33,5 @@ class Crowller {
 
 const secret = 'x3b174jsx';
 const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secret}`;
-const analyzer = new Analyzer();
+const analyzer = Analyzer.getInstance();
 new Crowller(url, analyzer);

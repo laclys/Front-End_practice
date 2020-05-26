@@ -1,6 +1,6 @@
 import fs from 'fs';
 import cheerio from 'cheerio';
-import { AnalyzerType } from './crowller'
+import { AnalyzerType } from './crowller';
 
 interface Course {
   title: string;
@@ -17,6 +17,17 @@ interface Content {
 }
 
 export default class Analyzer implements AnalyzerType {
+  private constructor() {}
+
+  private static instance: Analyzer;
+
+  static getInstance() {
+    if (!Analyzer.instance) {
+      Analyzer.instance = new Analyzer();
+    }
+    return Analyzer.instance;
+  }
+
   private getCoureInfo(html: string) {
     const $ = cheerio.load(html);
     const courseItems = $('.course-item');
