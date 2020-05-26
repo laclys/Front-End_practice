@@ -5,7 +5,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node ./src/crowller.ts"
+    "dev:build": "tsc -w",
+    "dev:start": "nodemon node ./build/crowller.js",
+    "dev": "concurrently npm:dev:*"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "data/*"
+    ]
   },
   "devDependencies": {
     "@types/cheerio": "^0.22.17",
@@ -15,6 +22,8 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
     "superagent": "^5.2.2"
   }
 }
