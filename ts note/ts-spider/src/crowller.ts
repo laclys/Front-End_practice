@@ -5,7 +5,7 @@ import Analyzer from './analyzer';
 // import DellAnalyzer from './dellAnalyzer';
 
 export interface AnalyzerType {
-  analyze: (html: string, filePath: string) => string
+  analyze: (html: string, filePath: string) => string;
 }
 
 class Crowller {
@@ -31,7 +31,4 @@ class Crowller {
   }
 }
 
-const secret = 'x3b174jsx';
-const url = `http://www.dell-lee.com/typescript/demo.html?secret=${secret}`;
-const analyzer = Analyzer.getInstance();
-new Crowller(url, analyzer);
+export default Crowller;
