@@ -1,19 +1,17 @@
 import fs from 'fs';
 import path from 'path';
 import superagent from 'superagent';
-import Analyzer from './analyzer';
-// import DellAnalyzer from './dellAnalyzer';
 
-export interface AnalyzerType {
+export interface Analyzer {
   analyze: (html: string, filePath: string) => string;
 }
 
 class Crowller {
-  private filePath = path.resolve(__dirname, '../data/course.json');
+  private filePath = path.resolve(__dirname, '../../data/course.json');
 
   private async getRawHtml() {
-    const ret = await superagent.get(this.url);
-    return ret.text;
+    const result = await superagent.get(this.url);
+    return result.text;
   }
 
   private writeFile(content: string) {
@@ -26,7 +24,7 @@ class Crowller {
     this.writeFile(fileContent);
   }
 
-  constructor(private url: string, private analyzer: AnalyzerType) {
+  constructor(private url: string, private analyzer: Analyzer) {
     this.initSpiderProcess();
   }
 }
