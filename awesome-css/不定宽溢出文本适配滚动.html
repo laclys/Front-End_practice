@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不定宽溢出文本适配滚动</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: burlywood;
+      }
+      .wrap {
+        position: relative;
+        overflow: hidden;
+        width: 150px;
+        background: whitesmoke;
+      }
+
+      p {
+        /* 使用 inline-block 获取实际文本的宽度 */
+        display: inline-block;
+        white-space: nowrap;
+      }
+
+      p:hover {
+        animation: move 1.5s infinite alternate linear;
+      }
+
+      @keyframes move {
+        0% {
+          left: 0;
+          transform: translate(0, 0);
+        }
+        100% {
+          /* 向右位移父容器宽度的 100% */
+          left: 100%;
+          /* 能够向左位移自身宽度的 100% */
+          transform: translate(calc(-100%, 0));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p title="我的宽度是正常宽度">我的宽度是正常宽度</p>
+      <p class="scroll" title="我的宽度是溢出了一小部分">
+        我的宽度是溢出了一小部分
+      </p>
+      <p class="scroll" title="我的宽度是溢出了溢出了很大一部分">
+        我的宽度是溢出了溢出了很大一部分
+      </p>
+    </div>
+  </body>
+</html>
