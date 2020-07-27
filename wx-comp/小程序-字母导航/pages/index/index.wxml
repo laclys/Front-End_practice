@@ -1,0 +1,9 @@
+<scroll-view class="scroll" scroll-y style="height: {{windowHeight}}px" >
+  <view wx:for="{{ left }}"
+    wx:key="item" class="{{ (scrollTop >= item.regions[0] && scrollTop < item.regions[1]) ? 'active' : '' }}" bindtap="scroll" data-key="{{item}}">
+    {{ item.name }}
+  </view>
+</scroll-view>
+<scroll-view class="content" bindscroll="scrollContent"  scroll-y scroll-into-view="{{ intoindex }}" scroll-with-animation>
+  <view wx:for="{{ content }}" wx:key="idx" id="{{item.group}}">{{ item.name }}</view>
+</scroll-view>
