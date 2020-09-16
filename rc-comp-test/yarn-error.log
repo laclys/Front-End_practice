@@ -1,0 +1,65 @@
+Arguments: 
+  /usr/local/lib/node_modules/node/bin/node /usr/local/bin/yarn build
+
+PATH: 
+  /Users/lac/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/lac/go/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  13.10.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/lac/Desktop/rc-comp-test/package.json: Unexpected token } in JSON at position 326
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "rc-comp-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/bundle.js",
+    "files": [
+      "dist"
+    ],
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "webpack-dev-server --config webpack.dev.config.js",
+      "build": "webpack --config webpack.prod.config.js",
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1"
+    },
+    "devDependencies": {
+      "babel-cli": "^6.26.0",
+      "babel-core": "^6.26.0",
+      "babel-loader": "^7.1.4",
+      "babel-preset-env": "^1.6.1",
+      "babel-preset-react": "^6.24.1",
+      "css-loader": "^4.3.0",
+      "html-webpack-plugin": "^4.4.1",
+      "style-loader": "^1.2.1",
+      "webpack": "^4.44.1",
+      "webpack-cli": "^3.3.12",
+      "webpack-dev-server": "^3.11.0",
+      "webpack-node-externals": "^2.5.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
