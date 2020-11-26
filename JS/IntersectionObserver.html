@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntersectionObserver</title>
+  <style>
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+    }
+
+    .img {
+      margin-bottom: 50px;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+
+
+      var io = new IntersectionObserver((entries) => {
+        entries.forEach(item => {
+          // isIntersecting是一个Boolean值，判断目标元素当前是否可见
+          if (item.isIntersecting) {
+            item.target.style = 'transform: scale(1.5);'
+            // 图片加载后即停止监听该元素
+            io.unobserve(item.target)
+          }
+        })
+      })
+
+      console.log('!!!!')
+      const imgList = [...document.querySelectorAll('.img')]
+      imgList.forEach(i => io.observe(i))
+    }
+  </script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+    <img class="img" src="https://ww1.sinaimg.cn/mw1024/68f74d54jw8f22cfa95ijj20ku0kumy7.jpg" alt="">
+  </div>
+</body>
+
+</html>
