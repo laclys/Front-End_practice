@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: lightblue;
+}
+
+img {
+  width: 500px;
+  object-fit: contain;
+}
