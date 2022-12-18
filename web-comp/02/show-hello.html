@@ -1,0 +1,30 @@
+<!-- 有自己的 id 空间。
+对主文档的 JavaScript 选择器隐身，比如 querySelector。
+只使用 shadow tree 内部的样式，不使用主文档的样式。 -->
+
+<script>
+  customElements.define('show-hello', class extends HTMLElement {
+    // 在元素被添加到文档之后，浏览器会调用这个方法
+    connectedCallback() {
+      // 调用 elem.attachShadow({mode: …}) 可以创建一个 shadow tree
+      const shadow = this.attachShadow({
+        mode: 'open'
+      });
+      console.log('elem.shadowRoot.host', this.shadowRoot.host)
+      shadow.innerHTML = `
+      <style> p { font-weight: bold; } </style>
+      <p>
+        Hello, ${this.getAttribute('name')}
+      </p>`;
+    }
+  });
+
+</script>
+
+<show-hello id="showEle" name="John"></show-hello>
+
+<script>
+  console.log('showEle', showEle.shadowRoot.querySelectorAll('p').length)
+
+</script>
+

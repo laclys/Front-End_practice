@@ -1,0 +1,16 @@
+<template id="tmpl">
+  <style> p { font-weight: bold; } </style>
+  <p id="message"></p>
+</template>
+
+<div id="elem">Click me</div>
+
+<script>
+  elem.onclick = function() {
+    elem.attachShadow({mode: 'open'});
+
+    elem.shadowRoot.append(tmpl.content.cloneNode(true)); // (*)
+
+    elem.shadowRoot.getElementById('message').innerHTML = "Hello from the shadows!";
+  };
+</script>
