@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100vw;
+      min-height: 100vh;
+    }
+
+    .item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      flex-shrink: 0;
+      margin-bottom: 10px;
+      margin-right: 20px;
+      padding: 10px;
+      width: calc(50% - 10px);
+      box-sizing: border-box;
+      border: 1px solid black;
+      background: yellow;
+    }
+
+    .item:nth-child(2n) {
+      margin-right: 0;
+    }
+
+    .item:last-child:nth-child(2n+1) {
+      width: 100%;
+      background: green;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      margin-right: 0;
+    }
+
+
+    .item:last-child:nth-child(2n) {
+      border-bottom-right-radius: 10px;
+    }
+
+    .item:nth-last-child(2) {
+      border-bottom-left-radius: 10px;
+    }
+
+
+    .item:first-child:nth-child(1) {
+      border-top-left-radius: 10px;
+    }
+
+    .item:nth-child(2) {
+      border-top-right-radius: 10px;
+    }
+
+    .item:last-child:first-child {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+  </div>
+</body>
+
+</html>
