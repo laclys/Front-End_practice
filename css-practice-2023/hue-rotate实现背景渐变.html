@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 100px auto;
+      background: linear-gradient(45deg, #5fddcc, #ff004d);
+      animation: hueRotate 10s infinite alternate;
+    }
+    /* hue-rotate：为色相旋转滤镜，默认的值为 0deg，当旋转 360deg 后，相当于回到了本身的颜色值。 */
+    @keyframes hueRotate {
+      0% {
+        filter: hue-rotate(0);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      position: relative;
+      overflow: hidden;
+      width: 100px;
+      height: 100px;
+      margin: 100px auto;
+      border: 2px solid #000;
+    }
+
+    div::before {
+      content: "";
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      bottom: -100%;
+      right: -100%;
+      background: linear-gradient(45deg, #ffc700 0%, #e91e1e 50%, #6f27b0 100%);
+      background-size: 100% 100%;
+      animation: bgposition 5s infinite linear alternate;
+      z-index: -1;
+    }
+
+    @keyframes bgposition {
+      0% {
+        transform: translate(30%, 30%);
+      }
+
+      25% {
+        transform: translate(30%, -30%);
+      }
+
+      50% {
+        transform: translate(-30%, -30%);
+      }
+
+      75% {
+        transform: translate(-30%, 30%);
+      }
+
+      100% {
+        transform: translate(30%, 30%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

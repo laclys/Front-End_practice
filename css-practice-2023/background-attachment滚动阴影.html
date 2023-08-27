@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- ！！！Safari on iOS 及 Android Browser 对 background-attachment 的支持度依旧不高 -->
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .g-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    li {
+      line-height: 24px;
+    }
+
+    ul {
+      position: relative;
+      margin: auto;
+      overflow: auto;
+      height: 8em;
+      padding: .3em .5em;
+      border: 1px solid silver;
+    }
+
+    .g-one {
+      background: linear-gradient(#fff, #f00);
+      background-size: 100% 10px;
+      background-repeat: no-repeat;
+      background-attachment: local;
+    }
+
+    .g-two {
+      background: radial-gradient(at 50% 0, #000, #0f0 72%);
+      background-size: 100% 10px;
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+    }
+
+    .g-combine {
+      background:
+        linear-gradient(#fff, #f00),
+        radial-gradient(at 50% 0%, #000, #0f0 72%);
+      background-size: 100% 10px, 100% 10px;
+      background-repeat: no-repeat;
+      background-attachment: local, scroll;
+    }
+
+    .g-final {
+      background:
+        linear-gradient(#fff, transparent 100%),
+        linear-gradient(rgba(0, 0, 0, .5), transparent 100%);
+      background-size: 100% 50px, 100% 10px;
+      background-repeat: no-repeat;
+      background-attachment: local, scroll;
+    }
+
+
+    .g-tips {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-around;
+      font-size: 14px;
+      font-weight: bold;
+
+      div {
+        width: 250px;
+        text-align: center;
+      }
+
+      span {
+        color: deeppink;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="g-container">
+    <ul class="g-one">
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+    </ul>
+    <ul class="g-two">
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+    </ul>
+    <ul class="g-combine">
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+    </ul>
+    <ul class="g-final">
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+      <li>AAAAAAAA AAAA</li>
+      <li>BBBBBBBB CCCC</li>
+      <li>DDDDDDDD DDDD</li>
+    </ul>
+  </div>
+  <div class="g-tips">
+    <div>background-attachment: <span>local</span></div>
+    <div>background-attachment: <span>scroll</span></div>
+    <div>background-attachment: <span>local</span> + background-attachment: <span>scroll</span></div>
+    <div></div>
+    </span>
+</body>
+
+</html>

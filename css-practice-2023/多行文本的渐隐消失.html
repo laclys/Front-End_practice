@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    p {
+      position: relative;
+      width: 400px;
+    }
+
+    a {
+      background: linear-gradient(90deg, transparent, transparent 70%, #fff);
+      background-repeat: no-repeat;
+      cursor: pointer;
+      color: transparent;
+
+    }
+
+    a::before {
+      content: "Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #000;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+  <p>
+    <a>Mollitia nostrum placeat consequatur deserunt velit ducimus possimus commodi temporibus debitis quam
+    </a>
+  </p>
+</body>
+
+</html>

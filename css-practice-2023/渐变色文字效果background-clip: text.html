@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      font-size: 54px;
+      color: transparent;
+      background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+      background-clip: text;
+      /* 必须要加这个不然不生效 */
+      -webkit-background-clip: text;
+    }
+
+    p {
+      font-size: 54px;
+      color: transparent;
+      background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: huerotate 3s infinite alternate;
+    }
+
+    span {
+      margin: 50px auto;
+      font-size: 54px;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      color: transparent;
+      background: linear-gradient(45deg, #ffeb3b, #009688, yellowgreen, pink, #03a9f4, #9c27b0, #8bc34a);
+      background-size: cover;
+      background-position: center center;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: huerotate 3s infinite;
+    }
+
+    @keyframes huerotate {
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+  </style>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div> background-clip: text</div>
+  <p>background-clip: text animation</p>
+  <span>background-clip: text complex</span>
+</body>
+
+</html>

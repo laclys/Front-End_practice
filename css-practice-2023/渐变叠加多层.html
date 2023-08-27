@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .notching {
+      width: 200px;
+      height: 120px;
+      background:
+        linear-gradient(135deg, transparent 15px, deeppink 0),
+        linear-gradient(-135deg, transparent 15px, deeppink 0),
+        linear-gradient(-45deg, transparent 15px, deeppink 0),
+        linear-gradient(45deg, transparent 15px, deeppink 0);
+      background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+      background-position: top left, top right, bottom right, bottom left;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="notching"></div>
+</body>
+
+</html>

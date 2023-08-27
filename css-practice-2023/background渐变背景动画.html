@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      position: relative;
+      width: 300px;
+      height: 100px;
+      margin: 20px auto;
+      background: linear-gradient(90deg, #ffc700 0%, #e91e1e 33%, #6f27b0 66%, #00ff88 100%);
+      background-position: 100% 0;
+      animation: bgSize 5s infinite ease-in-out alternate;
+
+    }
+
+    @keyframes bgSize {
+      0% {
+        background-size: 300% 100%;
+      }
+
+      100% {
+        background-size: 100% 100%;
+      }
+    }
+
+    .box2 {
+      position: relative;
+      width: 300px;
+      height: 100px;
+      margin: 20px auto;
+      background: linear-gradient(90deg, #ffc700 0%, #e91e1e 33%, #6f27b0 66%, #00ff88 100%);
+      background-size: 200% 100%;
+      background-position: 0 0;
+      animation: bgposition 2s infinite linear alternate;
+
+    }
+
+    @keyframes bgSize {
+      0% {
+        background-size: 300% 100%;
+      }
+
+      100% {
+        background-size: 100% 100%;
+      }
+    }
+
+    @keyframes bgposition {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: 100% 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+</body>
+
+</html>

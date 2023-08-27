@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+      /* 利用了 background 可以多重这个特性，不过由于不支持写成 background: #fff, 
+      #e91e63，所以将第一重白色写成了 linear-gradient(#fff, #fff)，它其实等价于 #fff */
+      background: linear-gradient(#fff, #fff), #e91e63;
+      background-clip: padding-box, border-box;
+      border: 5px dashed #ffeb3b;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>
