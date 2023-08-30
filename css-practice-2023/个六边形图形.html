@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      position: relative;
+      margin: 0 auto;
+      width: 150px;
+      height: 260px;
+      background: #fff;
+      filter:
+        drop-shadow(0 0 .5px #333) drop-shadow(0 0 .5px #333) drop-shadow(0 0 .5px #333);
+    }
+
+    div::before,
+    div::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: inherit;
+    }
+
+    div::before {
+      transform: rotate(60deg);
+    }
+
+    div::after {
+      transform: rotate(-60deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

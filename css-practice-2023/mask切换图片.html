@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .g-outer {
+      width: 650px;
+      height: 340px;
+      background-image: url(https://images.cnblogs.com/cnblogs_com/coco1s/881614/o_21081614180122.png);
+    }
+
+    .g-inner {
+      width: 650px;
+      height: 340px;
+      background: url(https://images.cnblogs.com/cnblogs_com/coco1s/881614/o_21081614175811.png);
+      -webkit-mask: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+      -webkit-mask-size: 200% 100%;
+      animation: maskChange 2s infinite alternate linear;
+    }
+
+    @keyframes maskChange {
+      0% {
+        -webkit-mask-position: -100% 0;
+      }
+
+      100% {
+        -webkit-mask-position: 0 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="g-outer">
+    <div class="g-inner"></div>
+  </div>
+</body>
+
+</html>
