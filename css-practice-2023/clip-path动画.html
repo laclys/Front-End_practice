@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- clip-path 的一大优点在于它可以与 CSS 中的过渡 transtion 与动画 animation 进行联动，实现动画效果 -->
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: crimson;
+      animation: polygon-ani 3s linear infinite;
+    }
+
+    @keyframes polygon-ani {
+
+      0%,
+      5% {
+        clip-path: polygon(50% 0%,
+            0% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%);
+      }
+
+      30%,
+      35% {
+        clip-path: polygon(50% 0%,
+            100% 50%,
+            50% 100%,
+            0% 50%,
+            0% 50%);
+      }
+
+      60%,
+      65% {
+        clip-path: polygon(50% 0%,
+            100% 38%,
+            82% 100%,
+            18% 100%,
+            0% 38%);
+      }
+
+      95%,
+      100% {
+        clip-path: polygon(50% 0%,
+            0% 100%,
+            100% 100%,
+            100% 100%,
+            100% 100%);
+      }
+      /* 顶点数量要保持一致 不然动画不生效 */
+    }
+    /* 三边形向四边形再到五边形的一个变换效果，每个 clip-path 都有 5 个顶点，只是对于多出了顶点的图形，利用坐标点重合进行隐藏 */
+
+    .box2 {
+      margin-top: 50px;
+      width: 200px;
+      height: 200px;
+      background-color: blueviolet;
+      clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+      transition: .5s clip-path;
+    }
+
+    .box2:hover {
+      clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%, 0 100%);
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+
+  <div class="box2"></div>
+</body>
+
+</html>

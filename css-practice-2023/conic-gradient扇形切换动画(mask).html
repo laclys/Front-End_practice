@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @property --per {
+      syntax: '<percentage>';
+      inherits: false;
+      initial-value: -10%;
+    }
+
+    div {
+      position: relative;
+      width: 400px;
+      height: 400px;
+      background: url(https://picsum.photos/400/400?random=5) no-repeat;
+
+    }
+
+    div::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url(https://picsum.photos/400/400?random=100) no-repeat;
+      -webkit-mask: conic-gradient(#000 0,
+          #000 var(--per),
+          transparent calc(var(--per) + 10%),
+          transparent);
+      z-index: 1;
+      /* animation: name duration timing-function delay iteration-count direction play-state; */
+      animation: maskRotate 4s ease-in forwards infinite;
+    }
+
+    @keyframes maskRotate {
+      0% {
+        --per: -10%;
+      }
+
+      100% {
+        --per: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: burlywood;
+    }
+
+    .g-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 400px;
+      height: 300px;
+      overflow: hidden;
+      transition: clip-path .3s linear;
+      clip-path: circle(20px at 44px 44px);
+      background: #fff;
+      cursor: pointer;
+    }
+
+
+    .g-container:hover {
+      clip-path: circle(460px at 44px 44px);
+    }
+
+    li:hover {
+      color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="g-container">
+    <ul>
+      <li>11111</li>
+      <li>22222</li>
+      <li>33333</li>
+      <li>44444</li>
+    </ul>
+  </div>
+</body>
+
+</html>

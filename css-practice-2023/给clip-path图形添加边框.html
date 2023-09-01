@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 借助 filter: drop-shadow() 给 clip-path 图形添加边框或者阴影 */
+    /* drop-shadow() 是可以重复添加多次的（我们称之为多层阴影） */
+    .father {
+      margin: auto;
+      filter:
+        drop-shadow(0 0 .5px #000) drop-shadow(0 0 .5px #000) drop-shadow(0 0 .5px #000) drop-shadow(0 0 .5px #000) drop-shadow(0 0 .5px #000) drop-shadow(0 0 .5px #000) drop-shadow(0 0 .5px #000);
+    }
+
+    .children {
+      width: 200px;
+      height: 100px;
+      clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+      background: #ff5722;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="father">
+    <div class="children"></div>
+  </div>
+</body>
+
+</html>

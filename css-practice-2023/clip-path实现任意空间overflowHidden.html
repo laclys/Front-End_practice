@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* 将整个裁剪区域画成一个超大的矩形形状，
+    也就是 polygon(-1000% 0, 1000% 0, 1000% 100%, -1000% 100%)，
+    这样我们就成功实现了特定区域的 overflow: hidden */
+    div {
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(-1000% 0, 1000% 0, 1000% 100%, -1000% 100%);
+      background: burlywood;
+      font-size: 0;
+    }
+
+    p {
+      width: 500px;
+      height: 500px;
+      background: red;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <p></p>
+
+  </div>
+</body>
+
+</html>

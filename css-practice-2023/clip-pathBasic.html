@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    }
+    /* 圆形 */
+    /* 以元素的左上角为坐标起点，在元素的 （50px, 50px）处，生成一个半径为 50px 的圆 */
+    /* 元素将保留 clip-path 路径生成的图形内部的内容，裁剪掉生成图形之外的内容 */
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background-color: yellowgreen;
+      clip-path: circle(50px at 50px 50px);
+    }
+
+    /* 十边形 */
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background-color: yellowgreen;
+      clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+
+    }
+
+    .box3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 100px;
+      background: linear-gradient(45deg, #f9d9e7, #ff1493);
+      clip-path: polygon(15px 0,
+          calc(100% - 15px) 0,
+          100% 15px,
+          100% calc(100% - 15px),
+          calc(100% - 15px) 100%,
+          15px 100%,
+          0 calc(100% - 15px),
+          0 15px);
+    }
+
+    .box4 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 60px;
+      background: linear-gradient(45deg, #04e6fb, #65ff9a);
+      clip-path: polygon(0 0,
+          30px 50%,
+          0 100%,
+          calc(100% - 30px) 100%,
+          100% 50%,
+          calc(100% - 30px) 0);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1"></div>
+  <br> <br> <br> <br> <br>
+  <div class="box2"></div>
+  <br> <br> <br> <br> <br>
+  <div class="box3">notching</div>
+  <br> <br> <br> <br> <br>
+  <div class="box4">Arrow</div>
+</body>
+
+</html>
