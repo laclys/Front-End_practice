@@ -1,0 +1,21 @@
+<canvas
+  id="myCanvas"
+  width="300"
+  height="150"
+  style="border: 1px solid #d3d3d3"
+>
+  Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script>
+  var canvasa = document.getElementById('myCanvas')
+  var ctx = canvasa.getContext('2d')
+  // var image = new Image()
+  ctx.beginPath()
+  ctx.strokeStyle = '#000'
+  ctx.fillStyle = '#6cf'
+  ctx.rect(0, 0, 200, 100)
+  ctx.fill()
+  ctx.stroke()
+  const h = ctx.getImageData(20, 30, 1, 1).data
+  console.log('hhh', h)
+</script>
