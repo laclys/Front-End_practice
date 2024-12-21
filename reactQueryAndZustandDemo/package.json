@@ -1,0 +1,24 @@
+{
+  "name": "reactQueryAndZustandDemo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.62.8",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "reset.css": "^2.0.2",
+    "zustand": "^5.0.2"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.1.8",
+    "@rsbuild/plugin-react": "^1.0.7",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "typescript": "^5.7.2"
+  }
+}
